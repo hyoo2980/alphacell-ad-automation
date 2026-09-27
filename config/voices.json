@@ -1,5 +1,5 @@
 {
-  "_note": "채널별 배정 음성(assign.py). default=elevenlabs: 보이스는 시크릿 ELEVENLABS_VOICE_ID(taehyung) 하나, 채널마다 안정도·속도만 달리함. ElevenLabs 실패 시 Gemini 로 자동 대체.",
+  "_note": "default=elevenlabs: 무료 계정에서 쓸 수 있는 기본(premade) 목소리 14종을 날짜+채널로 돌려 씀(assign.py). 계정은 채널별(account). 실패 시 Gemini.",
   "default": "elevenlabs",
   "gemini": [
     {
@@ -27,32 +27,114 @@
     {
       "provider": "elevenlabs",
       "model": "eleven_v3",
+      "voice": "CwhRBWXzGAHq8TQ4Fs17",
+      "name": "Roger",
       "stability": 0.5,
       "speed": 1.0
     },
     {
       "provider": "elevenlabs",
       "model": "eleven_v3",
-      "stability": 0.0,
-      "speed": 1.05
-    },
-    {
-      "provider": "elevenlabs",
-      "model": "eleven_v3",
+      "voice": "EXAVITQu4vr4xnSDxMaL",
+      "name": "Sarah",
       "stability": 0.5,
-      "speed": 1.08
-    },
-    {
-      "provider": "elevenlabs",
-      "model": "eleven_v3",
-      "stability": 0.0,
       "speed": 1.0
     },
     {
       "provider": "elevenlabs",
       "model": "eleven_v3",
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "name": "Laura",
       "stability": 0.5,
-      "speed": 1.12
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "voice": "IKne3meq5aSn9XLyUdCD",
+      "name": "Charlie",
+      "stability": 0.5,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "voice": "JBFqnCBsd6RMkjVDRZzb",
+      "name": "George",
+      "stability": 0.5,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "voice": "N2lVS1w4EtoT3dr4eOWO",
+      "name": "Callum",
+      "stability": 0.5,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "voice": "SAz9YHcvj6GT2YYXdXww",
+      "name": "River",
+      "stability": 0.5,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "voice": "SOYHLrjzK2X1ezoPC6cr",
+      "name": "Harry",
+      "stability": 0.5,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "voice": "TX3LPaxmHKxFdv7VOQHJ",
+      "name": "Liam",
+      "stability": 0.5,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "voice": "Xb7hH8MSUJpSbSDYk0k2",
+      "name": "Alice",
+      "stability": 0.5,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "voice": "XrExE9yKIg1WjnnlVkGX",
+      "name": "Matilda",
+      "stability": 0.5,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "voice": "bIHbv24MWmeRgasZH58o",
+      "name": "Will",
+      "stability": 0.5,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "name": "Jessica",
+      "stability": 0.5,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "name": "Eric",
+      "stability": 0.5,
+      "speed": 1.0
     }
   ],
   "edge": [

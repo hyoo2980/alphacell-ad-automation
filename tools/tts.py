@@ -369,7 +369,7 @@ def synth_lines(texts, v=None):
         for i in range(len(accs)):
             a = accs[(start + i) % len(accs)]
             try:
-                return synth_script_gemini(texts, {**v, "api_key": a["key"], "voice": a["voice_id"]}, "eleven"), False
+                return synth_script_gemini(texts, {**v, "api_key": a["key"], "voice": v.get("voice") or a["voice_id"]}, "eleven"), False
             except Exception as e:
                 print(f"::warning::ElevenLabs 계정 {(start + i) % len(accs) + 1} 실패 → 다음 계정 ({str(e)[:150]})")
         print("::warning::ElevenLabs 모든 계정 실패 → Gemini 로 대체")
