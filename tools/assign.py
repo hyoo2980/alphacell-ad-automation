@@ -1,50 +1,40 @@
-"""오늘의 채널별 제작 배정 — 5채널이 동시에 돌아도 서로 겹치지 않게 날짜+채널 순번으로 축을 나눈다.
+"""오늘의 채널별 제작 배정 — 광고 흐름(PATTERNS HSO)은 고정, 표면(훅·증상·보이스·첫 컷)만 날짜+채널로 돌린다.
 
   python tools/assign.py <채널id> [YYYY-MM-DD]
 
-같은 날 채널끼리는 훅 유형·소재 각도·보이스·첫 장면 소스 후보가 전부 다르고, 날마다 한 칸씩 돈다.
-(유튜브: 영상 간 차이 없는 기계적 대량생산 → 노출 제한. 채널 간 유사 영상 방지)
+같은 날 5채널은 훅 유형/증상 조합과 보이스·첫 컷이 서로 다르게 나온다(같은 영상으로 감지되지 않을 정도).
 """
 import json
 import sys
-from datetime import date
+from collections import Counter
+from datetime import date, timedelta
 
 from common import LIB, ROOT, load_json
 
-HOOKS = [
-    "증상 질문형 — 식후 몸의 신호를 묻는다 (예: 밥만 먹으면 눈꺼풀이 무거우시죠?)",
-    "사과·반전형 — 예상을 뒤집으며 시작 (예: ~찾고 계셨다면 죄송합니다)",
-    "상황 장면형 — 구체적 시각·장소의 한 장면 (예: 점심 먹고 오후 2시, 모니터 앞에서…)",
-    "사실 제시형 — 흔한 오해를 뒤집는 한 문장 (예: 흰 쌀밥이 문제가 아니었습니다)",
-    "확신·도발형 — 강한 확신으로 멈추게 함 (판매중단·환불·100% 같은 위험 표현 없이)",
+HOOKS = [  # PATTERNS_혈당.md 의 검증된 훅 유형
+    "증상 질문형 (예: 밥만 먹으면 졸리시죠?)",
+    "사과·반전형 (예: 혈당 수치만 잠깐 내리는 걸 찾으셨다면 죄송합니다)",
+    "확신형 (예: 장담하는데, 식후 혈당 이렇게 관리해 보세요 — 판매중단·환불 약속 없이)",
+    "증상 장면형 (예: 점심 먹고 오후 2시, 눈꺼풀이 내려앉을 때)",
+    "사실 제시형 (예: 식후 졸음, 나이 탓이 아닐 수 있어요)",
 ]
-ANGLES = [  # 12개 — 같은 날 5채널은 서로 다른 각도, 날마다 이동 (12일 주기)
-    "식후 졸림·오후 무기력",
-    "손발 저림·찌릿함",
-    "흰 쌀밥·탄수화물 식습관",
-    "밥 위에 뿌려 먹는 사용법(보라색 가루)",
-    "자색고구마 안토시아닌 이야기",
-    "독일산 귀리 식이섬유 이야기",
-    "혈당측정기 수치를 보는 순간(실망 → 안도)",
-    "부모님·가족을 챙기는 마음",
-    "식약처·연구·제조 과정의 신뢰",
-    "택배 개봉·구매 후기형 장면",
-    "끈적한 혈액·당독소 비유(애니메이션)",
-    "다리 붓기·계단 숨참 같은 일상 신호",
-]
-# 음성: config/voices.json (provider 별 목록). ElevenLabs 키가 등록되면 elevenlabs 목록을 쓴다.
+SYMPTOMS = ["식후 졸림·무기력", "손발 저림·찌릿함", "식후 혈당 급상승(흰 쌀밥)"]
+SYMPTOM_VISUALS = {  # 훅 증상에 맞는 첫 컷 비주얼
+    "식후 졸림·무기력": ("ugc_drowsy_after_meal",),
+    "손발 저림·찌릿함": ("ugc_numb_hands", "hands_still", "ugc_leg_pain"),
+    "식후 혈당 급상승(흰 쌀밥)": ("glucometer_high", "glucose_test", "meal_sprinkle_rice"),
+}
+LENGTHS = ["30~35초", "35~40초", "40~45초", "32~38초", "36~42초"]
+
+
 def _voices():
     import os
     vc = load_json(ROOT / "config" / "voices.json")
-    prov = os.environ.get("TTS_PROVIDER") or vc.get("default", "gemini")
-    return vc[prov]
-LENGTHS = ["25~30초", "35~40초", "30~35초", "40~45초", "28~33초"]
+    return vc[os.environ.get("TTS_PROVIDER") or vc.get("default", "gemini")]
 
 
 def source_usage(day, days=14):
-    """최근 days 일 동안 모든 채널 EDL 에서 소스별 사용 횟수. (예시 EDL 제외)"""
-    from collections import Counter
-    from datetime import timedelta
+    """최근 days 일 동안 모든 채널 EDL 에서 소스별 사용 횟수 (예시 EDL 제외)."""
     cnt = Counter()
     since = (day - timedelta(days=days)).strftime("%y%m%d")
     for p in (ROOT / "edl").glob("*/*.json"):
@@ -64,49 +54,27 @@ def assign(channel, day):
     chs = load_json(ROOT / "upload" / "channels.json")
     active = [k for k, v in chs.items() if not k.startswith("_") and v.get("enabled")]
     slot = active.index(channel) if channel in active else 0
-    # 같은 날 이미 만든 EDL 이 있으면(추가 제작) 모든 채널 배정을 같은 폭만큼 밀어 다른 소재·훅이 나오게.
-    # 채널 간 겹침 방지를 유지하려고 shift 는 채널 공통값(오늘 가장 많이 만든 채널의 개수)을 쓴다.
-    ymd = day.strftime("%y%m%d")
+    ymd = day.strftime("%y%m%d")   # 같은 날 추가 제작이면 전 채널 공통으로 한 칸씩 밀기
     shift = max([len(list((ROOT / "edl" / c).glob(f"{ymd}_*.json"))) for c in active] or [0])
-    k = (day.toordinal() + slot + shift) % 5
+    k = (day.toordinal() + slot + shift) % len(HOOKS)
     cfg = chs[channel]
-    idx = load_json(LIB / "index.json")
-    items = idx if isinstance(idx, list) else idx.get("items", [])
-    pool = []
-    for x in items:
-        lb = x.get("labels") or {}
-        if (x.get("group") == cfg.get("group") and lb.get("beat") in ("hook", "problem", "agitate", "enemy")
-                and not lb.get("has_text") and (lb.get("quality") or 0) >= 2):
-            pool.append(x)
+    items = [x for x in load_json(LIB / "index.json")
+             if x.get("group") == cfg.get("group") and x.get("labels")
+             and not x["labels"].get("has_text") and (x["labels"].get("quality") or 0) >= 2]
     usage = source_usage(day)
-    mine = [x for i, x in enumerate(pool) if i % 5 == k] or pool
-    mine.sort(key=lambda x: usage.get(x.get("path"), 0))   # 첫 컷 후보도 덜 쓴 순
-    # 참고 스크립트: 참고 스크립트/<group>/*.txt 의 [번호] 블록들을 날짜+채널로 순환 배정 (메시지 영감용)
-    import re
-    blocks = []
-    for f in sorted((ROOT / "참고 스크립트" / cfg.get("group", "")).glob("*.txt")):
-        for m in re.finditer(r"^\[(\d+)\]", f.read_text(encoding="utf-8"), re.M):
-            blocks.append(f"{f.relative_to(ROOT).as_posix()} [{m.group(1)}]")
-    ref = blocks[(day.toordinal() * 5 + slot + shift) % len(blocks)] if blocks else None
+    items.sort(key=lambda x: usage.get(x["path"], 0))
+    symptom = SYMPTOMS[(day.toordinal() + slot * 2 + shift) % len(SYMPTOMS)]
+    pool = [x for x in items if x["labels"].get("visual") in SYMPTOM_VISUALS[symptom]]
+    hook_cuts = (pool[slot % len(pool):] + pool[:slot % len(pool)])[:4] if pool else []   # 채널마다 다른 첫 컷
+    voices = _voices()
     return {
-        "channel": channel, "name": cfg.get("name"), "date": day.isoformat(), "slot": slot,
+        "channel": channel, "name": cfg.get("name"), "date": day.isoformat(),
         "style_profile": cfg.get("style_profile"), "brand": cfg.get("brand"),
-        "hook_type": HOOKS[k], "angle": ANGLES[(day.toordinal() + shift * 5 + slot * 2) % len(ANGLES)],
-        "voice": _voices()[k % len(_voices())], "length": LENGTHS[k],
-        "hook_sources": [{"src": x.get("path") or x.get("source"), "visual": x["labels"].get("visual"),
-                          "desc": x["labels"].get("desc")} for x in mine],
-        "reference_script": ref,
-        # 소스 다양화: 사용 횟수 오름차순(0 = 아직 안 쓴 새 소스). 앞쪽을 우선 쓰고, overused 는 피한다.
-        "sources_by_usage": [f"{n}회 | {x['labels']['visual']} | {x['labels']['beat']} | {x['labels']['desc']} | {x['path']}"
-                             for n, x in sorted(((usage.get(x['path'], 0), x) for x in items
-                                                  if x.get('group') == cfg.get('group') and x.get('labels')
-                                                  and not x['labels'].get('has_text') and (x['labels'].get('quality') or 0) >= 2),
-                                                 key=lambda t: t[0])],
-        "overused": [s for s, n in usage.most_common() if n >= 4],
-        "avoid_angles": [ANGLES[(day.toordinal() + shift * 5 + i * 2) % len(ANGLES)] for i in range(len(active)) if i != slot],
-        "rule": "소재 각도(angle)는 반드시 지킨다(다른 채널과 겹치지 않게 배정된 것). avoid_angles(오늘 다른 채널 소재)는 "
-                "헤드라인·훅·제목의 메인 소재로 쓰지 않는다(본문에서 한 번 스치는 정도만). 첫 문구의 컷은 hook_sources 중에서 "
-                "고른다. reference_script 는 메시지·논리 영감용일 뿐 문장을 그대로 쓰지 않는다.",
+        "hook_type": HOOKS[k], "hook_symptom": symptom,
+        "voice": voices[(k + slot) % len(voices)], "length": LENGTHS[slot % len(LENGTHS)],
+        "first_cut_candidates": [f"{x['labels']['desc']} | {x['path']}" for x in hook_cuts],
+        "sources_by_usage": [f"{usage.get(x['path'], 0)}회 | {x['labels']['visual']} | {x['labels']['beat']} | "
+                             f"{x['labels']['desc']} | {x['path']}" for x in items],
     }
 
 
