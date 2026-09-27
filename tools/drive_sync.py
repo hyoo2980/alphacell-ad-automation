@@ -23,8 +23,16 @@ UA = {"User-Agent": "Mozilla/5.0"}
 
 
 def list_folder(fid):
-    r = requests.get(f"https://drive.google.com/embeddedfolderview?id={fid}", headers=UA, timeout=60)
-    r.raise_for_status()
+    for k in range(4):   # 드라이브가 가끔 500 을 냄 → 재시도
+        try:
+            r = requests.get(f"https://drive.google.com/embeddedfolderview?id={fid}", headers=UA, timeout=60)
+            r.raise_for_status()
+            break
+        except Exception as e:
+            if k == 3:
+                raise
+            print(f"  목록 재시도 {k + 1}: {e}")
+            time.sleep(10 * (k + 1))
     entries = re.findall(r'href="https://drive\.google\.com/file/d/([\w-]+)/[^"]*".*?flip-entry-title">([^<]*)<',
                          r.text, re.S)
     subs = re.findall(r'href="https://drive\.google\.com/drive/folders/([\w-]+)"', r.text)
@@ -90,4 +98,7 @@ def sync(folder, list_only=False):
 
 if __name__ == "__main__":
     for fo in load_json(CONFIG / "drive.json")["folders"]:
-        sync(fo, "--list" in sys.argv)
+        try:
+            sync(fo, "--list" in sys.argv)
+        except Exception as e:   # 동기화 실패해도 이미 받아둔(캐시) 파일로 제작은 계속
+            print(f"::warning::드라이브 동기화 실패({fo['dest']}) → 기존 파일로 진행: {e}")
