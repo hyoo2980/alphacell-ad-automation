@@ -1,0 +1,216 @@
+{
+  "id": "260927_channel1_v01_hook-drowsy",
+  "_brief": "assign.py channel1 2026-09-27 slot2 배정: 사실 제시형 훅(흔한 오해 뒤집기), 각도=식후 졸림·오후 무기력, voice=Sadachbia",
+  "brand": "alphacell",
+  "style_profile": "hyeoldang_geongang",
+  "layout": "band",
+  "headline": [
+    {
+      "text": "쏟아지는 오후 졸음",
+      "color": "yellow"
+    },
+    {
+      "text": "{red|식후 혈당} {green|한 포로 관리}",
+      "color": "white"
+    },
+    {
+      "text": "알파셀 혈당 세이프",
+      "color": "purple"
+    }
+  ],
+  "disclaimer": true,
+  "voice": {
+    "provider": "gemini",
+    "voice": "Sadachbia"
+  },
+  "bgm": null,
+  "lines": [
+    {
+      "text": "오후만 되면 쏟아지는 {red|졸음}",
+      "style": "outline",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/122.png"
+        }
+      ]
+    },
+    {
+      "text": "{yellow|잠} 때문이 아니었습니다",
+      "style": "outline",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Man_pricking_finger_with_lancet_202608171523.mp4"
+        }
+      ]
+    },
+    {
+      "text": "밥 먹고 나면 {red|혈당}부터 오르고",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Gemini_Generated_Image_8yntng8yntng8ynt.jpeg"
+        }
+      ]
+    },
+    {
+      "text": "그 뒤로 {red|식후 졸림}이 따라와요"
+    },
+    {
+      "text": "{red|손발}까지 차고 저릿하다면",
+      "style": "outline",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Rubbing_cold_hands_together_20260913123647.mp4"
+        }
+      ]
+    },
+    {
+      "text": "몸이 보내는 {yellow|신호}일 수 있어요"
+    },
+    {
+      "text": "혈관 속엔 {yellow|끈적한 당}이 떠돌고",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/혈관_속_포도당_정체_202608162210.mp4"
+        }
+      ]
+    },
+    {
+      "text": "몸은 그 {red|찌꺼기}를 나릅니다",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 2 (1).mp4"
+        }
+      ]
+    },
+    {
+      "text": "화장실 {red|거품}도 신호일 수 있어요",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Foam_bubbling_in_202603312047.mp4"
+        }
+      ]
+    },
+    {
+      "text": "가볍게 넘기지 마세요"
+    },
+    {
+      "text": "대부분의 혈당 제품은"
+    },
+    {
+      "text": "{red|오르고 나서} 챙기는 제품이죠"
+    },
+    {
+      "text": "{purple|알파셀 혈당 세이프}는 다릅니다",
+      "style": "outline",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/혈당 제품 하이라이트 1.mp4"
+        }
+      ]
+    },
+    {
+      "text": "밥 위에 {green|한 포만 뿌리면}",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Freepik_-Shot-Composition-Closeup-Of-A-Korean-Meal-Table-W_Kling_720P_16-9_24Fps_79599.mp4"
+        }
+      ]
+    },
+    {
+      "text": "{green|식후 혈당 관리}가 시작돼요"
+    },
+    {
+      "text": "일본 장수마을 주식이었던",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Splitting_purple_sweet_potato_by…_202608171449.mp4"
+        }
+      ]
+    },
+    {
+      "text": "{pink|자색고구마} 안토시아닌에",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/안토시아닌 분말 손 가득.mp4"
+        }
+      ]
+    },
+    {
+      "text": "{yellow|독일산} {cyan|귀리 베타글루칸}까지",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/귀리를_수확한다._20260912202041.mp4"
+        }
+      ]
+    },
+    {
+      "text": "두 원료를 함께 {yellow|연구}했어요",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/원료를_연구한다._20260912202234.mp4"
+        }
+      ]
+    },
+    {
+      "text": "{yellow|항산화} 성분이 풍부해서",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/안토시아닌 폭발 1.mp4"
+        }
+      ]
+    },
+    {
+      "text": "혈관 속 {yellow|끈적한 당}까지 신경 써요",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Antioxidants_cleaning_blocked_bl…_202608162158.mp4"
+        }
+      ]
+    },
+    {
+      "text": "하루 한 포면 {green|충분해요}",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Man_pouring_powder_into_mouth_202608162348.mp4"
+        }
+      ]
+    },
+    {
+      "text": "밥 먹고 나서도 {green|개운하게}",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Woman_stretching_with_bright_exp…_202608171000 (1).mp4"
+        }
+      ]
+    },
+    {
+      "text": "오후에도 {green|무기력하지 않게}",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Woman_running_on_park_track_202608171236 (4).mp4"
+        }
+      ]
+    },
+    {
+      "text": "{green|가벼운 하루}를 보내세요",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/행복해하는 중년 여성.mp4"
+        }
+      ]
+    },
+    {
+      "text": "{purple|알파셀 혈당 세이프}",
+      "style": "outline",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/12_1.mp4"
+        }
+      ]
+    },
+    {
+      "text": "궁금하다면 {green|살펴보세요}",
+      "style": "outline"
+    }
+  ]
+}
