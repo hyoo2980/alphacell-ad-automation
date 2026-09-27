@@ -1,4 +1,4 @@
-# ElevenLabs 계정별 음성 생성 확인 (짧은 문장 1개, 계정당 약 20크레딧). Claude 사용 안 함.
+# ElevenLabs 기본(premade) 목소리 샘플 — 무료 계정 1번으로 같은 광고 문장을 목소리별로 생성 → Artifacts. Claude 사용 안 함.
 name: tts-test
 
 on:
@@ -18,15 +18,26 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install requests
-      - name: 계정별 생성 테스트
+      - name: 기본 목소리 샘플 생성
         run: |
-          cd tools && python - <<'EOF'
-          import os, requests, tts
-          for i, a in enumerate(tts.xi_accounts(), 1):
-              h = {"xi-api-key": a["key"]}
-              r = requests.post(f"https://api.elevenlabs.io/v1/text-to-speech/{a['voice_id']}?output_format=mp3_44100_128",
-                                headers=h, json={"text": "밥만 먹으면 졸리시죠?", "model_id": "eleven_v3", "language_code": "ko"}, timeout=120)
-              s = requests.get("https://api.elevenlabs.io/v1/user/subscription", headers=h, timeout=30).json()
-              left = s.get("character_limit", 0) - s.get("character_count", 0)
-              print(f"계정 {i}: {'OK' if r.ok else 'FAIL'} HTTP {r.status_code} | 남은 크레딧 {left:,} | {'' if r.ok else r.text[:200]}")
+          mkdir -p samples && cd tools && python - <<'EOF'
+          import re, requests, tts
+          a = tts.xi_accounts()[0]
+          h = {"xi-api-key": a["key"]}
+          text = "밥만 먹으면 졸리시죠? 식후 혈당 때문일 수 있어요. 지금 쿠팡에서 알파셀 혈당 세이프를 검색해보세요!"
+          voices = [v for v in requests.get("https://api.elevenlabs.io/v1/voices", headers=h, timeout=30).json()["voices"]
+                    if v.get("category") == "premade"]
+          print(f"기본 목소리 {len(voices)}개")
+          for v in voices[:14]:
+              lab = v.get("labels") or {}
+              r = requests.post(f"https://api.elevenlabs.io/v1/text-to-speech/{v['voice_id']}?output_format=mp3_44100_128",
+                                headers=h, json={"text": text, "model_id": "eleven_v3", "language_code": "ko"}, timeout=120)
+              name = re.sub(r"[^\w]+", "_", f"{v['name']}_{lab.get('gender','')}_{lab.get('age','')}").strip("_")
+              if r.ok:
+                  open(f"../samples/{name}.mp3", "wb").write(r.content)
+              print(f"{'OK ' if r.ok else 'FAIL'} {name} | {v['voice_id']} | {'' if r.ok else r.text[:120]}")
           EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voice-samples
+          path: samples/
