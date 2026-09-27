@@ -1,0 +1,32 @@
+# ElevenLabs 계정별 음성 생성 확인 (짧은 문장 1개, 계정당 약 20크레딧). Claude 사용 안 함.
+name: tts-test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONIOENCODING: utf-8
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
+      ELEVENLABS_ACCOUNTS: ${{ secrets.ELEVENLABS_ACCOUNTS }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: 계정별 생성 테스트
+        run: |
+          cd tools && python - <<'EOF'
+          import os, requests, tts
+          for i, a in enumerate(tts.xi_accounts(), 1):
+              h = {"xi-api-key": a["key"]}
+              r = requests.post(f"https://api.elevenlabs.io/v1/text-to-speech/{a['voice_id']}?output_format=mp3_44100_128",
+                                headers=h, json={"text": "밥만 먹으면 졸리시죠?", "model_id": "eleven_v3", "language_code": "ko"}, timeout=120)
+              s = requests.get("https://api.elevenlabs.io/v1/user/subscription", headers=h, timeout=30).json()
+              left = s.get("character_limit", 0) - s.get("character_count", 0)
+              print(f"계정 {i}: {'OK' if r.ok else 'FAIL'} HTTP {r.status_code} | 남은 크레딧 {left:,} | {'' if r.ok else r.text[:200]}")
+          EOF
