@@ -1,0 +1,267 @@
+{
+ "id": "260927_channel1_hyeoldang_v04_hook-apology-legswollen",
+ "_brief": "assign.py 배정 — hook_type: 사과·반전형, angle: 흰 쌀밥·탄수화물 식습관, voice: Orus, 길이 35~40초. v01(손등 정지)·v02(가슴 답답)·v03(혈당측정기) 과 훅 비주얼(다리 붓기 이미지)·컷 순서·소스·자막 스타일 배치를 모두 다르게 함. 엔진 비유·당 분해 비교 실험 등 참고 스크립트에 없는 메시지 추가",
+ "ref_script": "참고 스크립트/혈당/참고스크립트1.txt [1]",
+ "_hso": {
+  "hook": [0, 1],
+  "enemy": [2, 6],
+  "product": [7, 9],
+  "mechanism": [10, 15],
+  "proof": [16, 17],
+  "result": [18, 23],
+  "cta": [24, 27]
+ },
+ "title": "퇴근하고 다리 무거운 날, 이거 챙겨요",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_mubyeong",
+ "layout": "band",
+ "headline": [
+  {
+   "text": "다리 붓기 고민이라면",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|다리 붓기} {green|한 포로 관리}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "gemini",
+  "voice": "Orus"
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "다리 붓기만 빼려 하셨다면",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/ChatGPT_Image_2026_8_17_08_53_05_2.png"
+    }
+   ],
+   "_visual": "leg_swollen"
+  },
+  {
+   "text": "죄송합니다",
+   "style": "outline",
+   "hold": 0.3
+  },
+  {
+   "text": "그 붓기, 원인이 다른 곳에 있어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Woman_massaging_her_leg_202608171218.mp4"
+    }
+   ],
+   "_visual": "ugc_leg_pain"
+  },
+  {
+   "text": "매일 드시는 {yellow|흰 쌀밥} 때문이에요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Freepik_-Shot-Composition-Closeup-Of-A-Korean-Meal-Table-W_Kling_720P_16-9_24Fps_79599.mp4"
+    }
+   ],
+   "_visual": "meal_sprinkle_rice"
+  },
+  {
+   "text": "밥 먹고 나면 {red|혈당이 출렁거려요}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관_속_포도당_정체_202608162210.mp4"
+    }
+   ],
+   "_visual": "anim_vessel_clogged"
+  },
+  {
+   "text": "마치 엔진에 낀 때처럼요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/72d66c988d317f40.mp4"
+    }
+   ],
+   "_visual": "analogy_engine_clean"
+  },
+  {
+   "text": "안에서 보내는 경고가 흐려져요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Pancreas_failing_and_vessels_clo…_20260913125028.mp4"
+    }
+   ],
+   "_visual": "anim_pancreas_failing"
+  },
+  {
+   "text": "그래서 챙기는 {purple|알파셀 혈당 세이프}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_3463.mov"
+    }
+   ],
+   "_visual": "product_with_sweetpotato"
+  },
+  {
+   "text": "밥 위에 {green|한 포만 톡} 뿌려요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/talkv_wzs08OL9aZ_MGj8K8i0JbpBXNOLTnTReK_talkv_high.mov",
+     "in": 2.0
+    }
+   ],
+   "_visual": "product_stick_open_sprinkle"
+  },
+  {
+   "text": "{green|식후 혈당 관리}, 이렇게 간단해요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_7333.mov",
+     "in": 3.0
+    }
+   ],
+   "_visual": "meal_sprinkle_rice"
+  },
+  {
+   "text": "이 {yellow|보라색 가루}, 정체가 뭐냐면",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/1 (2).mp4"
+    }
+   ],
+   "_visual": "powder_purple"
+  },
+  {
+   "text": "일본 장수마을 어르신들이",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/자색 고구마 1.mp4"
+    }
+   ],
+   "_visual": "sweetpotato_field"
+  },
+  {
+   "text": "주식으로 드시는 {pink|자색고구마}래요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Splitting_purple_sweet_potato_by…_202608171449.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "sweetpotato_split"
+  },
+  {
+   "text": "{pink|안토시아닌}이 그만큼 듬뿍이고요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_completely_202510272258_3avgo.mp4"
+    }
+   ],
+   "_visual": "powder_purple_particles"
+  },
+  {
+   "text": "독일산 {cyan|귀리 베타글루칸}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_dark_202509132300_vsfbi.mp4"
+    }
+   ],
+   "_visual": "ingredient_oat_harvest"
+  },
+  {
+   "text": "든든하게 챙겨 넣었죠"
+  },
+  {
+   "text": "당 분해력을 직접 비교해봤어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/당 분해 비교 1.mp4"
+    }
+   ],
+   "_visual": "experiment_compare"
+  },
+  {
+   "text": "{green|차이가 확실히} 보이더라고요"
+  },
+  {
+   "text": "혈관도 {green|한결 편해지고}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 폭발.mp4"
+    }
+   ],
+   "_visual": "anim_vessel_clean"
+  },
+  {
+   "text": "다리 붓기도 {green|가벼워졌어요}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/4a0a8cc8d8da8eab.mp4"
+    }
+   ],
+   "_visual": "ugc_happy_hands"
+  },
+  {
+   "text": "이제는 {green|몸도 가벼워요}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_running_on_park_track_202608171231 (2).mp4"
+    }
+   ],
+   "_visual": "ugc_active_happy"
+  },
+  {
+   "text": "밥 먹고도 {green|가볍게 움직여요}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/65c05a4abc55ce76.mp4"
+    }
+   ],
+   "_visual": "ugc_exercise_mat"
+  },
+  {
+   "text": "직접 흔들어서 확인해봤어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_shaking_stick_202603282231 (1).mp4"
+    }
+   ],
+   "_visual": "ugc_show_stick"
+  },
+  {
+   "text": "{green|믿고 챙길 만하더라고요}"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/adadca005789830f.mp4"
+    }
+   ],
+   "_visual": "product_reveal"
+  },
+  {
+   "text": "지금 {yellow|쿠팡}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ],
+   "_visual": "coupang_search"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를"
+  },
+  {
+   "text": "{green|검색해보세요!}",
+   "style": "outline",
+   "hold": 0.4
+  }
+ ]
+}
