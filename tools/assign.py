@@ -50,6 +50,17 @@ def source_usage(day, days=14):
     return cnt
 
 
+def base_scripts(group):
+    """참고 스크립트/<group>/*.txt 의 '[스크립트 N]' 블록들 → [(파일명 N, 본문)]."""
+    import re
+    out = []
+    for f in sorted((ROOT / "참고 스크립트" / group).glob("*.txt")):
+        t = f.read_text(encoding="utf-8")
+        for m in re.finditer(r"^\[스크립트\s*(\d+)\]\s*\n(.*?)(?=^\[스크립트|\Z)", t, re.M | re.S):
+            out.append((f"{f.stem} #{m.group(1)}", m.group(2).strip()))
+    return out
+
+
 def assign(channel, day):
     chs = load_json(ROOT / "upload" / "channels.json")
     active = [k for k, v in chs.items() if not k.startswith("_") and v.get("enabled")]
@@ -67,7 +78,11 @@ def assign(channel, day):
     pool = [x for x in items if x["labels"].get("visual") in SYMPTOM_VISUALS[symptom]]
     hook_cuts = (pool[slot % len(pool):] + pool[:slot % len(pool)])[:4] if pool else []   # 채널마다 다른 첫 컷
     voices = _voices()
+    bs = base_scripts(cfg.get("group", ""))
+    base = bs[(day.toordinal() * 5 + slot + shift) % len(bs)] if bs else None   # 같은 날 채널끼리 다른 번호, 날마다 이동
     return {
+        "base_script_id": base[0] if base else None,
+        "base_script": base[1] if base else None,
         "channel": channel, "name": cfg.get("name"), "date": day.isoformat(),
         "style_profile": cfg.get("style_profile"), "brand": cfg.get("brand"),
         "hook_type": HOOKS[k], "hook_symptom": symptom,
