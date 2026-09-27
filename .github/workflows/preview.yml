@@ -1,0 +1,62 @@
+# 스타일 확인용: 예시 EDL 을 5채널 스타일로 렌더(업로드 없음) → 프레임 PNG 를 Artifacts 로.
+name: style-preview
+
+on:
+  workflow_dispatch:
+
+jobs:
+  preview:
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fontconfig
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: 참고영상 소스
+          key: drive-${{ hashFiles('config/drive.json') }}-${{ github.run_id }}
+          restore-keys: drive-${{ hashFiles('config/drive.json') }}-
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-small-v1
+      - name: 폰트 받기
+        run: |
+          curl -sSL -o /tmp/gm.zip https://corp.gmarket.com/fonts/GmarketSansTTF.zip
+          unzip -o -j /tmp/gm.zip '*.ttf' -d assets/fonts
+      - name: 폰트 확인
+        run: |
+          ls -la assets/fonts
+          fc-scan --format "%{file} | family=%{family} | style=%{style}\n" assets/fonts/*.ttf
+          cd tools && python -c "from common import ass_family, font_path; print('Bold ->', font_path('Gmarket Sans TTF', True), ass_family('Gmarket Sans TTF', True)); print('Medium ->', ass_family('Gmarket Sans TTF', False))"
+      - run: cd tools && python drive_sync.py
+      - name: 5개 스타일 렌더 + 프레임 추출
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          echo "TTS_PROVIDER=gemini" > .env
+          mkdir -p preview
+          for p in hyeoldang_mubyeong hyeoldang_hyeolgwan hyeoldang_geongang hyeoldang_nohu hyeoldang_al; do
+            python - "$p" <<'EOF'
+          import json, sys
+          e = json.load(open("edl/examples/260927_alphacell_v01_hook-numbhands.json", encoding="utf-8"))
+          e["id"] = "preview_" + sys.argv[1]; e["style_profile"] = sys.argv[1]
+          e["voice"] = {"provider": "gemini", "voice": "Puck"}
+          e["lines"] = e["lines"][:6]
+          json.dump(e, open(f"edl/preview_{sys.argv[1]}.json", "w", encoding="utf-8"), ensure_ascii=False)
+          EOF
+            (cd tools && python render.py "../edl/preview_$p.json")
+            ffmpeg -v error -y -ss 1.2 -i "광고 결과 영상/preview_$p.mp4" -frames:v 1 -vf scale=540:960 "preview/$p.png"
+          done
+          ls preview
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: style-preview
+          path: preview/

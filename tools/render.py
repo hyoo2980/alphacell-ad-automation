@@ -91,7 +91,9 @@ def make_segment(m, start, dur, box, out, fps, nframes):
 
 # ---------- 자막(ASS) ----------
 def ass_style(name, s, fonts):
-    fam = s.get("font", fonts["subtitle"])
+    from common import ass_family
+    # 자막 렌더러(libass)는 글꼴 파일 안의 실제 패밀리명으로 찾는다 → 설정 이름이 아니라 파일에서 읽은 이름을 쓴다
+    fam = ass_family(s.get("font", fonts["subtitle"]), s.get("bold", True))
     prim = hex_to_ass(color(s.get("color", "white")))
     if s.get("box"):
         # BorderStyle 3 = 불투명 박스. 박스색=OutlineColour, 여백=Outline

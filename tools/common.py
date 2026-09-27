@@ -160,6 +160,22 @@ def font_path(family, bold=True):
     raise FileNotFoundError(f"폰트 '{family}' 를 찾지 못했습니다 → assets/fonts/ 에 {names or family} 파일을 넣으세요")
 
 
+def has_hangul(path):
+    """글꼴에 한글(가~힣) 글리프가 있는지. 없으면 자막이 네모(□)로 나온다."""
+    from fontTools.ttLib import TTFont
+    cmap = TTFont(path, fontNumber=0, lazy=True).getBestCmap() or {}
+    return all(c in cmap for c in (0xAC00, 0xB098, 0xD7A3))
+
+
+def ass_family(family, bold=True):
+    """설정의 패밀리명 → 실제 글꼴 파일의 패밀리명(libass 가 찾는 이름). 한글 없는 글꼴이면 렌더 중단."""
+    from PIL import ImageFont
+    p = font_path(family, bold)
+    if not has_hangul(p):
+        raise RuntimeError(f"글꼴에 한글이 없습니다: {p} → 자막이 네모로 나오므로 렌더 중단")
+    return ImageFont.truetype(p, 20).getname()[0]
+
+
 def fonts_dir_for_ass():
     """libass fontsdir: assets/fonts 에 폰트가 있으면 그 폴더, 없으면 Gmarket 이 있는 OS 폴더."""
     return str(Path(font_path("Gmarket Sans TTF", True)).parent)

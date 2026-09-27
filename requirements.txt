@@ -9,3 +9,4 @@ requests==2.34.2
 numpy==2.4.6
 imageio==2.37.4
 python-dotenv==1.2.3
+fonttools==4.63.0
