@@ -1,0 +1,203 @@
+{
+ "id": "260928_channel2_v02_s40",
+ "_brief": "channel2(노후비책) 260928 배정: base_script=#40(인슐린 주사/좀비포도당/췌장/100% 환불 등 위험표현 다수). 흐름은 원본 그대로(매번 챙겨야 하는 관리 대신 듀얼 포뮬러 제품 등장→식후 피로·어지럼증은 혈관 속 여분 포도당 신호→베타글루칸이 포도당을 근육으로 흡수시키는 동안 안토시아닌이 혈관을 도와줌→음식 앞에서 눈치 안 봐도 됨)이나 claims_risky 전부 회피해 각색, 손발저림 훅 추가. CTA는 쿠팡 검색+62% 기간한정으로 교체",
+ "title": "손발 저림 있다면 혈당 관리부터 다시 챙기세요",
+ "brand": "alphacell",
+ "base_script": "알파셀_혈당세이프_스크립트_100개_베타글루칸 #40",
+ "style_profile": "hyeoldang_nohu",
+ "layout": "band",
+ "headline": [
+  {
+   "text": "손발 저림, 그냥 두셨다면",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|혈당} 관리부터 다시 보세요",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "elevenlabs",
+  "model": "eleven_v3",
+  "voice": "Xb7hH8MSUJpSbSDYk0k2",
+  "name": "Alice",
+  "stability": 0.5,
+  "speed": 1.0,
+  "account": 3
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "손발 저림, 이것저것",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/손발저림_02.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_numb_hands"
+  },
+  {
+   "text": "다 해보셨다면 죄송해요"
+  },
+  {
+   "text": "방법이 잘못됐을 수 있어요"
+  },
+  {
+   "text": "매번 신경 써야 했던"
+  },
+  {
+   "text": "관리 대신 독일산",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/귀리를_수확한다._20260912202041.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ingredient_oat_harvest"
+  },
+  {
+   "text": "초미립 베타글루칸 한 포로"
+  },
+  {
+   "text": "해결하는 제품이 나왔어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/12_1.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "product_reveal"
+  },
+  {
+   "text": "식후에 몰려오는",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/식후졸림_01.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_yawn_meal"
+  },
+  {
+   "text": "피로와 어지럼증"
+  },
+  {
+   "text": "이건 혈관 속에 남은",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈액끈적_01.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "anim_vessel_clogged"
+  },
+  {
+   "text": "여분의 포도당이"
+  },
+  {
+   "text": "보내는 신호예요"
+  },
+  {
+   "text": "국내 최초 듀얼 포뮬러"
+  },
+  {
+   "text": "베타글루칸이 여분의 포도당을",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관청소_01.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "anim_vessel_clean"
+  },
+  {
+   "text": "근육으로 흡수시키는 동안"
+  },
+  {
+   "text": "안토시아닌은 지친 혈관을",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Against_a_seamless_202509141142_z107k.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "blueberry"
+  },
+  {
+   "text": "편안하게 도와줘요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 폭발.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "anim_vessel_clean"
+  },
+  {
+   "text": "먹고 싶은 음식 앞에서",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/밥뿌리기_02.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "meal_sprinkle_rice"
+  },
+  {
+   "text": "더는 눈치 보지 않아도 돼요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/4a0a8cc8d8da8eab.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_happy_hands"
+  },
+  {
+   "text": "{yellow|기간 한정} {yellow|62% 할인} 중이에요",
+   "vo": "기간 한정 육십이 퍼센트 할인 중이에요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/62_.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "sign_discount"
+  },
+  {
+   "text": "지금 {yellow|쿠팡}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ],
+   "_visual": "coupang_search",
+   "_cta": true
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_2562 (1).mov"
+    }
+   ],
+   "_visual": "product_stick_hand",
+   "_cta": true
+  },
+  {
+   "text": "검색해보세요!",
+   "_cta": true
+  }
+ ]
+}
