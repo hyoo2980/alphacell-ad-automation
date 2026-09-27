@@ -1,0 +1,173 @@
+{
+ "id": "260927_channel4_hyeoldang_v03_scene-drowsy",
+ "_assign": "assign.py channel4_hyeoldang 2026-09-27 — 상황 장면형 훅(오후 식곤증) / 성분 앵글(자색고구마 안토시아닌) / 보이스 edge ko-KR-SunHiNeural / 30~35초. v01(첫컷=계단 숨참)·v02(첫컷=다리 마사지)와 겹치지 않게 첫컷·훅 문구·컷 순서·소스를 오후 식곤증 장면으로 변경",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_hyeolgwan",
+ "layout": "band",
+ "title": "오후 2시만 되면 꾸벅꾸벅 졸았던 이유",
+ "headline": [
+  {
+   "text": "오후만 되면 꾸벅꾸벅",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|식후 혈당}엔 {green|이 한 포}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "headline_bg": null,
+ "banner": null,
+ "disclaimer": true,
+ "voice": {
+  "provider": "edge",
+  "voice": "ko-KR-SunHiNeural",
+  "rate": "+8%"
+ },
+ "bgm": null,
+ "ref_script": "참고 스크립트/혈당/참고스크립트1.txt [2]",
+ "lines": [
+  {
+   "text": "오후만 되면 {red|꾸벅꾸벅 존다}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/꾸벅꾸벅_졸고있다._카메라는_고정._202605251103.mp4"
+    }
+   ]
+  },
+  {
+   "text": "손끝은 또 {red|저릿저릿하고}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/0329_14.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{yellow|밥 한 그릇} 비웠을 뿐인데",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Freepik_-Shot-Composition-Closeup-Of-A-Korean-Meal-Table-W_Kling_720P_16-9_24Fps_79599.mp4"
+    }
+   ]
+  },
+  {
+   "text": "몸 속은 또 {yellow|끈적한 당}으로 가득",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Glucose_clogged_blood_vessels_st…_202608171504.mp4"
+    }
+   ]
+  },
+  {
+   "text": "이러다 {red|큰일 나겠다} 싶었다"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를 알게 됐다",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/adadca005789830f.mp4"
+    }
+   ]
+  },
+  {
+   "text": "비결은 {pink|자색고구마 안토시아닌}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_3464.mov"
+    }
+   ]
+  },
+  {
+   "text": "오키나와 장수마을의 주식이죠",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/자색 고구마 1.mp4"
+    }
+   ]
+  },
+  {
+   "text": "독일산 {cyan|귀리 베타글루칸}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_dark_202509132300_vsfbi.mp4"
+    }
+   ]
+  },
+  {
+   "text": "성분표부터 꼼꼼히 확인했다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/원료를_연구한다._20260912202234.mp4"
+    }
+   ]
+  },
+  {
+   "text": "밥 위에 {green|한 포만 뿌리면}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/talkv_wzs08OL9aZ_MGj8K8i0JbpBXNOLTnTReK_talkv_high.mov"
+    }
+   ]
+  },
+  {
+   "text": "{green|식후 혈당 관리}가 시작된다"
+  },
+  {
+   "text": "몸속 {yellow|끈적한 당}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 폭발.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{green|깔끔하게 관리}해준다"
+  },
+  {
+   "text": "손끝 저림도 {green|한결 편해졌다}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Smiling_person_looking_at_hands_20260913124104.mp4"
+    }
+   ]
+  },
+  {
+   "text": "오후에도 {green|정신이 맑아졌다}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/행복해하는 중년 여성.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}로 가벼운 하루",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈당 제품 하이라이트 1.mp4"
+    }
+   ]
+  },
+  {
+   "text": "지금 {green|이 링크}에서 확인하세요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/20260817_164349.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{green|가벼운 오후}를 시작하세요",
+   "style": "outline",
+   "hold": 0.3
+  }
+ ]
+}
