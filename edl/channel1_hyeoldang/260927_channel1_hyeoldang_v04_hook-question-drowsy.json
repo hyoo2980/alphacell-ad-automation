@@ -1,0 +1,175 @@
+{
+ "id": "260927_channel1_hyeoldang_v04_hook-question-drowsy",
+ "_brief": "assign.py 배정 — hook_type: 증상 질문형, hook_symptom: 식후 졸림·무기력, voice: gemini Puck, 길이 30~35초",
+ "_hso": {
+  "hook": [0, 1],
+  "enemy": [2, 5],
+  "product": [6, 9],
+  "mechanism": [10, 10],
+  "usage_result": [11, 12],
+  "offer": [13, 13],
+  "cta": [14, 16]
+ },
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_mubyeong",
+ "layout": "band",
+ "title": "밥만 먹으면 쏟아지는 잠, 이유가 있었어요",
+ "headline": [
+  {
+   "text": "밥만 먹어도 졸리다면",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|식곤증}엔 {green|한 포 관리}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "gemini",
+  "voice": "Puck"
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "밥만 먹으면 졸리시죠?",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/피곤_01.mp4"
+    }
+   ],
+   "_visual": "ugc_drowsy_after_meal"
+  },
+  {
+   "text": "일만 있어도 {red|무기력}하고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/꾸벅꾸벅_졸고있다._카메라는_고정._202605251103.mp4"
+    }
+   ],
+   "_visual": "ugc_drowsy_after_meal"
+  },
+  {
+   "text": "식후 혈당이 {red|확 오르면}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈당측정기_01.mp4"
+    }
+   ],
+   "_visual": "glucometer_high"
+  },
+  {
+   "text": "매일 먹는 {yellow|쌀밥}이 문제예요"
+  },
+  {
+   "text": "혈액도 {red|점점 끈적}해지고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Glucose_clogged_blood_vessels_st…_202608171504.mp4"
+    }
+   ],
+   "_visual": "anim_vessel_clogged"
+  },
+  {
+   "text": "오르고 나서 챙기면 {red|늦어요}"
+  },
+  {
+   "text": "그래서 {purple|알파셀 혈당 세이프}를",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/adadca005789830f.mp4"
+    }
+   ],
+   "_visual": "product_reveal"
+  },
+  {
+   "text": "밥 위에 {green|한 포만 뿌려요}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/talkv_wzs08OL9aZ_MGj8K8i0JbpBXNOLTnTReK_talkv_high.mov"
+    }
+   ],
+   "_visual": "product_stick_open_sprinkle"
+  },
+  {
+   "text": "{pink|자색고구마} 안토시아닌에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/자색 고구마 1.mp4"
+    }
+   ],
+   "_visual": "sweetpotato_field"
+  },
+  {
+   "text": "독일산 {cyan|귀리 베타글루칸}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_dark_202509132300_vsfbi.mp4"
+    }
+   ],
+   "_visual": "ingredient_oat_harvest"
+  },
+  {
+   "text": "{green|식후 혈당 관리}가 편해져요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/3968be69-1ff3-4983-a10b-d1ba4db3ac25.mp4"
+    }
+   ],
+   "_visual": "anim_vessel_clean"
+  },
+  {
+   "text": "일어나도 {green|덜 피곤}하고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/행복해하는 중년 여성.mp4"
+    }
+   ],
+   "_visual": "ugc_morning_happy"
+  },
+  {
+   "text": "낮에도 {green|졸림 없이} 개운해요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_running_on_park_track_202608171231 (2).mp4"
+    }
+   ],
+   "_visual": "ugc_active_happy"
+  },
+  {
+   "text": "{red|기간 한정} {yellow|62% 할인} 중이에요",
+   "vo": "기간 한정 육십이 퍼센트 할인 중이에요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/62_.mp4"
+    }
+   ],
+   "_visual": "sign_discount"
+  },
+  {
+   "text": "지금 {yellow|쿠팡}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ],
+   "_visual": "coupang_search"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를"
+  },
+  {
+   "text": "검색해보세요!",
+   "style": "outline",
+   "hold": 0.4
+  }
+ ]
+}
