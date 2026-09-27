@@ -1,6 +1,6 @@
 {
-  "_note": "채널별 배정 음성 목록(assign.py). default 또는 환경변수 TTS_PROVIDER 로 선택. elevenlabs 는 ELEVENLABS_API_KEY 등록 후 voice_id 를 채워 쓴다(무료 계정은 라이브러리 보이스 API 불가).",
-  "default": "gemini",
+  "_note": "채널별 배정 음성(assign.py). default=elevenlabs: 보이스는 시크릿 ELEVENLABS_VOICE_ID(taehyung) 하나, 채널마다 안정도·속도만 달리함. ElevenLabs 실패 시 Gemini 로 자동 대체.",
+  "default": "elevenlabs",
   "gemini": [
     {
       "provider": "gemini",
@@ -23,7 +23,38 @@
       "voice": "Charon"
     }
   ],
-  "elevenlabs": [],
+  "elevenlabs": [
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "stability": 0.5,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "stability": 0.0,
+      "speed": 1.05
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "stability": 0.5,
+      "speed": 1.08
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "stability": 0.0,
+      "speed": 1.0
+    },
+    {
+      "provider": "elevenlabs",
+      "model": "eleven_v3",
+      "stability": 0.5,
+      "speed": 1.12
+    }
+  ],
   "edge": [
     {
       "provider": "edge",

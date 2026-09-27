@@ -37,6 +37,10 @@ def voice_cfg(v=None):
     load_env()
     v = dict(v or {})
     v.setdefault("provider", os.environ.get("TTS_PROVIDER", "say"))
+    if v["provider"] == "elevenlabs" and not (os.environ.get("ELEVENLABS_API_KEY") and
+                                              (v.get("voice") or os.environ.get("ELEVENLABS_VOICE_ID"))):
+        print("::warning::ElevenLabs 키/보이스 ID 없음 → Gemini 로 대체 (setup_secrets.bat 로 등록)")
+        v = {"provider": "gemini", "voice": "Puck"}
     if v["provider"] == "elevenlabs":
         v.setdefault("voice", os.environ.get("ELEVENLABS_VOICE_ID"))
         v.setdefault("model", os.environ.get("ELEVENLABS_MODEL", "eleven_v3"))
@@ -97,6 +101,17 @@ def _xi_post(path, v, body):
     if r.status_code >= 400:
         raise RuntimeError(f"ElevenLabs {r.status_code}: {r.text[:500]}")
     return r
+
+
+def _eleven_call(text, v, out):
+    """ElevenLabs 대본 1회 생성(크레딧 = 글자 수). 문구 분할은 Whisper 정렬로 한다."""
+    import re
+    text = re.sub(r"\s+", " ", text)
+    r = _xi_post("", v, {"text": text})
+    mp3 = Path(str(out) + ".mp3")
+    mp3.write_bytes(r.content)
+    ffmpeg("-i", mp3, "-ar", "24000", "-ac", "1", out)
+    mp3.unlink()
 
 
 def _synth_elevenlabs(text, v, out):
@@ -231,14 +246,14 @@ def synth_script_gemini(texts, v, engine="gemini"):
     import re
     CACHE.mkdir(parents=True, exist_ok=True)
     clean = [re.sub(r"\[[^\]]*\]", "", t).strip() for t in texts]     # v3 감정태그 제거
-    cfg = {k: v.get(k) for k in ("voice", "model", "style", "tempo", "rate")}
-    h = _key("gscript" if engine == "gemini" else "escript", json.dumps(cfg, sort_keys=True, ensure_ascii=False),
+    cfg = {k: v.get(k) for k in ("voice", "model", "style", "tempo", "rate", "stability", "speed")}
+    h = _key({"gemini": "gscript", "edge": "escript", "eleven": "xscript"}[engine], json.dumps(cfg, sort_keys=True, ensure_ascii=False),
              " / ".join(clean))
     outs = [CACHE / f"{h}_{i:03d}.wav" for i in range(len(clean))]
     if not all(o.exists() for o in outs):
         full = CACHE / f"{h}.full.wav"
         if not full.exists():
-            (_gemini_call if engine == "gemini" else _edge_call)(" ".join(clean), v, full)
+            {"gemini": _gemini_call, "edge": _edge_call, "eleven": _eleven_call}[engine](" ".join(clean), v, full)
         total = probe(full)["duration"]
         mids = _align_split(full, clean)
         cuts = [0.0] + mids + [total]
@@ -330,11 +345,13 @@ def synth_lines(texts, v=None):
         except Exception as e:
             print(f"[tts] Edge 대본 분할 실패 → Edge 문구 모드: {str(e)[:200]}")
             v = {**v, "provider": "edge"}
-    if v["provider"] == "elevenlabs" and v["mode"] == "script":
+    if v["provider"] == "elevenlabs":
+        # 대본 1회 생성 → Whisper 정렬. 문구마다 호출하는 모드는 크레딧 낭비라 쓰지 않는다. 막히면 Gemini 로.
         try:
-            return synth_script(texts, v), False
-        except RuntimeError as e:
-            print(f"[tts] 대본 모드 실패 → 문구 모드로 전환: {e}")
+            return synth_script_gemini(texts, v, "eleven"), False
+        except Exception as e:
+            print(f"::warning::ElevenLabs 실패 → Gemini 로 대체 ({str(e)[:200]})")
+        return synth_lines(texts, {"provider": "gemini", "voice": "Puck"})
     return [synth(t, v) for t in texts], True
 
 

@@ -69,7 +69,43 @@ def ask_claude():
         print(f"  ✗ 형식이 다릅니다(길이 {len(t)}자, 앞부분 {t[:7]!r}). 'sk-ant-oat' 로 시작하는 전체를 복사하세요.")
 
 
+def ask_eleven():
+    print("\n=== ElevenLabs (목소리) ===")
+    print("elevenlabs.io → Developers → API Keys 에서 키 복사 → 붙여넣고 Enter (건너뛰려면 그냥 Enter)")
+    for _ in range(3):
+        k = clean(input("ElevenLabs 키: "))
+        if not k:
+            return
+        h = {"xi-api-key": k}
+        r = requests.get("https://api.elevenlabs.io/v1/voices", headers=h, timeout=30)
+        if not r.ok:
+            print(f"  ✗ 키가 거절됐습니다 (HTTP {r.status_code}) → 키를 다시 복사해 주세요")
+            continue
+        name = input("  쓸 목소리 이름 (Enter = taehyung): ").strip() or "taehyung"
+        mine = [v for v in r.json().get("voices", []) if name.lower() in v["name"].lower()]
+        if mine:
+            vid, vname = mine[0]["voice_id"], mine[0]["name"]
+        else:   # 내 목소리에 없으면 보이스 라이브러리에서 찾아 추가
+            s = requests.get("https://api.elevenlabs.io/v1/shared-voices", headers=h,
+                             params={"search": name, "page_size": 10}, timeout=30).json().get("voices", [])
+            if not s:
+                print(f"  ✗ '{name}' 목소리를 찾지 못했습니다. ElevenLabs 에서 내 목소리(My Voices)에 추가한 뒤 다시 실행하세요.")
+                return
+            sv = s[0]
+            a = requests.post(f"https://api.elevenlabs.io/v1/voices/add/{sv['public_owner_id']}/{sv['voice_id']}",
+                              headers=h, json={"new_name": sv["name"]}, timeout=30)
+            if not a.ok:
+                print(f"  ✗ 라이브러리 목소리 추가 실패 (HTTP {a.status_code}: {a.text[:150]}) → 유료 요금제가 필요할 수 있습니다")
+                return
+            vid, vname = a.json().get("voice_id", sv["voice_id"]), sv["name"]
+        print(f"  ✓ 목소리: {vname} ({vid})")
+        gh_set("ELEVENLABS_API_KEY", k)
+        gh_set("ELEVENLABS_VOICE_ID", vid)
+        return
+
+
 def main():
+    ask_eleven()
     ask_gemini()
     ask_claude()
     print("\n=== 3/3 유튜브 토큰 올리기 ===")

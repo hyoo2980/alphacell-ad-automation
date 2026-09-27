@@ -157,7 +157,10 @@ jobs:
       - name: .env
         run: |
           {
-            echo "TTS_PROVIDER=gemini"
+            echo "TTS_PROVIDER=elevenlabs"
+            echo "ELEVENLABS_API_KEY=${{ secrets.ELEVENLABS_API_KEY }}"
+            echo "ELEVENLABS_VOICE_ID=${{ secrets.ELEVENLABS_VOICE_ID }}"
+            echo "ELEVENLABS_MODEL=eleven_v3"
             echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}"
             echo "PEXELS_API_KEY=${{ secrets.PEXELS_API_KEY }}"
           } > .env
