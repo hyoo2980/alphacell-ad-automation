@@ -1,0 +1,239 @@
+{
+ "id": "260927_channel2_v01_hook-daneon-jeorim",
+ "_brief": "channel2(노후비책) 260927 배정: hook_type=확신·도발형, angle=손발 저림·찌릿함, voice=Charon, length=28~33초, style_profile=hyeoldang_nohu. 바꾼 축: 훅을 질문형이 아닌 단언·확신형으로, 첫 컷은 leg_swollen(부은 다리 이미지)",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_nohu",
+ "layout": "band",
+ "headline": [
+  {
+   "text": "손발이 자꾸 찌릿하다면",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|저림} 말고 {green|혈당 관리}로",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "gemini",
+  "voice": "Charon"
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "{red|찌릿찌릿}한 손발,",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/ChatGPT_Image_2026_8_17_08_53_05_1.png"
+    }
+   ],
+   "_visual": "leg_swollen"
+  },
+  {
+   "text": "그냥 두면 안 됩니다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Woman_massaging_her_leg_202608171218.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "ugc_leg_pain"
+  },
+  {
+   "text": "{red|저리고 시린} 발끝,",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Person_rubbing_numb_hand_202608170921.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "ugc_numb_hands"
+  },
+  {
+   "text": "{yellow|혈당} 때문일 수 있어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Gemini_Generated_Image_8yntng8yntng8ynt.jpeg"
+    }
+   ],
+   "_visual": "glucometer_high"
+  },
+  {
+   "text": "{yellow|쌀밥} 먹을 때마다 심해지고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Freepik_-Shot-Composition-Closeup-Of-A-Korean-Meal-Table-W_Kling_720P_16-9_24Fps_79599.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "meal_sprinkle_rice"
+  },
+  {
+   "text": "혈관 속엔 {yellow|끈적한 당}이 쌓이고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관_속_포도당_정체_202608162210.mp4"
+    }
+   ],
+   "_visual": "anim_vessel_clogged"
+  },
+  {
+   "text": "계단만 올라도 {red|숨이 차죠}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Climbing_stairs_breathlessly_202608171149.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "ugc_breathless"
+  },
+  {
+   "text": "손발은 계속 {red|차갑고 저리죠}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Rubbing_cold_hands_together_20260913123647.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "ugc_numb_hands"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}는 달라요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈당 제품 하이라이트 1.mp4",
+     "in": 3.0
+    }
+   ],
+   "_visual": "product_reveal"
+  },
+  {
+   "text": "밥 위에 {green|한 포만 뿌리면}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_7333.mov"
+    }
+   ],
+   "_visual": "meal_sprinkle_rice"
+  },
+  {
+   "text": "{green|식후 혈당 관리}가 시작돼요"
+  },
+  {
+   "text": "일본 장수마을 주식",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Splitting_purple_sweet_potato_by…_202608171449.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "sweetpotato_split"
+  },
+  {
+   "text": "{pink|자색고구마 안토시아닌}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/안토시아닌 분말 손 가득.mp4"
+    }
+   ],
+   "_visual": "powder_purple_hands"
+  },
+  {
+   "text": "독일산 {cyan|귀리 베타글루칸}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/귀리를_수확한다._20260912202041.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "ingredient_oat_harvest"
+  },
+  {
+   "text": "{yellow|끈적한 당}까지 신경 쓴",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Antioxidants_cleaning_blocked_bl…_202608162158.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "anim_vessel_clean"
+  },
+  {
+   "text": "{green|듀얼 포뮬러}예요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/안토시아닌 폭발 1.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "powder_purple_particles"
+  },
+  {
+   "text": "하루 {green|한 포}면 충분해요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_pouring_powder_into_mouth_202608162348.mp4"
+    }
+   ],
+   "_visual": "ugc_intake"
+  },
+  {
+   "text": "손발 저림 신경 안 쓰는",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Smiling_person_looking_at_hands_20260913124104.mp4"
+    }
+   ],
+   "_visual": "ugc_happy_hands"
+  },
+  {
+   "text": "{green|가벼운 하루}를 보내세요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Woman_running_on_park_track_202608171236 (4).mp4"
+    }
+   ],
+   "_visual": "ugc_active_happy"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/12_1.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "product_reveal",
+   "_cta": true
+  },
+  {
+   "text": "지금 {green|이 링크}에서",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/20260817_164349.mp4",
+     "in": 2.0
+    }
+   ],
+   "_visual": "secret_link_page",
+   "_cta": true
+  },
+  {
+   "text": "바로 확인해보세요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_2557 (1).mov"
+    }
+   ],
+   "_visual": "product_hand_person",
+   "_cta": true
+  }
+ ]
+}
