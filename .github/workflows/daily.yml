@@ -39,6 +39,39 @@ jobs:
       channels: ${{ steps.c.outputs.list }}
     steps:
       - uses: actions/checkout@v4
+      # 드라이브에 새로 올라온 소스를 받아 라벨이 없으면 Claude 가 썸네일을 보고 분류 → 커밋 (채널 job 들이 공유)
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-cjk
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: 참고영상 소스
+          key: drive-${{ hashFiles('config/drive.json') }}-${{ github.run_id }}
+          restore-keys: drive-${{ hashFiles('config/drive.json') }}-
+      - name: 드라이브 동기화 + 새 소스 스캔
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          cd tools && python drive_sync.py
+          python sources.py scan "../참고영상 소스/혈당 영상 사용할 소스" --group 혈당
+          n=$(python -c "import json;print(sum(1 for x in json.load(open('../library/sources/혈당/catalog.json',encoding='utf-8')) if not x.get('labels')))")
+          echo "라벨 없는 새 소스: $n개"; echo "NEW=$n" >> "$GITHUB_ENV"
+      - name: 새 소스 라벨링 (Claude, 새 소스가 있을 때만)
+        if: env.NEW != '0'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude -p "library/sources/혈당/catalog.json 에서 labels 가 null 인 항목만, 각 항목의 thumb 이미지(4프레임)를 보고 labels 를 채워라. 형식: {\"visual\": 코드, \"beat\": hook|problem|agitate|enemy|mechanism|ingredient|usage|proof|result|testimonial|offer|urgency, \"desc\": 한국어 한 줄 설명, \"has_text\": 구워진 자막 여부, \"quality\": 1~3}. visual 코드는 기존 항목들이 쓰는 코드를 우선 재사용하고 없으면 새로 만든다. 다른 항목은 건드리지 말고, 끝나면 cd tools && python analyze.py index 를 실행하라. 커밋은 하지 않는다." \
+            --dangerously-skip-permissions --max-turns 40 --output-format text
+      - name: 라벨 커밋
+        if: env.NEW != '0'
+        run: |
+          git config user.name "daily-ads-bot"; git config user.email "actions@users.noreply.github.com"
+          git add library && git diff --cached --quiet || { git commit -m "sources: label new drive files"; for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done; }
       - id: c
         env:
           ONLY_CHANNEL: ${{ github.event.inputs.channel }}
@@ -63,6 +96,8 @@ jobs:
       TZ: Asia/Seoul
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # plan 단계에서 커밋한 새 소스 라벨까지 받기
 
       - name: ffmpeg
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fontconfig fonts-noto-cjk

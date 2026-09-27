@@ -46,6 +46,12 @@ def voice_cfg(v=None):
         v.setdefault("speed", float(os.environ.get("ELEVENLABS_SPEED", 1.0)))
         if not v["voice"]:
             raise ValueError("ElevenLabs voice_id 가 없습니다 (.env ELEVENLABS_VOICE_ID 또는 EDL voice.voice)")
+    if v["provider"] == "edge":
+        v.setdefault("voice", "ko-KR-InJoonNeural")
+        v.setdefault("rate", "+12%")
+        v.setdefault("model", "edge")
+        v.setdefault("style", "")
+        v.setdefault("mode", "script")
     if v["provider"] == "gemini":
         v.setdefault("voice", os.environ.get("GEMINI_TTS_VOICE", "Puck"))
         v.setdefault("model", os.environ.get("GEMINI_TTS_MODEL", "gemini-2.5-flash-preview-tts"))
@@ -148,13 +154,17 @@ EDGE_VOICES = {"Puck": "ko-KR-InJoonNeural", "Orus": "ko-KR-HyunsuNeural", "Fenr
                "Charon": "ko-KR-HyunsuNeural", "Sadachbia": "ko-KR-SunHiNeural"}
 
 
+EDGE_TO_GEMINI = {"ko-KR-InJoonNeural": "Puck", "ko-KR-HyunsuMultilingualNeural": "Orus", "ko-KR-SunHiNeural": "Sadachbia"}
+
+
 def _edge_call(text, v, out):
     """Microsoft Edge 온라인 음성(edge-tts). 광고 톤에 맞게 약간 빠르게."""
     import asyncio
     import edge_tts
-    voice = EDGE_VOICES.get(v.get("voice"), "ko-KR-InJoonNeural")
+    vo = v.get("voice") or ""
+    voice = vo if vo.startswith("ko-KR") else EDGE_VOICES.get(vo, "ko-KR-InJoonNeural")
     mp3 = Path(str(out) + ".mp3")
-    asyncio.run(edge_tts.Communicate(text, voice, rate="+12%").save(str(mp3)))
+    asyncio.run(edge_tts.Communicate(text, voice, rate=v.get("rate") or "+12%").save(str(mp3)))
     ffmpeg("-i", mp3, "-ar", "24000", "-ac", "1", out)
     mp3.unlink()
 
@@ -221,7 +231,7 @@ def synth_script_gemini(texts, v, engine="gemini"):
     import re
     CACHE.mkdir(parents=True, exist_ok=True)
     clean = [re.sub(r"\[[^\]]*\]", "", t).strip() for t in texts]     # v3 감정태그 제거
-    cfg = {k: v.get(k) for k in ("voice", "model", "style", "tempo")}
+    cfg = {k: v.get(k) for k in ("voice", "model", "style", "tempo", "rate")}
     h = _key("gscript" if engine == "gemini" else "escript", json.dumps(cfg, sort_keys=True, ensure_ascii=False),
              " / ".join(clean))
     outs = [CACHE / f"{h}_{i:03d}.wav" for i in range(len(clean))]
@@ -301,6 +311,13 @@ def synth_script(texts, v):
 def synth_lines(texts, v=None):
     """render.py 진입점. 반환: [(wav, 길이)], 문구 사이 간격을 더해야 하는지 여부."""
     v = voice_cfg(v)
+    if v["provider"] == "edge":
+        # 기본: 무료 Edge 음성(대본 1회 생성 → Whisper 정렬 분할). 막히면 Gemini 로 대체하고 경고를 남긴다.
+        try:
+            return synth_script_gemini(texts, v, "edge"), False
+        except Exception as e:
+            print(f"::warning::Edge 음성 사용 불가 → Gemini 로 대체 ({str(e)[:200]})")
+        v = voice_cfg({"provider": "gemini", "voice": EDGE_TO_GEMINI.get(v["voice"], "Puck")})
     if v["provider"] == "gemini":
         # 문구마다 Gemini 를 부르는 모드(편당 20~30회)는 무료 한도를 바로 소진 → 쓰지 않는다.
         # Gemini 가 막히면(한도·오류) 같은 대본을 무료 Edge 음성으로 1회 생성해 분할한다.

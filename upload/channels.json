@@ -7,8 +7,7 @@
     "style_profile": "hyeoldang_mubyeong",
     "group": "혈당",
     "publish_slots": [
-      "08:00",
-      "18:00"
+      "07:30"
     ]
   },
   "channel4_hyeoldang": {
@@ -18,8 +17,7 @@
     "style_profile": "hyeoldang_hyeolgwan",
     "group": "혈당",
     "publish_slots": [
-      "14:00",
-      "16:00"
+      "10:30"
     ]
   },
   "channel1": {
@@ -29,8 +27,7 @@
     "style_profile": "hyeoldang_geongang",
     "group": "혈당",
     "publish_slots": [
-      "09:00",
-      "19:00"
+      "08:30"
     ]
   },
   "channel2": {
@@ -40,8 +37,7 @@
     "style_profile": "hyeoldang_nohu",
     "group": "혈당",
     "publish_slots": [
-      "11:00",
-      "20:00"
+      "09:30"
     ]
   },
   "channel4": {
@@ -51,8 +47,7 @@
     "style_profile": "hyeoldang_al",
     "group": "혈당",
     "publish_slots": [
-      "15:00",
-      "22:00"
+      "11:30"
     ]
   },
   "channel2_hyeoldang": {

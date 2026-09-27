@@ -22,12 +22,15 @@ PER_SHEET = 12
 
 def _label_font():
     """시트 번호 표기용 한글 폰트(drawtext fontfile). Windows 는 fontconfig 기본 설정이 없어 직접 지정해야 한다."""
+    # 시스템 한글 글꼴 우선(경로에 한글이 없어 ffmpeg 필터 인자로 안전), 없으면 Gmarket
     from common import font_path
-    try:
-        f = font_path("Gmarket Sans TTF", True)
-    except FileNotFoundError:
-        f = next((c for c in ["C:/Windows/Fonts/malgun.ttf", "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
-                              "/System/Library/Fonts/AppleSDGothicNeo.ttc"] if Path(c).exists()), None)
+    f = next((c for c in ["C:/Windows/Fonts/malgun.ttf", "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+                          "/System/Library/Fonts/AppleSDGothicNeo.ttc"] if Path(c).exists()), None)
+    if not f:
+        try:
+            f = font_path("Gmarket Sans TTF", True)
+        except FileNotFoundError:
+            f = None
     return (":fontfile='" + f.replace("\\", "/").replace(":", "\\:") + "'") if f else ""
 
 

@@ -18,14 +18,27 @@ HOOKS = [
     "사실 제시형 — 흔한 오해를 뒤집는 한 문장 (예: 흰 쌀밥이 문제가 아니었습니다)",
     "확신·도발형 — 강한 확신으로 멈추게 함 (판매중단·환불·100% 같은 위험 표현 없이)",
 ]
-ANGLES = [
+ANGLES = [  # 12개 — 같은 날 5채널은 서로 다른 각도, 날마다 이동 (12일 주기)
     "식후 졸림·오후 무기력",
     "손발 저림·찌릿함",
     "흰 쌀밥·탄수화물 식습관",
     "밥 위에 뿌려 먹는 사용법(보라색 가루)",
-    "성분 이야기(자색고구마·귀리 식이섬유)",
+    "자색고구마 안토시아닌 이야기",
+    "독일산 귀리 식이섬유 이야기",
+    "혈당측정기 수치를 보는 순간(실망 → 안도)",
+    "부모님·가족을 챙기는 마음",
+    "식약처·연구·제조 과정의 신뢰",
+    "택배 개봉·구매 후기형 장면",
+    "끈적한 혈액·당독소 비유(애니메이션)",
+    "다리 붓기·계단 숨참 같은 일상 신호",
 ]
-VOICES = ["Puck", "Orus", "Fenrir", "Sadachbia", "Charon"]
+VOICES = [  # 무료 Edge 음성 (provider=edge). 같은 목소리도 속도를 달리해 채널별 느낌을 다르게
+    {"provider": "edge", "voice": "ko-KR-InJoonNeural", "rate": "+12%"},
+    {"provider": "edge", "voice": "ko-KR-HyunsuMultilingualNeural", "rate": "+10%"},
+    {"provider": "edge", "voice": "ko-KR-SunHiNeural", "rate": "+8%"},
+    {"provider": "edge", "voice": "ko-KR-InJoonNeural", "rate": "+20%"},
+    {"provider": "edge", "voice": "ko-KR-HyunsuMultilingualNeural", "rate": "+16%"},
+]
 LENGTHS = ["25~30초", "35~40초", "30~35초", "40~45초", "28~33초"]
 
 
@@ -44,13 +57,22 @@ def assign(channel, day):
                 and not lb.get("has_text") and (lb.get("quality") or 0) >= 2):
             pool.append(x)
     mine = [x for i, x in enumerate(pool) if i % 5 == k] or pool
+    # 참고 스크립트: 참고 스크립트/<group>/*.txt 의 [번호] 블록들을 날짜+채널로 순환 배정 (메시지 영감용)
+    import re
+    blocks = []
+    for f in sorted((ROOT / "참고 스크립트" / cfg.get("group", "")).glob("*.txt")):
+        for m in re.finditer(r"^\[(\d+)\]", f.read_text(encoding="utf-8"), re.M):
+            blocks.append(f"{f.relative_to(ROOT).as_posix()} [{m.group(1)}]")
+    ref = blocks[(day.toordinal() * 5 + slot) % len(blocks)] if blocks else None
     return {
         "channel": channel, "name": cfg.get("name"), "date": day.isoformat(), "slot": slot,
         "style_profile": cfg.get("style_profile"), "brand": cfg.get("brand"),
-        "hook_type": HOOKS[k], "angle": ANGLES[(k + 2) % 5], "voice": VOICES[k], "length": LENGTHS[k],
+        "hook_type": HOOKS[k], "angle": ANGLES[(day.toordinal() + slot * 2) % len(ANGLES)], "voice": VOICES[k], "length": LENGTHS[k],
         "hook_sources": [{"src": x.get("path") or x.get("source"), "visual": x["labels"].get("visual"),
                           "desc": x["labels"].get("desc")} for x in mine],
-        "rule": "첫 문구의 컷은 hook_sources 중에서 고른다. 나머지 컷도 최근 14일 EDL 에서 첫 컷으로 쓰인 소스는 피한다.",
+        "reference_script": ref,
+        "rule": "소재 각도(angle)는 반드시 지킨다(다른 채널과 겹치지 않게 배정된 것). 첫 문구의 컷은 hook_sources 중에서 "
+                "고른다. reference_script 는 메시지·논리 영감용일 뿐 문장을 그대로 쓰지 않는다.",
     }
 
 

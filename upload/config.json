@@ -7,7 +7,7 @@
     "09:00",
     "19:00"
   ],
-  "min_lead_hours": 3,
+  "min_lead_hours": 2,
   "max_per_day": 1,
   "category_id": "26",
   "is_short": true,
