@@ -41,6 +41,25 @@ def _voices():
 LENGTHS = ["25~30초", "35~40초", "30~35초", "40~45초", "28~33초"]
 
 
+def source_usage(day, days=14):
+    """최근 days 일 동안 모든 채널 EDL 에서 소스별 사용 횟수. (예시 EDL 제외)"""
+    from collections import Counter
+    from datetime import timedelta
+    cnt = Counter()
+    since = (day - timedelta(days=days)).strftime("%y%m%d")
+    for p in (ROOT / "edl").glob("*/*.json"):
+        if p.parent.name == "examples" or p.name[:6] < since:
+            continue
+        try:
+            e = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for ln in e.get("lines", []):
+            for m in ln.get("media") or []:
+                cnt[m.get("src")] += 1
+    return cnt
+
+
 def assign(channel, day):
     chs = load_json(ROOT / "upload" / "channels.json")
     active = [k for k, v in chs.items() if not k.startswith("_") and v.get("enabled")]
@@ -59,7 +78,9 @@ def assign(channel, day):
         if (x.get("group") == cfg.get("group") and lb.get("beat") in ("hook", "problem", "agitate", "enemy")
                 and not lb.get("has_text") and (lb.get("quality") or 0) >= 2):
             pool.append(x)
+    usage = source_usage(day)
     mine = [x for i, x in enumerate(pool) if i % 5 == k] or pool
+    mine.sort(key=lambda x: usage.get(x.get("path"), 0))   # 첫 컷 후보도 덜 쓴 순
     # 참고 스크립트: 참고 스크립트/<group>/*.txt 의 [번호] 블록들을 날짜+채널로 순환 배정 (메시지 영감용)
     import re
     blocks = []
@@ -75,6 +96,13 @@ def assign(channel, day):
         "hook_sources": [{"src": x.get("path") or x.get("source"), "visual": x["labels"].get("visual"),
                           "desc": x["labels"].get("desc")} for x in mine],
         "reference_script": ref,
+        # 소스 다양화: 사용 횟수 오름차순(0 = 아직 안 쓴 새 소스). 앞쪽을 우선 쓰고, overused 는 피한다.
+        "sources_by_usage": [f"{n}회 | {x['labels']['visual']} | {x['labels']['beat']} | {x['labels']['desc']} | {x['path']}"
+                             for n, x in sorted(((usage.get(x['path'], 0), x) for x in items
+                                                  if x.get('group') == cfg.get('group') and x.get('labels')
+                                                  and not x['labels'].get('has_text') and (x['labels'].get('quality') or 0) >= 2),
+                                                 key=lambda t: t[0])],
+        "overused": [s for s, n in usage.most_common() if n >= 4],
         "avoid_angles": [ANGLES[(day.toordinal() + shift * 5 + i * 2) % len(ANGLES)] for i in range(len(active)) if i != slot],
         "rule": "소재 각도(angle)는 반드시 지킨다(다른 채널과 겹치지 않게 배정된 것). avoid_angles(오늘 다른 채널 소재)는 "
                 "헤드라인·훅·제목의 메인 소재로 쓰지 않는다(본문에서 한 번 스치는 정도만). 첫 문구의 컷은 hook_sources 중에서 "
