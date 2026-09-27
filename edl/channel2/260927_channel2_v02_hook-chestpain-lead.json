@@ -1,0 +1,229 @@
+{
+ "id": "260927_channel2_v02_hook-chestpain-lead",
+ "_brief": "channel2(노후비책) 260927 배정: hook_type=확신·도발형, angle=손발 저림·찌릿함, voice=Charon, length=28~33초, style_profile=hyeoldang_nohu. 같은 날 v01(hook-daneon-jeorim)과 겹치지 않게 첫 컷을 hook_sources 중 ugc_chest_pain 으로, 컷 순서·문구·강조색 배치를 새로 씀",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_nohu",
+ "layout": "band",
+ "headline": [
+  {
+   "text": "가슴 답답, 손발 저림 반복된다면",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|저림} 대신 {green|한 포 관리}로",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "gemini",
+  "voice": "Charon"
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "{red|가슴 답답함}이 반복된다면",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_suffering_chest_pain_20260913121614.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_chest_pain"
+  },
+  {
+   "text": "손발 저림도 함께 옵니다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_looking_at_hands_202608170934 (2).mp4"
+    }
+   ],
+   "_visual": "ugc_numb_hands"
+  },
+  {
+   "text": "{yellow|혈당}이 원인일 수 있어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/122.png"
+    }
+   ],
+   "_visual": "glucometer_high"
+  },
+  {
+   "text": "{yellow|쌀밥} 먹을 때마다 심해지고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Freepik_-Shot-Composition-Closeup-Of-A-Korean-Meal-Table-W_Kling_720P_16-9_24Fps_79599.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "meal_sprinkle_rice"
+  },
+  {
+   "text": "{yellow|포도당}이 혈관을 끈적하게 하고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 2 (1).mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "anim_vessel_clogged"
+  },
+  {
+   "text": "다리까지 {red|붓고 저릿합니다}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/ChatGPT_Image_2026_8_17_08_53_05_2.png"
+    }
+   ],
+   "_visual": "leg_swollen"
+  },
+  {
+   "text": "계단 앞에서 {red|숨이 차기도}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Climbing_stairs_out_of_breath_202608171151 (1).mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_breathless"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}가 다릅니다",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈당 제품 하이라이트 1.mp4",
+     "in": 3.0
+    }
+   ],
+   "_visual": "product_reveal"
+  },
+  {
+   "text": "밥 위에 {green|한 포만 얹으면}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_7333.mov"
+    }
+   ],
+   "_visual": "meal_sprinkle_rice"
+  },
+  {
+   "text": "{green|식후 혈당}을 함께 관리해요"
+  },
+  {
+   "text": "일본 장수마을이 먹던 재료",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Splitting_purple_sweet_potato_by…_202608171449.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "sweetpotato_split"
+  },
+  {
+   "text": "{pink|자색고구마 안토시아닌}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/안토시아닌 분말 손 가득.mp4"
+    }
+   ],
+   "_visual": "powder_purple_hands"
+  },
+  {
+   "text": "독일산 {cyan|귀리 베타글루칸}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/귀리를_수확한다._20260912202041.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "ingredient_oat_harvest"
+  },
+  {
+   "text": "{yellow|끈적한 당}까지 챙긴",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Antioxidants_clearing_blocked_bl…_202608162217.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "anim_vessel_clean"
+  },
+  {
+   "text": "{green|두 가지 성분}을 한 번에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/안토시아닌 폭발 1.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "powder_purple_particles"
+  },
+  {
+   "text": "하루 {green|한 포}면 그만이에요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Woman_taking_powdered_supplement_202608162304.mp4"
+    }
+   ],
+   "_visual": "ugc_intake"
+  },
+  {
+   "text": "손발 저림 잊고 지내는",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/4a0a8cc8d8da8eab.mp4"
+    }
+   ],
+   "_visual": "ugc_happy_hands"
+  },
+  {
+   "text": "{green|가벼운 하루}가 시작돼요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Woman_stretching_with_bright_exp…_202608171000 (1).mp4"
+    }
+   ],
+   "_visual": "ugc_active_happy"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/12_1.mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "product_reveal",
+   "_cta": true
+  },
+  {
+   "text": "지금 {green|이 링크}에서",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/20260817_164349.mp4",
+     "in": 2.0
+    }
+   ],
+   "_visual": "secret_link_page",
+   "_cta": true
+  },
+  {
+   "text": "바로 만나보세요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Korean_person_shaking_202603282043 (1).mp4"
+    }
+   ],
+   "_visual": "ugc_show_box",
+   "_cta": true
+  }
+ ]
+}
