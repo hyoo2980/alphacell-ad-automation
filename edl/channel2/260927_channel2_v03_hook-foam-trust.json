@@ -1,0 +1,238 @@
+{
+ "id": "260927_channel2_v03_hook-foam-trust",
+ "_brief": "channel2(노후비책) 260927 배정: hook_type=확신·도발형, angle=식약처·연구·제조 과정의 신뢰, voice=edge ko-KR-HyunsuMultilingualNeural(+16%), length=28~33초, style_profile=hyeoldang_nohu. 같은 날 v01(다리·저림)·v02(가슴답답)와 겹치지 않게 첫 컷을 거품 소변(urine_foam)으로, 몸통을 제조·연구·통관 신뢰 소구로 새로 씀",
+ "title": "이 혈당 영양제는 만드는 과정부터 다릅니다",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_nohu",
+ "layout": "band",
+ "headline": [
+  {
+   "text": "거품 소변에도 이유가",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|거품 소변} {green|성분으로 관리}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "edge",
+  "voice": "ko-KR-HyunsuMultilingualNeural",
+  "rate": "+16%"
+ },
+ "bgm": null,
+ "ref_script": "참고 스크립트/혈당/참고스크립트1.txt [4]",
+ "lines": [
+  {
+   "text": "{red|거품 소변}, 원인이 있어요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Foam_bubbling_in_202603312047.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "urine_foam"
+  },
+  {
+   "text": "손가락 채혈까지 하신다면",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_pricking_finger_with_lancet_202608171523.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "glucose_test"
+  },
+  {
+   "text": "가슴까지 {red|답답}해집니다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/가슴_통증으로_찡그린_표정._202608171139 (2).mp4",
+     "in": 1.2
+    }
+   ],
+   "_visual": "ugc_chest_pain"
+  },
+  {
+   "text": "손끝은 {red|시리고 저리고}요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/0329_14.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_numb_hands"
+  },
+  {
+   "text": "{yellow|혈당} 신호일 수 있어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/She_disappointed_because_202512142027_zekiu (1).mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "glucometer_high"
+  },
+  {
+   "text": "성분 표시만 보면 몰라요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/0a9d9a1b0236979c8b02f4a1859bc969.jpeg"
+    }
+   ],
+   "_visual": "hands_still"
+  },
+  {
+   "text": "{purple|알파셀}은 과정부터 달라요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/공항_세관_직원이_물건_검수_20260913122851.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "import_customs"
+  },
+  {
+   "text": "원료 {yellow|수입}부터 확인하고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/c46823daa5a98272.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "lab_research"
+  },
+  {
+   "text": "{yellow|성분 검사}까지 거칩니다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/원료를_연구한다._20260912202234.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "lab_research"
+  },
+  {
+   "text": "정해진 절차대로 만들어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Create_a_cinematic_202512070613_bns4z.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "authority_building"
+  },
+  {
+   "text": "일본 장수마을이 먹는",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/자색 고구마 1.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "sweetpotato_field"
+  },
+  {
+   "text": "{pink|자색고구마 안토시아닌}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_3464.mov"
+    }
+   ],
+   "_visual": "sweetpotato_split"
+  },
+  {
+   "text": "독일산 {cyan|귀리 베타글루칸}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_dark_202509132300_vsfbi.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ingredient_oat_harvest"
+  },
+  {
+   "text": "밥 위에 {green|한 포만 뿌리면}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_7333.mov"
+    }
+   ],
+   "_visual": "meal_sprinkle_rice"
+  },
+  {
+   "text": "{green|식후 혈당 관리}가 시작돼요"
+  },
+  {
+   "text": "수치 보고 안심하는 이유죠",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/This_man_is_202512141034_l4rik.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "glucometer_normal"
+  },
+  {
+   "text": "{green|가벼운 하루}를 보내요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_stretching_with_bright_expre…_202608170957 (1).mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_active_happy"
+  },
+  {
+   "text": "아침이 다시 개운해져요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/행복해하는 중년 여성.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_morning_happy"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/adadca005789830f.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "product_reveal",
+   "_cta": true
+  },
+  {
+   "text": "지금 {green|이 링크}에서",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/20260817_164349.mp4",
+     "in": 2.0
+    }
+   ],
+   "_visual": "secret_link_page",
+   "_cta": true
+  },
+  {
+   "text": "확인해보세요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Middle-aged_Korean_person_202603282239 (1).mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_show_box",
+   "_cta": true
+  }
+ ]
+}
