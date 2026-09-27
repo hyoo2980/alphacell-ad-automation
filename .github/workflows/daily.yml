@@ -135,6 +135,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
+          echo "등록된 키 길이: ${#GEMINI_API_KEY}자 (정상 키는 30자 이상)"
           code=$(curl -s -o /tmp/g.json -w '%{http_code}' -H "x-goog-api-key: ${GEMINI_API_KEY}" \
             https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts)
           if [ "$code" != "200" ]; then echo "::error::Gemini 키 인증 실패 (HTTP $code) → setup_secrets.bat 로 키 재등록"; head -c 400 /tmp/g.json; exit 1; fi
