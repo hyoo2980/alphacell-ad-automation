@@ -34,15 +34,18 @@ TRIM = ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.02,
 
 def xi_accounts():
     """ELEVENLABS_ACCOUNTS(JSON 목록) → [{"key","voice_id"}]. 없으면 단일 키 설정을 한 개짜리 목록으로."""
+    accs = []
+    # 처음 단독으로 등록한 계정(ELEVENLABS_API_KEY/VOICE_ID)이 1번, 이후 추가 등록한 목록이 뒤에 붙는다
+    if os.environ.get("ELEVENLABS_API_KEY") and os.environ.get("ELEVENLABS_VOICE_ID"):
+        accs.append({"key": os.environ["ELEVENLABS_API_KEY"], "voice_id": os.environ["ELEVENLABS_VOICE_ID"]})
     raw = os.environ.get("ELEVENLABS_ACCOUNTS", "").strip()
     if raw:
         try:
-            return [a for a in json.loads(raw) if a.get("key") and a.get("voice_id")]
+            accs += [a for a in json.loads(raw) if a.get("key") and a.get("voice_id")
+                     and a["key"] not in {x["key"] for x in accs}]
         except Exception:
             print("::warning::ELEVENLABS_ACCOUNTS 형식 오류")
-    if os.environ.get("ELEVENLABS_API_KEY") and os.environ.get("ELEVENLABS_VOICE_ID"):
-        return [{"key": os.environ["ELEVENLABS_API_KEY"], "voice_id": os.environ["ELEVENLABS_VOICE_ID"]}]
-    return []
+    return accs
 
 
 def voice_cfg(v=None):

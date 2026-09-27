@@ -93,7 +93,7 @@ def _xi_voice(k, name):
 
 def ask_eleven():
     print("\n=== ElevenLabs 계정들 (목소리) ===")
-    print("계정 키를 하나씩 붙여넣고 Enter. 채널 1개당 계정 1개(무료 1만 크레딧 ≈ 하루 1편 한 달). 다 넣었으면 빈 Enter.")
+    print("처음 등록한 계정은 그대로 유지됩니다. 새 계정 키만 하나씩 붙여넣고 Enter. 채널 1개당 계정 1개(무료 1만 크레딧 ≈ 하루 1편 한 달). 다 넣었으면 빈 Enter.")
     name = input("쓸 목소리 이름 (Enter = taehyung): ").strip() or "taehyung"
     accs = []
     while True:
@@ -113,7 +113,7 @@ def ask_eleven():
         accs.append({"key": k, "voice_id": vid})
     if accs:
         gh_set("ELEVENLABS_ACCOUNTS", json.dumps(accs))
-        print(f"  → 계정 {len(accs)}개 등록. 채널 5개면 5개 이상 권장(6개면 여유).")
+        print(f"  → 추가 계정 {len(accs)}개 등록 (처음 등록한 계정과 합쳐서 사용). 합계 5개 이상 권장, 6개면 여유.")
 
 
 def main():
