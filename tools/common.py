@@ -151,10 +151,12 @@ def font_path(family, bold=True):
             for p in d.rglob(n):
                 return str(p)
     try:
-        r = subprocess.run(["fc-match", "-f", "%{file}", f"{family}:{'bold' if bold else 'regular'}"],
+        r = subprocess.run(["fc-match", "-f", "%{family}|%{file}", f"{family}:{'bold' if bold else 'regular'}"],
                            capture_output=True, text=True)
-        if r.returncode == 0 and r.stdout:
-            return r.stdout
+        # fc-match 는 없는 글꼴도 비슷한 걸(DejaVu 등) 돌려준다 → 이름이 맞을 때만 사용
+        fams, _, f = r.stdout.partition("|")
+        if r.returncode == 0 and f and family.lower() in fams.lower():
+            return f
     except FileNotFoundError:
         pass
     raise FileNotFoundError(f"폰트 '{family}' 를 찾지 못했습니다 → assets/fonts/ 에 {names or family} 파일을 넣으세요")
@@ -168,12 +170,19 @@ def has_hangul(path):
 
 
 def ass_family(family, bold=True):
-    """설정의 패밀리명 → 실제 글꼴 파일의 패밀리명(libass 가 찾는 이름). 한글 없는 글꼴이면 렌더 중단."""
+    """설정의 패밀리명 → 실제 글꼴 파일의 패밀리명(libass 가 찾는 이름).
+    그 글꼴이 없거나 한글이 없으면 Gmarket Sans 로 대체, Gmarket 도 없으면 렌더 중단(네모 자막 방지)."""
     from PIL import ImageFont
-    p = font_path(family, bold)
-    if not has_hangul(p):
-        raise RuntimeError(f"글꼴에 한글이 없습니다: {p} → 자막이 네모로 나오므로 렌더 중단")
-    return ImageFont.truetype(p, 20).getname()[0]
+    for fam in (family, "Gmarket Sans TTF"):
+        try:
+            p = font_path(fam, bold)
+        except FileNotFoundError:
+            continue
+        if has_hangul(p):
+            if fam != family:
+                print(f"[글꼴] '{family}' 없음/한글 미지원 → Gmarket Sans TTF 로 대체")
+            return ImageFont.truetype(p, 20).getname()[0]
+    raise RuntimeError("한글 글꼴(Gmarket Sans TTF)을 찾지 못했습니다 → assets/fonts 확인. 자막이 네모로 나오므로 렌더 중단")
 
 
 def fonts_dir_for_ass():

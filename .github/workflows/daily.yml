@@ -87,19 +87,12 @@ jobs:
           path: ~/.cache/huggingface
           key: whisper-small-v1
 
-      - name: 폰트 캐시 (G마켓 산스, 무료 폰트)
-        id: font
-        uses: actions/cache@v4
-        with:
-          path: assets/fonts/*.ttf
-          key: gmarket-sans-ttf-v1
-
-      - name: 폰트 받기 (공식 배포처)
-        if: steps.font.outputs.cache-hit != 'true'
+      - name: 폰트 받기 (G마켓 산스 무료 폰트, 공식 배포처 — 매번 받음)
         run: |
-          curl -sSL -o /tmp/gm.zip https://corp.gmarket.com/fonts/GmarketSansTTF.zip
+          curl -sSL --retry 3 -o /tmp/gm.zip https://corp.gmarket.com/fonts/GmarketSansTTF.zip
           unzip -o -j /tmp/gm.zip '*.ttf' -d assets/fonts
           ls assets/fonts
+          cd tools && python -c "from common import ass_family; print('자막 글꼴:', ass_family('Gmarket Sans TTF', True))"
 
       - name: 드라이브 동기화 (새 파일만)
         run: cd tools && python drive_sync.py
