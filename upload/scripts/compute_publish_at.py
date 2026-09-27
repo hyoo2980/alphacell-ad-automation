@@ -26,15 +26,17 @@ def _used(log_path, hhmm):
     return used
 
 
-def compute(log_path, slots, now=None):
+def compute(log_path, slots, now=None, min_lead_hours=0):
+    """min_lead_hours: 지금부터 이 시간 안의 슬롯은 건너뜀(공개 전에 사람이 확인할 시간 확보)."""
     now = now or datetime.now(KST)
+    earliest = now + timedelta(hours=min_lead_hours)
     used_by_slot = {hhmm: _used(log_path, hhmm) for hhmm in slots}
     day = now.date()
     for _ in range(30):
         for hhmm in slots:
             h, m = map(int, hhmm.split(":"))
             slot = datetime(day.year, day.month, day.day, h, m, tzinfo=KST)
-            if slot <= now or day.isoformat() in used_by_slot[hhmm]:
+            if slot <= earliest or day.isoformat() in used_by_slot[hhmm]:
                 continue
             return slot.strftime("%Y-%m-%dT%H:%M:%S+09:00")
         day += timedelta(days=1)

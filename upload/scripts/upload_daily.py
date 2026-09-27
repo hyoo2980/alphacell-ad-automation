@@ -94,7 +94,7 @@ def main():
         for fname in todo:
             m = meta_for(os.path.join(P("video_dir"), fname))
             print(f"  {fname}\n    제목: {m['title']}\n    태그: {m['tags']}\n    공개 예정: "
-                  f"{compute_publish_at.compute(logp, CFG['publish_slots'])} (실제 업로드 시 슬롯 순차 배정)")
+                  f"{compute_publish_at.compute(logp, CFG['publish_slots'], min_lead_hours=CFG.get('min_lead_hours', 0))} (실제 업로드 시 슬롯 순차 배정)")
         return
 
     from google.auth.exceptions import RefreshError
@@ -121,7 +121,7 @@ def main():
     for fname in todo:
         path = os.path.join(P("video_dir"), fname)
         m = meta_for(path)
-        publish_at = compute_publish_at.compute(logp, CFG["publish_slots"])
+        publish_at = compute_publish_at.compute(logp, CFG["publish_slots"], min_lead_hours=CFG.get("min_lead_hours", 0))
         body = {
             "snippet": {"title": m["title"],
                         "description": m["description"] + ("\n\n#Shorts" if m["is_short"] else ""),
