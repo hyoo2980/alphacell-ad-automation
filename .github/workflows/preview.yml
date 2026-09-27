@@ -57,6 +57,9 @@ jobs:
             ffmpeg -v error -y -ss 1.2 -i "광고 결과 영상/preview_$p.mp4" -frames:v 1 -vf scale=540:960 "preview/$p.png"
           done
           ls preview
+          echo "=== libass 글꼴 선택 로그"
+          ass=$(ls work/preview_hyeoldang_mubyeong/subs.ass)
+          ffmpeg -loglevel debug -y -f lavfi -i color=c=gray:s=1080x1920:d=1 -vf "ass='$ass':fontsdir='$PWD/assets/fonts'" -frames:v 1 /tmp/t.png 2>&1 | grep -iE "fontselect|glyph|font provider|fontconfig" | sort | uniq -c | head -30
       - uses: actions/upload-artifact@v4
         if: always()
         with:
