@@ -19,6 +19,11 @@ on:
         description: "채널당 제작 편수"
         required: false
         default: "1"
+      publish_now:
+        description: "예약 없이 즉시 공개 (실시간 확인용)"
+        type: boolean
+        required: false
+        default: false
 
 concurrency:
   group: daily-ads
@@ -52,6 +57,7 @@ jobs:
     env:
       CHANNEL: ${{ matrix.channel }}
       COUNT: ${{ github.event.inputs.count || '1' }}
+      PUBLISH_NOW: ${{ github.event.inputs.publish_now == 'true' && '1' || '0' }}
       PYTHONIOENCODING: utf-8
       TZ: Asia/Seoul
     steps:

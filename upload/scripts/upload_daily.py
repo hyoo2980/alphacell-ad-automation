@@ -121,13 +121,16 @@ def main():
     for fname in todo:
         path = os.path.join(P("video_dir"), fname)
         m = meta_for(path)
-        publish_at = compute_publish_at.compute(logp, CFG["publish_slots"], min_lead_hours=CFG.get("min_lead_hours", 0))
+        # PUBLISH_NOW=1 (또는 --now): 예약 없이 즉시 공개 — 사람이 실시간으로 확인할 때만
+        now_mode = os.environ.get("PUBLISH_NOW") == "1" or "--now" in sys.argv
+        publish_at = None if now_mode else compute_publish_at.compute(
+            logp, CFG["publish_slots"], min_lead_hours=CFG.get("min_lead_hours", 0))
         body = {
             "snippet": {"title": m["title"],
                         "description": m["description"] + ("\n\n#Shorts" if m["is_short"] else ""),
                         "tags": m["tags"], "categoryId": CFG["category_id"]},
-            "status": {"privacyStatus": "private",           # publishAt 은 private 에서만 동작
-                       "publishAt": publish_at,
+            "status": {"privacyStatus": "public" if now_mode else "private",   # publishAt 은 private 에서만 동작
+                       **({} if now_mode else {"publishAt": publish_at}),
                        "selfDeclaredMadeForKids": CFG["made_for_kids"],
                        "containsSyntheticMedia": CFG["contains_synthetic_media"]},
         }
@@ -151,7 +154,7 @@ def main():
         vid = resp["id"]
         record({"file": fname, "title": m["title"], "video_id": vid, "url": f"https://youtu.be/{vid}",
                 "publish_at": publish_at, "at": datetime.now().isoformat(timespec="seconds")})
-        log(f"완료 {fname} → https://youtu.be/{vid} ({publish_at} 공개)")
+        log(f"완료 {fname} → https://youtu.be/{vid} ({'즉시 공개' if now_mode else publish_at + ' 공개'})")
         os.makedirs(P("done_dir"), exist_ok=True)
         shutil.move(path, os.path.join(P("done_dir"), fname))
         side = os.path.splitext(path)[0] + ".json"
