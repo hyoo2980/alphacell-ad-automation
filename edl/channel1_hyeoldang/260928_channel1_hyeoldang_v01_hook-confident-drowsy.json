@@ -1,0 +1,169 @@
+{
+ "id": "260928_channel1_hyeoldang_v01_hook-confident-drowsy",
+ "_brief": "assign.py 배정 — base_script #36, hook_type: 확신형, hook_symptom: 식후 졸림·무기력, voice: elevenlabs Callum, 길이 30~35초",
+ "_hso": {
+  "hook": [0, 1],
+  "enemy": [2, 4],
+  "product": [5, 5],
+  "mechanism": [6, 8],
+  "usage_result": [9, 10],
+  "offer": [11, 11],
+  "cta": [12, 14]
+ },
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_mubyeong",
+ "layout": "band",
+ "title": "밥 먹고 나면 늘어진다면, 혈당 관리부터 점검해보세요",
+ "headline": [
+  {
+   "text": "식후에 자꾸 처진다면",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|혈당} 관리, 이제부터",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "base_script": "알파셀_혈당세이프_스크립트_100개_베타글루칸 #36",
+ "voice": {
+  "provider": "elevenlabs",
+  "model": "eleven_v3",
+  "voice": "N2lVS1w4EtoT3dr4eOWO",
+  "name": "Callum",
+  "stability": 0.5,
+  "speed": 1.0,
+  "account": 0
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "밥 먹고 나면 늘어지시죠?",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Woman_leaning_on_202604290942.mp4"
+    }
+   ],
+   "_visual": "ugc_drowsy_after_meal"
+  },
+  {
+   "text": "그거 그냥 피곤한 게 아니에요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/피곤_01.mp4"
+    }
+   ],
+   "_visual": "ugc_drowsy_after_meal"
+  },
+  {
+   "text": "많이 안 먹어도 {red|혈당}은 올라요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈당측정기_01.mp4"
+    }
+   ],
+   "_visual": "glucometer_high"
+  },
+  {
+   "text": "혈관 속엔 갈 곳 없는 {red|포도당}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관막힘_01.mp4"
+    }
+   ],
+   "_visual": "anim_vessel_clogged"
+  },
+  {
+   "text": "계속 쌓이기만 해요"
+  },
+  {
+   "text": "그래서 {purple|알파셀 혈당 세이프}를",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_2557 (1).mov"
+    }
+   ],
+   "_visual": "product_hand_person"
+  },
+  {
+   "text": "{pink|자색고구마} 안토시아닌과",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_3464.mov"
+    }
+   ],
+   "_visual": "sweetpotato_split"
+  },
+  {
+   "text": "독일산 {cyan|귀리 베타글루칸}이",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_dark_202509132300_vsfbi.mp4"
+    }
+   ],
+   "_visual": "ingredient_oat_harvest"
+  },
+  {
+   "text": "{red|포도당}을 흡수해줘요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/3D 인체모형 혈관 개선 1.mp4"
+    }
+   ],
+   "_visual": "anim_vessel_clean"
+  },
+  {
+   "text": "{green|식후 혈당 관리}가 편해지고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Gemini_Generated_Image_sz1cowsz1cowsz1c.png"
+    }
+   ],
+   "_visual": "glucometer_normal"
+  },
+  {
+   "text": "몸도 한결 {green|가볍게} 느껴져요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/운동-개선_01.mp4"
+    }
+   ],
+   "_visual": "ugc_active_happy"
+  },
+  {
+   "text": "{red|기간 한정} {yellow|62% 할인} 중이니",
+   "vo": "기간 한정 육십이 퍼센트 할인 중이니",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/62_.mp4"
+    }
+   ],
+   "_visual": "sign_discount"
+  },
+  {
+   "text": "지금 {yellow|쿠팡}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ],
+   "_visual": "coupang_search"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를"
+  },
+  {
+   "text": "검색해보세요!",
+   "style": "outline",
+   "hold": 0.4
+  }
+ ]
+}
