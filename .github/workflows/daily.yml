@@ -187,6 +187,8 @@ jobs:
             --dangerously-skip-permissions --max-turns 40 --output-format text | tee claude_output.txt
 
       - name: 렌더 + 예약 업로드
+        env:
+          ELEVENLABS_ACCOUNTS: ${{ secrets.ELEVENLABS_ACCOUNTS }}
         run: |
           # 채널마다 음성 요청 시점을 40초씩 늦춰 Gemini 분당 한도 충돌 방지
           idx=$(python3 -c "import json,os;print(json.loads(os.environ['ALL'] ).index(os.environ['CHANNEL']))")

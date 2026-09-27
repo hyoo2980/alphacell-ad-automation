@@ -32,13 +32,26 @@ TRIM = ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.02,
         "areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.03,areverse")
 
 
+def xi_accounts():
+    """ELEVENLABS_ACCOUNTS(JSON 목록) → [{"key","voice_id"}]. 없으면 단일 키 설정을 한 개짜리 목록으로."""
+    raw = os.environ.get("ELEVENLABS_ACCOUNTS", "").strip()
+    if raw:
+        try:
+            return [a for a in json.loads(raw) if a.get("key") and a.get("voice_id")]
+        except Exception:
+            print("::warning::ELEVENLABS_ACCOUNTS 형식 오류")
+    if os.environ.get("ELEVENLABS_API_KEY") and os.environ.get("ELEVENLABS_VOICE_ID"):
+        return [{"key": os.environ["ELEVENLABS_API_KEY"], "voice_id": os.environ["ELEVENLABS_VOICE_ID"]}]
+    return []
+
+
 def voice_cfg(v=None):
     """EDL voice + .env 기본값 병합."""
     load_env()
     v = dict(v or {})
     v.setdefault("provider", os.environ.get("TTS_PROVIDER", "say"))
-    if v["provider"] == "elevenlabs" and not (os.environ.get("ELEVENLABS_API_KEY") and
-                                              (v.get("voice") or os.environ.get("ELEVENLABS_VOICE_ID"))):
+    if v["provider"] == "elevenlabs" and not (xi_accounts() or (os.environ.get("ELEVENLABS_API_KEY") and
+                                              (v.get("voice") or os.environ.get("ELEVENLABS_VOICE_ID")))):
         print("::warning::ElevenLabs 키/보이스 ID 없음 → Gemini 로 대체 (setup_secrets.bat 로 등록)")
         v = {"provider": "gemini", "voice": "Puck"}
     if v["provider"] == "elevenlabs":
@@ -88,7 +101,7 @@ def _xi_settings(v):
 
 def _xi_post(path, v, body):
     """v3 에서 지원하지 않는 설정이 있으면 400 → 최소 설정으로 재시도."""
-    headers = {"xi-api-key": os.environ["ELEVENLABS_API_KEY"]}
+    headers = {"xi-api-key": v.get("api_key") or os.environ["ELEVENLABS_API_KEY"]}
     fmt = os.environ.get("ELEVENLABS_OUTPUT_FORMAT", "mp3_44100_128")   # 192k 는 Creator 요금제 이상
     url = f"{XI}/{v['voice']}{path}?output_format={fmt}"
     base = {"model_id": v["model"], **body}
@@ -346,11 +359,17 @@ def synth_lines(texts, v=None):
             print(f"[tts] Edge 대본 분할 실패 → Edge 문구 모드: {str(e)[:200]}")
             v = {**v, "provider": "edge"}
     if v["provider"] == "elevenlabs":
-        # 대본 1회 생성 → Whisper 정렬. 문구마다 호출하는 모드는 크레딧 낭비라 쓰지 않는다. 막히면 Gemini 로.
-        try:
-            return synth_script_gemini(texts, v, "eleven"), False
-        except Exception as e:
-            print(f"::warning::ElevenLabs 실패 → Gemini 로 대체 ({str(e)[:200]})")
+        # 대본 1회 생성 → Whisper 정렬. 채널에 배정된 계정(account)부터 시도하고, 크레딧 소진 등으로 실패하면
+        # 다음 계정 → 모두 실패하면 Gemini 로.
+        accs = xi_accounts() or [{"key": None, "voice_id": v.get("voice")}]
+        start = int(v.get("account", 0)) % len(accs)
+        for i in range(len(accs)):
+            a = accs[(start + i) % len(accs)]
+            try:
+                return synth_script_gemini(texts, {**v, "api_key": a["key"], "voice": a["voice_id"]}, "eleven"), False
+            except Exception as e:
+                print(f"::warning::ElevenLabs 계정 {(start + i) % len(accs) + 1} 실패 → 다음 계정 ({str(e)[:150]})")
+        print("::warning::ElevenLabs 모든 계정 실패 → Gemini 로 대체")
         return synth_lines(texts, {"provider": "gemini", "voice": "Puck"})
     return [synth(t, v) for t in texts], True
 

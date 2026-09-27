@@ -71,7 +71,8 @@ def assign(channel, day):
         "channel": channel, "name": cfg.get("name"), "date": day.isoformat(),
         "style_profile": cfg.get("style_profile"), "brand": cfg.get("brand"),
         "hook_type": HOOKS[k], "hook_symptom": symptom,
-        "voice": voices[(k + slot) % len(voices)], "length": LENGTHS[slot % len(LENGTHS)],
+        "voice": {**voices[(k + slot) % len(voices)], "account": slot},   # account: 채널 담당 ElevenLabs 계정
+        "length": LENGTHS[slot % len(LENGTHS)],
         "first_cut_candidates": [f"{x['labels']['desc']} | {x['path']}" for x in hook_cuts],
         "sources_by_usage": [f"{usage.get(x['path'], 0)}회 | {x['labels']['visual']} | {x['labels']['beat']} | "
                              f"{x['labels']['desc']} | {x['path']}" for x in items],
