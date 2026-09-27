@@ -1,0 +1,190 @@
+{
+ "id": "260927_channel4_v04_hook-numbhands",
+ "_brief": "assign.py channel4 2026-09-27 배정: 증상 질문형 훅, 각도=끈적한 혈액·당독소 비유(애니메이션), voice=edge InJoon +12%, 25~30초. v01(다리 붓음)·v02(가슴 답답)·v03(혈당수치)와 겹치지 않게 첫 컷을 손 저림(0329_14.mp4)으로 바꾸고, '식단 조절만으론 이미 쌓인 혈관 속 찌꺼기는 해결 안 된다'는 새 메시지 축으로 씀.",
+ "ref_script": "참고 스크립트/혈당/참고스크립트1.txt [5]",
+ "title": "손발 저림·붓기, 식단관리만으론 안 빠지는 이유",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_al",
+ "layout": "band",
+ "headline": [
+  {
+   "text": "자꾸 저리고 붓는 손발",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|식단만으론 부족} {green|한 포로}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "edge",
+  "voice": "ko-KR-InJoonNeural",
+  "rate": "+12%"
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "요즘 손이 자꾸 {red|저릿하고}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/0329_14.mp4"
+    }
+   ]
+  },
+  {
+   "text": "다리나 발도 {red|자주 붓는다면}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/ChatGPT_Image_2026_8_17_08_53_05_1.png"
+    }
+   ]
+  },
+  {
+   "text": "대부분 {yellow|밥}부터 줄이지만 부족해요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Freepik_-Shot-Composition-Closeup-Of-A-Korean-Meal-Table-W_Kling_720P_16-9_24Fps_79599.mp4"
+    }
+   ]
+  },
+  {
+   "text": "이미 혈관 속엔 {yellow|끈적한 당}이",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Glucose_clogged_blood_vessels_st…_202608171504.mp4"
+    }
+   ]
+  },
+  {
+   "text": "차곡차곡 쌓여있거든요"
+  },
+  {
+   "text": "식후엔 {yellow|혈당}까지 훅 오르고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/This_man_is_202512141033_gaepi.mp4"
+    }
+   ]
+  },
+  {
+   "text": "계단만 올라도 {red|숨이 차죠}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Climbing_stairs_out_of_breath_202608171151 (1).mp4"
+    }
+   ]
+  },
+  {
+   "text": "쌓인 {red|찌꺼기}까지 챙겨야 해요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 2 (1).mp4"
+    }
+   ]
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}는",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/1 (3).mp4"
+    }
+   ]
+  },
+  {
+   "text": "{green|끈적한 당}부터 관리해줘요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Blood_cells_plaque_202603262128.mp4"
+    }
+   ]
+  },
+  {
+   "text": "밥 위에 {green|한 포만 뿌리면}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/talkv_wzs08OL9aZ_MGj8K8i0JbpBXNOLTnTReK_talkv_high.mov"
+    }
+   ]
+  },
+  {
+   "text": "{green|식후 혈당 관리} 시작이에요"
+  },
+  {
+   "text": "일본 장수마을 {pink|자색고구마}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_3464.mov"
+    }
+   ]
+  },
+  {
+   "text": "독일산 {cyan|귀리 베타글루칸}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/귀리를_수확한다._20260912202041.mp4"
+    }
+   ]
+  },
+  {
+   "text": "혈관 속 {yellow|끈적함}까지 {green|깔끔하게}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Blood_cells_clearing_202603262050_2 (1).mp4"
+    }
+   ]
+  },
+  {
+   "text": "하루 {green|한 포}면 충분해요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_consuming_powdered_supplement_202608170007.mp4"
+    }
+   ]
+  },
+  {
+   "text": "밥 먹고 나서도 {green|편안하게}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_stretching_with_bright_expre…_202608170957 (1).mp4"
+    }
+   ]
+  },
+  {
+   "text": "{green|가벼운 하루} 보내보세요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_running_on_park_track_202608171231 (2).mp4"
+    }
+   ]
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈당 제품 하이라이트 1.mp4"
+    }
+   ]
+  },
+  {
+   "text": "궁금하면 {green|눌러서}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/20260817_164349.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{green|바로 확인}해보세요",
+   "style": "outline",
+   "hold": 0.4
+  }
+ ]
+}
