@@ -1,0 +1,199 @@
+{
+  "id": "260928_channel1_v01_hook-numbness",
+  "_brief": "assign.py channel1 2026-09-28, base_script #38(좀비 포도당/인슐린 부활 버전) 각색: 흐름(식후 졸림→손발 저림·숨참→원인 신호→듀얼포뮬러→개선→CTA)은 유지하되 claims_risky 표현(인슐린, 췌장, 8배, 부활, 좀비 포도당)은 모두 제거하고 claims_allowed 문구로 재작성. 훅=손 저림 살펴보는 장면, CTA는 쿠팡 검색으로 교체.",
+  "title": "손발이 자꾸 저릿하다면, 알파셀 혈당 세이프로 편안하게 관리해보세요",
+  "brand": "alphacell",
+  "style_profile": "hyeoldang_geongang",
+  "layout": "band",
+  "headline": [
+    {
+      "text": "손발이 자꾸 저릿하다면",
+      "color": "yellow"
+    },
+    {
+      "text": "{red|손발 저림} 이제는 편안하게",
+      "color": "white"
+    },
+    {
+      "text": "알파셀 혈당 세이프",
+      "color": "purple"
+    }
+  ],
+  "disclaimer": true,
+  "base_script": "알파셀_혈당세이프_스크립트_100개_베타글루칸 #38",
+  "voice": {
+    "provider": "elevenlabs",
+    "model": "eleven_v3",
+    "voice": "SOYHLrjzK2X1ezoPC6cr",
+    "name": "Harry",
+    "stability": 0.5,
+    "speed": 1.0,
+    "account": 2
+  },
+  "bgm": null,
+  "lines": [
+    {
+      "text": "손발이 자꾸 {red|저릿}하고",
+      "style": "outline",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Man_looking_at_hands_202608170934 (2).mp4"
+        }
+      ]
+    },
+    {
+      "text": "계단만 올라도 {red|숨이 차}다면",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/계단숨참_01.mp4"
+        }
+      ]
+    },
+    {
+      "text": "나이 탓이라고만 생각했나요"
+    },
+    {
+      "text": "몸이 보내는 신호일 수 있어요",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/혈당측정기_01.mp4"
+        }
+      ]
+    },
+    {
+      "text": "식후 혈당이 {red|훌쩍} 오르면",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/혈관막힘_01.mp4"
+        }
+      ]
+    },
+    {
+      "text": "혈관 속이 {yellow|끈적}해지고요"
+    },
+    {
+      "text": "그게 손끝까지 이어져요"
+    },
+    {
+      "text": "이것저것 다 해봤지만"
+    },
+    {
+      "text": "그때뿐, 금방 제자리였죠"
+    },
+    {
+      "text": "{purple|알파셀 혈당 세이프}는 달라요",
+      "style": "outline",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/adadca005789830f.mp4"
+        }
+      ]
+    },
+    {
+      "text": "밥 위에 {green|한 포} 톡 뿌려요",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/밥뿌리기_01.mp4"
+        }
+      ]
+    },
+    {
+      "text": "그게 전부, 정말 간단해요"
+    },
+    {
+      "text": "일본 장수마을이 먹던"
+    },
+    {
+      "text": "{pink|자색고구마} {yellow|안토시아닌}에",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/자색 고구마 1.mp4"
+        }
+      ]
+    },
+    {
+      "text": "{yellow|독일산} {cyan|귀리 베타글루칸}까지",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_dark_202509132300_vsfbi.mp4"
+        }
+      ]
+    },
+    {
+      "text": "두 힘을 함께 담았어요"
+    },
+    {
+      "text": "{yellow|항산화} 성분도 풍부해서",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Against_a_seamless_202509141142_z107k.mp4"
+        }
+      ]
+    },
+    {
+      "text": "식후 혈당 관리에 도움 돼요",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Blood_cells_clear_202603262148_1 (1).mp4"
+        }
+      ]
+    },
+    {
+      "text": "하루 {green|한 포}면 충분해요",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/0816(1).mp4"
+        }
+      ]
+    },
+    {
+      "text": "며칠 뒤 다시 살펴보니"
+    },
+    {
+      "text": "{red|저릿하던 손끝}이 편안해요",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/손저림-해소_01.mp4"
+        }
+      ]
+    },
+    {
+      "text": "계단도 이제 훨씬 가뿐해요",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/운동-개선_01.mp4"
+        }
+      ]
+    },
+    {
+      "text": "이제야 마음이 놓여요"
+    },
+    {
+      "text": "지금 {red|기간 한정} {yellow|62% 할인} 진행 중",
+      "vo": "지금 기간 한정 육십이 퍼센트 할인 진행 중",
+      "style": "outline",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/62_.mp4"
+        }
+      ]
+    },
+    {
+      "text": "지금 {yellow|쿠팡}에",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+          "focus_x": 0.3
+        }
+      ]
+    },
+    {
+      "text": "{purple|알파셀 혈당 세이프}를"
+    },
+    {
+      "text": "검색해보세요!",
+      "style": "outline",
+      "hold": 0.4
+    }
+  ]
+}
