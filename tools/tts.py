@@ -20,6 +20,7 @@ import hashlib
 import json
 import os
 import subprocess
+from pathlib import Path
 
 import requests
 
@@ -119,7 +120,7 @@ def _gemini_call(text, v, out):
     body = {"contents": [{"parts": [{"text": f"{v['style']}: {text}"}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": v["voice"]}}}}}
-    for attempt in range(6):
+    for attempt in range(3):
         # 키는 헤더로 전송: 옛 형식(AIza…)·새 형식(AQ.…) 키 모두 동작
         r = requests.post(url, headers={"x-goog-api-key": key}, json=body, timeout=300)
         if r.ok:
@@ -140,6 +141,22 @@ def _gemini_call(text, v, out):
         rate = next((x.split("=")[1] for x in part["mimeType"].split(";") if x.startswith("rate=")), "24000")
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "s16le", "-ar", rate, "-ac", "1", "-i", "-", str(out)],
                        input=raw, check=True)
+
+
+# ---------------- Edge TTS (무료, 키 불필요) — Gemini 한도 초과 시 자동 대체 ----------------
+EDGE_VOICES = {"Puck": "ko-KR-InJoonNeural", "Orus": "ko-KR-HyunsuNeural", "Fenrir": "ko-KR-InJoonNeural",
+               "Charon": "ko-KR-HyunsuNeural", "Sadachbia": "ko-KR-SunHiNeural"}
+
+
+def _edge_call(text, v, out):
+    """Microsoft Edge 온라인 음성(edge-tts). 광고 톤에 맞게 약간 빠르게."""
+    import asyncio
+    import edge_tts
+    voice = EDGE_VOICES.get(v.get("voice"), "ko-KR-InJoonNeural")
+    mp3 = Path(str(out) + ".mp3")
+    asyncio.run(edge_tts.Communicate(text, voice, rate="+12%").save(str(mp3)))
+    ffmpeg("-i", mp3, "-ar", "24000", "-ac", "1", out)
+    mp3.unlink()
 
 
 def _synth_gemini(text, v, out):
@@ -199,17 +216,19 @@ def _align_split(audio, texts):
     return cuts
 
 
-def synth_script_gemini(texts, v):
+def synth_script_gemini(texts, v, engine="gemini"):
+    """대본 전체 1회 생성 → Whisper 정렬로 문구 분할. engine: gemini | edge"""
     import re
     CACHE.mkdir(parents=True, exist_ok=True)
     clean = [re.sub(r"\[[^\]]*\]", "", t).strip() for t in texts]     # v3 감정태그 제거
     cfg = {k: v.get(k) for k in ("voice", "model", "style", "tempo")}
-    h = _key("gscript", json.dumps(cfg, sort_keys=True, ensure_ascii=False), " / ".join(clean))
+    h = _key("gscript" if engine == "gemini" else "escript", json.dumps(cfg, sort_keys=True, ensure_ascii=False),
+             " / ".join(clean))
     outs = [CACHE / f"{h}_{i:03d}.wav" for i in range(len(clean))]
     if not all(o.exists() for o in outs):
         full = CACHE / f"{h}.full.wav"
         if not full.exists():
-            _gemini_call(" ".join(clean), v, full)
+            (_gemini_call if engine == "gemini" else _edge_call)(" ".join(clean), v, full)
         total = probe(full)["duration"]
         mids = _align_split(full, clean)
         cuts = [0.0] + mids + [total]
@@ -224,6 +243,10 @@ def synth_script_gemini(texts, v):
 
 
 # ---------------- 문구 단위 ----------------
+def _synth_edge(text, v, out):
+    _edge_call(text, v, out)
+
+
 def synth(text, v):
     """문구 하나 → 앞뒤 무음 제거된 48k mono wav. 반환: (경로, 길이초)."""
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -278,11 +301,18 @@ def synth_script(texts, v):
 def synth_lines(texts, v=None):
     """render.py 진입점. 반환: [(wav, 길이)], 문구 사이 간격을 더해야 하는지 여부."""
     v = voice_cfg(v)
-    if v["provider"] == "gemini" and v["mode"] == "script":
+    if v["provider"] == "gemini":
+        # 문구마다 Gemini 를 부르는 모드(편당 20~30회)는 무료 한도를 바로 소진 → 쓰지 않는다.
+        # Gemini 가 막히면(한도·오류) 같은 대본을 무료 Edge 음성으로 1회 생성해 분할한다.
         try:
-            return synth_script_gemini(texts, v), False
-        except RuntimeError as e:
-            print(f"[tts] 대본 모드 실패 → 문구 모드로 전환: {e}")
+            return synth_script_gemini(texts, v, "gemini"), False
+        except Exception as e:
+            print(f"[tts] Gemini 실패 → 무료 Edge 음성으로 대체: {str(e)[:200]}")
+        try:
+            return synth_script_gemini(texts, v, "edge"), False
+        except Exception as e:
+            print(f"[tts] Edge 대본 분할 실패 → Edge 문구 모드: {str(e)[:200]}")
+            v = {**v, "provider": "edge"}
     if v["provider"] == "elevenlabs" and v["mode"] == "script":
         try:
             return synth_script(texts, v), False

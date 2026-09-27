@@ -56,6 +56,7 @@ jobs:
         channel: ${{ fromJson(needs.plan.outputs.channels) }}
     env:
       CHANNEL: ${{ matrix.channel }}
+      ALL: ${{ needs.plan.outputs.channels }}
       COUNT: ${{ github.event.inputs.count || '1' }}
       PUBLISH_NOW: ${{ github.event.inputs.publish_now == 'true' && '1' || '0' }}
       PYTHONIOENCODING: utf-8
@@ -149,6 +150,9 @@ jobs:
 
       - name: 렌더 + 예약 업로드
         run: |
+          # 채널마다 음성 요청 시점을 40초씩 늦춰 Gemini 분당 한도 충돌 방지
+          idx=$(python3 -c "import json,os;print(json.loads(os.environ['ALL'] ).index(os.environ['CHANNEL']))")
+          sleep $((idx * 40))
           cd tools
           shopt -s nullglob
           # 이번 실행에서 새로 만든(아직 커밋 안 된) EDL 만 렌더
