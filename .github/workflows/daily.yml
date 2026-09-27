@@ -131,6 +131,15 @@ jobs:
             echo "PEXELS_API_KEY=${{ secrets.PEXELS_API_KEY }}"
           } > .env
 
+      - name: Gemini 키 확인 (Claude 실행 전에 빨리 실패)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          code=$(curl -s -o /tmp/g.json -w '%{http_code}' -H "x-goog-api-key: ${GEMINI_API_KEY}" \
+            https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts)
+          if [ "$code" != "200" ]; then echo "::error::Gemini 키 인증 실패 (HTTP $code) → setup_secrets.bat 로 키 재등록"; head -c 400 /tmp/g.json; exit 1; fi
+          echo "Gemini 키 OK"
+
       - name: Claude Code
         run: npm install -g @anthropic-ai/claude-code
 
@@ -146,7 +155,8 @@ jobs:
         run: |
           cd tools
           shopt -s nullglob
-          edls=(../edl/${CHANNEL}/$(date +%y%m%d)_*.json)
+          # 이번 실행에서 새로 만든(아직 커밋 안 된) EDL 만 렌더
+          mapfile -t edls < <(cd .. && git ls-files --others --exclude-standard "edl/${CHANNEL}" | grep '\.json$' | sed 's#^#../#')
           [ ${#edls[@]} -gt 0 ] || { echo "::error::오늘 EDL 이 없음 (Claude 단계 로그 확인)"; exit 1; }
           rc=0
           for e in "${edls[@]}"; do

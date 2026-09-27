@@ -1,0 +1,30 @@
+{
+  "_note": "노후비책: 반투명 남색 박스+노랑 글자, 정자체",
+  "extends": "hyeoldang",
+  "layouts": {
+    "band": {
+      "subtitle_y": 1340
+    }
+  },
+  "headline": {
+    "italic": false,
+    "size": 96
+  },
+  "subtitle_styles": {
+    "box": {
+      "color": "#FFF200",
+      "box_color": "#0B1E5B",
+      "box_alpha": 40,
+      "italic": false,
+      "size": 82,
+      "box_pad": 13
+    },
+    "outline": {
+      "color": "#FFFFFF",
+      "outline": 6,
+      "outline_color": "#0B1E5B",
+      "italic": false,
+      "size": 86
+    }
+  }
+}

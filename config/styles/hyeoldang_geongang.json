@@ -1,0 +1,30 @@
+{
+  "_note": "건강은 늘 도망가: 박스 없는 굵은 외곽선형, 흰 글자, 크게",
+  "extends": "hyeoldang",
+  "layouts": {
+    "band": {
+      "subtitle_y": 1370
+    }
+  },
+  "headline": {
+    "italic": true,
+    "size": 100,
+    "skew": 0
+  },
+  "subtitle_styles": {
+    "box": {
+      "box": false,
+      "outline": 8,
+      "outline_color": "#000000",
+      "shadow": 2,
+      "size": 92,
+      "italic": false
+    },
+    "outline": {
+      "color": "#1EF0FF",
+      "outline": 8,
+      "size": 92,
+      "italic": false
+    }
+  }
+}

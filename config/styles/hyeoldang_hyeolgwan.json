@@ -1,0 +1,28 @@
+{
+  "_note": "혈관의비밀: 노랑 박스+검정 글자, 정자체, 자막 약간 위",
+  "extends": "hyeoldang",
+  "layouts": {
+    "band": {
+      "subtitle_y": 1320
+    }
+  },
+  "headline": {
+    "italic": false,
+    "size": 94
+  },
+  "subtitle_styles": {
+    "box": {
+      "color": "#111111",
+      "box_color": "#FFE600",
+      "italic": false,
+      "size": 84,
+      "box_pad": 14
+    },
+    "outline": {
+      "color": "#FFE600",
+      "outline": 7,
+      "italic": false,
+      "size": 88
+    }
+  }
+}

@@ -50,8 +50,13 @@ def _merge(base, over):
 
 def style():
     st = load_json(CONFIG / "style.json")
-    if _PROFILE:
-        st = _merge(st, load_json(CONFIG / "styles" / f"{_PROFILE}.json"))
+    chain, name = [], _PROFILE
+    while name:   # "extends": 채널별 프로파일 → 제품군 프로파일 → style.json 순서로 덮어씀
+        prof = load_json(CONFIG / "styles" / f"{name}.json")
+        chain.append(prof)
+        name = prof.get("extends")
+    for prof in reversed(chain):
+        st = _merge(st, prof)
     return st
 
 

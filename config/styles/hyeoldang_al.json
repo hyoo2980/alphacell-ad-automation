@@ -1,0 +1,29 @@
+{
+  "_note": "AL: 빨강 박스+흰 글자, 이탤릭, 자막 아래쪽",
+  "extends": "hyeoldang",
+  "layouts": {
+    "band": {
+      "subtitle_y": 1390
+    }
+  },
+  "headline": {
+    "italic": true,
+    "size": 92
+  },
+  "subtitle_styles": {
+    "box": {
+      "color": "white",
+      "box_color": "#D4001A",
+      "italic": true,
+      "size": 84,
+      "box_pad": 12
+    },
+    "outline": {
+      "color": "#FFFFFF",
+      "outline": 7,
+      "outline_color": "#D4001A",
+      "italic": true,
+      "size": 88
+    }
+  }
+}

@@ -120,7 +120,8 @@ def _gemini_call(text, v, out):
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": v["voice"]}}}}}
     for attempt in range(6):
-        r = requests.post(url, params={"key": key}, json=body, timeout=300)
+        # 키는 헤더로 전송: 옛 형식(AIza…)·새 형식(AQ.…) 키 모두 동작
+        r = requests.post(url, headers={"x-goog-api-key": key}, json=body, timeout=300)
         if r.ok:
             break
         if r.status_code in (429, 500, 503):

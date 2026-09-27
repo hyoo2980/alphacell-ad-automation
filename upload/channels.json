@@ -4,7 +4,7 @@
     "name": "무병백세",
     "enabled": true,
     "brand": "alphacell",
-    "style_profile": "hyeoldang",
+    "style_profile": "hyeoldang_mubyeong",
     "group": "혈당",
     "publish_slots": [
       "08:00",
@@ -15,7 +15,7 @@
     "name": "혈관의비밀",
     "enabled": true,
     "brand": "alphacell",
-    "style_profile": "hyeoldang",
+    "style_profile": "hyeoldang_hyeolgwan",
     "group": "혈당",
     "publish_slots": [
       "14:00",
@@ -26,7 +26,7 @@
     "name": "건강은 늘 도망가",
     "enabled": true,
     "brand": "alphacell",
-    "style_profile": "hyeoldang",
+    "style_profile": "hyeoldang_geongang",
     "group": "혈당",
     "publish_slots": [
       "09:00",
@@ -37,7 +37,7 @@
     "name": "노후비책",
     "enabled": true,
     "brand": "alphacell",
-    "style_profile": "hyeoldang",
+    "style_profile": "hyeoldang_nohu",
     "group": "혈당",
     "publish_slots": [
       "11:00",
@@ -48,7 +48,7 @@
     "name": "AL",
     "enabled": true,
     "brand": "alphacell",
-    "style_profile": "hyeoldang",
+    "style_profile": "hyeoldang_al",
     "group": "혈당",
     "publish_slots": [
       "15:00",
