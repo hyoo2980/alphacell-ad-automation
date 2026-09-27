@@ -1,0 +1,186 @@
+{
+ "id": "260927_channel2_v05_hook-chestpain-unbox",
+ "_brief": "channel2(노후비책) 260927 5번째 배정: hook_type=확신·도발형(판매중단·환불·100% 없이), angle=택배 개봉·구매 후기형 장면, voice=Charon, length=28~33초, style_profile=hyeoldang_nohu. 오늘 channel2 v01(손발저림)·v02(가슴답답 리드)·v03(거품소변·연구소 신뢰)·v04(채혈·연구소 신뢰)와 겹치지 않게 첫 컷은 hook_sources 중 아직 안 쓴 40_3.mp4(침실 가슴통증)로, 몸통은 택배 개봉→박스 후기→성분→실험 비교→혈당측정기 만족 결과 순으로 새 소스 조합(15c8ec9f98fc3975/Korean_man_shaking(2240)/adadca005789830f/IMG_3463/당 분해 비교 1/She_really_satisfied/Man_running_on_park_track(1231)/제품컷2/62_) 사용. avoid_angles(밥 위에 뿌리는 사용법·독일산 귀리·가족·다리붓기)는 메인 소재로 쓰지 않음.",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_nohu",
+ "layout": "band",
+ "title": "택배 열어보자마자 알아차린 이유",
+ "headline": [
+  {
+   "text": "택배 받고 알았어요",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|가슴 답답} {green|이렇게 관리}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "gemini",
+  "voice": "Charon"
+ },
+ "bgm": null,
+ "ref_script": "참고 스크립트/혈당/참고스크립트1.txt [4]",
+ "lines": [
+  {
+   "text": "밤마다 {red|가슴이 답답}하다면",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/40_3.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_chest_pain"
+  },
+  {
+   "text": "{red|손끝까지 저릿하다면}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/손발저림_01.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_numb_hands"
+  },
+  {
+   "text": "몸이 보내는 확실한 신호예요"
+  },
+  {
+   "text": "{yellow|혈관 속 당 결정}이 문제죠",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Glucose_clogged_blood_vessels_st…_202608171504.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "anim_vessel_clogged"
+  },
+  {
+   "text": "무심코 넘기면 계속 쌓여요"
+  },
+  {
+   "text": "저도 처음엔 그냥 넘겼어요"
+  },
+  {
+   "text": "그러다 택배 하나 받았죠",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/15c8ec9f98fc3975.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "warehouse_shipping"
+  },
+  {
+   "text": "박스 열자마자 알았어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Korean_man_shaking_202603282240 (1) (1).mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_show_box"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}였죠",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/adadca005789830f.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "product_reveal"
+  },
+  {
+   "text": "{pink|안토시아닌} 성분이 남달라요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_3463.mov",
+     "in": 1.0
+    }
+   ],
+   "_visual": "product_with_sweetpotato"
+  },
+  {
+   "text": "실험으로도 확인해봤어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/당 분해 비교 1.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "experiment_compare"
+  },
+  {
+   "text": "흐릿하던 게 맑아졌죠"
+  },
+  {
+   "text": "{green|혈당 수치}도 달라졌어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/She_really_satisfied_202512142032_f8q8z.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "glucometer_normal"
+  },
+  {
+   "text": "{green|몸이 훨씬 가벼워}졌죠",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_running_on_park_track_202608171231 (2).mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "ugc_active_happy"
+  },
+  {
+   "text": "택배 받고 후회 안 해요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/제품컷2.mov",
+     "in": 1.0
+    }
+   ],
+   "_visual": "product_sticks_hand"
+  },
+  {
+   "text": "{red|기간 한정} {yellow|62% 할인} 중이에요",
+   "vo": "기간 한정 육십이 퍼센트 할인 중이에요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/62_.mp4",
+     "in": 1.0
+    }
+   ],
+   "_visual": "sign_discount"
+  },
+  {
+   "text": "지금 {yellow|쿠팡}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ],
+   "_visual": "coupang_search",
+   "_cta": true
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를",
+   "_cta": true
+  },
+  {
+   "text": "검색해보세요!",
+   "style": "outline",
+   "_cta": true
+  }
+ ]
+}
