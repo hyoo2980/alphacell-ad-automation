@@ -45,7 +45,11 @@ def assign(channel, day):
     chs = load_json(ROOT / "upload" / "channels.json")
     active = [k for k, v in chs.items() if not k.startswith("_") and v.get("enabled")]
     slot = active.index(channel) if channel in active else 0
-    k = (day.toordinal() + slot) % 5
+    # 같은 날 이미 만든 EDL 이 있으면(추가 제작) 모든 채널 배정을 같은 폭만큼 밀어 다른 소재·훅이 나오게.
+    # 채널 간 겹침 방지를 유지하려고 shift 는 채널 공통값(오늘 가장 많이 만든 채널의 개수)을 쓴다.
+    ymd = day.strftime("%y%m%d")
+    shift = max([len(list((ROOT / "edl" / c).glob(f"{ymd}_*.json"))) for c in active] or [0])
+    k = (day.toordinal() + slot + shift) % 5
     cfg = chs[channel]
     idx = load_json(LIB / "index.json")
     items = idx if isinstance(idx, list) else idx.get("items", [])
@@ -62,16 +66,16 @@ def assign(channel, day):
     for f in sorted((ROOT / "참고 스크립트" / cfg.get("group", "")).glob("*.txt")):
         for m in re.finditer(r"^\[(\d+)\]", f.read_text(encoding="utf-8"), re.M):
             blocks.append(f"{f.relative_to(ROOT).as_posix()} [{m.group(1)}]")
-    ref = blocks[(day.toordinal() * 5 + slot) % len(blocks)] if blocks else None
+    ref = blocks[(day.toordinal() * 5 + slot + shift) % len(blocks)] if blocks else None
     return {
         "channel": channel, "name": cfg.get("name"), "date": day.isoformat(), "slot": slot,
         "style_profile": cfg.get("style_profile"), "brand": cfg.get("brand"),
-        "hook_type": HOOKS[k], "angle": ANGLES[(day.toordinal() + slot * 2) % len(ANGLES)],
+        "hook_type": HOOKS[k], "angle": ANGLES[(day.toordinal() + shift * 5 + slot * 2) % len(ANGLES)],
         "voice": _voices()[k % len(_voices())], "length": LENGTHS[k],
         "hook_sources": [{"src": x.get("path") or x.get("source"), "visual": x["labels"].get("visual"),
                           "desc": x["labels"].get("desc")} for x in mine],
         "reference_script": ref,
-        "avoid_angles": [ANGLES[(day.toordinal() + i * 2) % len(ANGLES)] for i in range(len(active)) if i != slot],
+        "avoid_angles": [ANGLES[(day.toordinal() + shift * 5 + i * 2) % len(ANGLES)] for i in range(len(active)) if i != slot],
         "rule": "소재 각도(angle)는 반드시 지킨다(다른 채널과 겹치지 않게 배정된 것). avoid_angles(오늘 다른 채널 소재)는 "
                 "헤드라인·훅·제목의 메인 소재로 쓰지 않는다(본문에서 한 번 스치는 정도만). 첫 문구의 컷은 hook_sources 중에서 "
                 "고른다. reference_script 는 메시지·논리 영감용일 뿐 문장을 그대로 쓰지 않는다.",
