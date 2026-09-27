@@ -71,7 +71,9 @@ def assign(channel, day):
         "hook_sources": [{"src": x.get("path") or x.get("source"), "visual": x["labels"].get("visual"),
                           "desc": x["labels"].get("desc")} for x in mine],
         "reference_script": ref,
-        "rule": "소재 각도(angle)는 반드시 지킨다(다른 채널과 겹치지 않게 배정된 것). 첫 문구의 컷은 hook_sources 중에서 "
+        "avoid_angles": [ANGLES[(day.toordinal() + i * 2) % len(ANGLES)] for i in range(len(active)) if i != slot],
+        "rule": "소재 각도(angle)는 반드시 지킨다(다른 채널과 겹치지 않게 배정된 것). avoid_angles(오늘 다른 채널 소재)는 "
+                "헤드라인·훅·제목의 메인 소재로 쓰지 않는다(본문에서 한 번 스치는 정도만). 첫 문구의 컷은 hook_sources 중에서 "
                 "고른다. reference_script 는 메시지·논리 영감용일 뿐 문장을 그대로 쓰지 않는다.",
     }
 
