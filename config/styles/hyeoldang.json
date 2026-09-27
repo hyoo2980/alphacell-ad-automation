@@ -1,0 +1,113 @@
+{
+  "_note": "알파셀 혈당 세이프 세로형 참고영상(53·56·39번) 실측값 + CapCut 원본 초안(혈당3번·Glucose39) 폰트/색. style.json 위에 덮어씀.",
+  "layouts": {
+    "band": {
+      "_desc": "상단 3줄 헤드라인(420px) + 1:1 영상 + 하단 검정",
+      "headline_band": {
+        "y": 0,
+        "h": 420,
+        "bg": "#000000"
+      },
+      "media": {
+        "x": 0,
+        "y": 420,
+        "w": 1080,
+        "h": 1080
+      },
+      "banner": null,
+      "subtitle_y": 1353,
+      "disclaimer": {
+        "x": 18,
+        "y": 1484,
+        "size": 22
+      }
+    },
+    "square": {
+      "_desc": "정방형 1080x1080 풀프레임 (15번·5번형). canvas 를 1080x1080 으로 씀",
+      "canvas": {
+        "w": 1080,
+        "h": 1080
+      },
+      "headline_band": null,
+      "media": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "banner": null,
+      "subtitle_y": 955,
+      "disclaimer": {
+        "x": 14,
+        "y": 14,
+        "size": 20
+      }
+    }
+  },
+  "fonts": {
+    "headline": "Gmarket Sans TTF",
+    "subtitle": "Gmarket Sans TTF"
+  },
+  "colors": {
+    "yellow": "#F0FF00",
+    "red": "#F00000",
+    "green": "#00F018",
+    "purple": "#C81EF0",
+    "pink": "#FF3DAB",
+    "cyan": "#1EF0FF",
+    "purple_gradient": [
+      "#EE8CF5",
+      "#B414F0"
+    ]
+  },
+  "headline": {
+    "size": 98,
+    "line_y": [
+      171,
+      261,
+      350
+    ],
+    "outline": 0,
+    "letter_spacing": -1,
+    "skew": 0,
+    "weight_boost": 0.8,
+    "scale_x": 100,
+    "_rule": "3줄: 1줄 노랑(상황/숫자), 2줄 빨강+초록 혼합(문제→해결), 3줄 보라 제품명 '알파셀 혈당 세이프'",
+    "italic": true
+  },
+  "subtitle_styles": {
+    "box": {
+      "_desc": "검정 박스 + 흰 글자, 핵심어만 {색|단어} 로 강조 (참고영상 대부분)",
+      "size": 86,
+      "bold": true,
+      "color": "white",
+      "box": true,
+      "box_color": "#000000",
+      "box_alpha": 0,
+      "box_pad": 11,
+      "outline": 0,
+      "letter_spacing": -1,
+      "italic": true
+    },
+    "outline": {
+      "_desc": "박스 없음 + 검정 외곽선 (훅 첫 문구/오퍼)",
+      "size": 88,
+      "bold": true,
+      "color": "white",
+      "box": false,
+      "outline": 6,
+      "outline_color": "#000000",
+      "shadow": 0,
+      "letter_spacing": -1,
+      "italic": true
+    }
+  },
+  "subtitle_rules": {
+    "_emphasis_guide": "문구 안 핵심어만 강조: {green|해결·혜택·기간} {red|문제·위험·수치} {yellow|성분·숫자} {purple|제품명} {pink|자색고구마·보라}"
+  },
+  "disclaimer_style": {
+    "color": "#FFFFFF",
+    "alpha": 0.55,
+    "size": 22
+  }
+}

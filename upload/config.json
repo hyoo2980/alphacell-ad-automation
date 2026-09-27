@@ -1,0 +1,23 @@
+{
+  "_note": "auto_queue: 렌더 후 inbox 등록 / auto_upload_now: 등록 즉시 upload_daily 실행(비공개+다음 슬롯 예약 공개) / block_risky: check.py [표현위험] 이 있는 영상은 upload/hold/ 로 보류(유튜브 의료 허위정보 정책 경고 방지). 강제로 올리려면 render --force-upload",
+  "video_dir": "inbox",
+  "done_dir": "done",
+  "log_dir": "logs",
+  "publish_slots": [
+    "09:00",
+    "19:00"
+  ],
+  "max_per_day": 2,
+  "category_id": "26",
+  "is_short": true,
+  "made_for_kids": false,
+  "contains_synthetic_media": true,
+  "default_description": "※ 본 영상은 정보 제공 목적입니다. 대본에 의해 연출된 장면이며, 제품의 효과는 체질에 따라 다를 수 있습니다.",
+  "default_tags": [
+    "건강",
+    "생활정보"
+  ],
+  "auto_queue": true,
+  "auto_upload_now": true,
+  "block_risky": true
+}

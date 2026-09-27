@@ -1,0 +1,22 @@
+# 비밀값 (서버는 GitHub Secrets 사용)
+.env
+upload/channels/*/client_secret.json
+upload/channels/*/token.json
+upload/channels/*/NEEDS_REAUTH.txt
+# 대용량/중간 산출물
+참고영상 소스/
+광고 결과 영상/
+work/
+upload/channels/*/inbox/
+upload/channels/*/done/
+upload/channels/*/hold/
+upload/channels/*/logs/upload.log
+__pycache__/
+*.pyc
+.venv/
+drive_sync.log
+claude_output.txt
+# 과거 프로젝트
+/_legacy/
+/logs/
+upload/channels/*/logs/legacy_log.jsonl

@@ -1,0 +1,260 @@
+{
+ "id": "260927_alphacell_v01_hook-numbhands",
+ "_brief": "briefs/260927_alphacell.md — 알파셀 혈당 세이프 첫 광고. 세로형(53·56·39번) 포맷, 훅=식후 손발 저림 질문형",
+ "_hso": {
+  "hook": [
+   0,
+   5
+  ],
+  "story": [
+   6,
+   8
+  ],
+  "product": [
+   9,
+   16
+  ],
+  "result": [
+   17,
+   19
+  ],
+  "proof": [
+   20,
+   21
+  ],
+  "offer": [
+   22,
+   25
+  ]
+ },
+ "brand": "alphacell",
+ "style_profile": "hyeoldang",
+ "layout": "band",
+ "headline": [
+  {
+   "text": "밥 먹고 손발 저린 분!",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|식후 혈당} {green|한 포로 관리}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "gemini",
+  "voice": "Puck"
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "밥만 먹으면 {yellow|손발 저리시죠?}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Person_rubbing_numb_hand_202608170921.mp4"
+    }
+   ]
+  },
+  {
+   "text": "그거 {red|식후 혈당} 때문일 수 있어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_looking_at_hands_202608170934 (2).mp4"
+    }
+   ]
+  },
+  {
+   "text": "밥 먹고 나면 {red|혈당이 확} 치솟고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Gemini_Generated_Image_8yntng8yntng8ynt.jpeg"
+    }
+   ]
+  },
+  {
+   "text": "혈관엔 {yellow|끈적한 당}이 쌓여요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관_속_포도당_정체_202608162210.mp4"
+    }
+   ]
+  },
+  {
+   "text": "손발 저림에 {red|식후 졸음}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Rubbing_cold_hands_together_20260913123647.mp4"
+    }
+   ]
+  },
+  {
+   "text": "계단만 올라도 {red|숨이 차죠}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Climbing_stairs_breathlessly_202608171149.mp4"
+    }
+   ]
+  },
+  {
+   "text": "문제는 매일 먹는 {yellow|쌀밥}이에요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Freepik_-Shot-Composition-Closeup-Of-A-Korean-Meal-Table-W_Kling_720P_16-9_24Fps_79599.mp4",
+     "in": 0.0
+    }
+   ]
+  },
+  {
+   "text": "대부분의 혈당 제품은",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_pricking_finger_with_lancet_202608171523.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{red|오르고 나서} 챙기는 제품이죠"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}는 달라요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈당 제품 하이라이트 1.mp4",
+     "in": 3.0
+    }
+   ]
+  },
+  {
+   "text": "밥 위에 {green|한 포만 뿌리면}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Freepik_-Shot-Composition-Closeup-Of-A-Korean-Meal-Table-W_Kling_720P_16-9_24Fps_79599.mp4",
+     "in": 4.5
+    }
+   ]
+  },
+  {
+   "text": "{green|식후 혈당 관리}가 시작돼요"
+  },
+  {
+   "text": "일본 장수마을의 주식",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Splitting_purple_sweet_potato_by…_202608171449.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{pink|자색고구마} 안토시아닌에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/안토시아닌 분말 손 가득.mp4"
+    }
+   ]
+  },
+  {
+   "text": "독일산 {yellow|귀리 베타글루칸}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/귀리를_수확한다._20260912202041.mp4"
+    }
+   ]
+  },
+  {
+   "text": "혈관 속 {yellow|끈적한 당}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Antioxidants_cleaning_blocked_bl…_202608162158.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{green|깔끔하게 관리}해줘요"
+  },
+  {
+   "text": "하루 한 포면 {green|충분해요}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_pouring_powder_into_mouth_202608162348.mp4"
+    }
+   ]
+  },
+  {
+   "text": "밥 먹고 나서도 {green|개운하게}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_stretching_with_bright_expre…_202608170957 (1).mp4"
+    }
+   ]
+  },
+  {
+   "text": "{green|가벼운 하루}를 보내세요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Woman_running_on_park_track_202608171236 (4).mp4"
+    }
+   ]
+  },
+  {
+   "text": "국내 {yellow|입고되자마자}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/공항_세관_직원이_물건_검수_20260913122851.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{red|재고가 빠르게} 줄고 있어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/freepik_-shot-composition-topdown-slightly-angled-view-of-_kling_720p_16-9_24fps_72507.mp4"
+    }
+   ]
+  },
+  {
+   "text": "지금 {green|이 링크}에서만",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/20260817_164349.mp4",
+     "focus_x": 0.5
+    }
+   ]
+  },
+  {
+   "text": "{green|62% 할인} 중이에요",
+   "vo": "육십이 퍼센트 할인 중이에요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/12_1.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{red|오늘 자정}까지만 이 가격",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/제품컷2.mov",
+     "focus_y": 0.4
+    }
+   ]
+  },
+  {
+   "text": "{red|서두르세요!}",
+   "vo": "[excited] 서두르세요!",
+   "style": "outline",
+   "hold": 0.4,
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Middle-aged_Korean_person_202603282239 (1).mp4"
+    }
+   ]
+  }
+ ]
+}

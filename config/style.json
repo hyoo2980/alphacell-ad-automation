@@ -1,0 +1,125 @@
+{
+  "_note": "참고영상(360x640) 실측값을 1080x1920 기준으로 x3 환산. 값을 바꾸면 모든 렌더에 반영됨. tools/calibrate.py 로 참고영상과 나란히 비교해 미세조정.",
+  "canvas": {
+    "w": 1080,
+    "h": 1920,
+    "fps": 30,
+    "bg": "#000000"
+  },
+  "layouts": {
+    "band": {
+      "_desc": "참고영상 기본형: 상단 헤드라인 밴드 + 1:1 영상 + 하단 배너",
+      "headline_band": {
+        "y": 0,
+        "h": 330,
+        "bg": "#000000"
+      },
+      "media": {
+        "x": 0,
+        "y": 330,
+        "w": 1080,
+        "h": 1080
+      },
+      "banner": {
+        "x": 0,
+        "y": 1410,
+        "w": 1080,
+        "h": 510
+      },
+      "subtitle_y": 1186
+    },
+    "full": {
+      "_desc": "풀스크린 9:16 (헤드라인은 영상 위 오버레이)",
+      "headline_band": null,
+      "media": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1920
+      },
+      "banner": null,
+      "subtitle_y": 1290
+    }
+  },
+  "fonts": {
+    "dir": "~/Library/Fonts",
+    "headline": "Gmarket Sans TTF",
+    "subtitle": "Gmarket Sans TTF"
+  },
+  "colors": {
+    "white": "#FFFFFF",
+    "yellow": "#FFF600",
+    "green": "#19FF2A",
+    "cyan": "#1EF0FF",
+    "red": "#FF0A10",
+    "blue": "#2E8BFF",
+    "black": "#000000"
+  },
+  "headline": {
+    "size": 108,
+    "bold": true,
+    "line_y": [
+      150,
+      250
+    ],
+    "outline": 0,
+    "outline_on_color_bg": 6,
+    "letter_spacing": -1,
+    "skew": 0,
+    "_rule": "한 줄 13자 이내(넘으면 자동 축소되어 참고영상보다 작아짐). 1줄 흰색/노랑, 2줄 빨강이 기본",
+    "weight_boost": 0.6,
+    "scale_x": 86
+  },
+  "subtitle_styles": {
+    "box": {
+      "_desc": "검정 박스 + 문구 전체 단색(흰/노/초/하늘/빨). 문제제기·메커니즘·성분 설명 구간(참고영상 60~70%)",
+      "size": 88,
+      "bold": true,
+      "color": "white",
+      "box": true,
+      "box_color": "#000000",
+      "box_alpha": 0,
+      "box_pad": 16,
+      "outline": 0,
+      "letter_spacing": -1
+    },
+    "serif_story": {
+      "_desc": "사과문/스토리형 도입부(경쟁사 항의 전화 등)에서 쓰인 명조 계열 흰 글자",
+      "size": 84,
+      "bold": false,
+      "color": "white",
+      "font": "Nanum Myeongjo",
+      "box": false,
+      "outline": 3,
+      "outline_color": "#000000",
+      "letter_spacing": 0
+    },
+    "outline": {
+      "_desc": "박스 없음 + 굵은 검정 외곽선. 훅(첫 2~4문구)·오퍼·CTA 구간에 사용. 색은 문구별로 지정",
+      "size": 90,
+      "bold": true,
+      "color": "yellow",
+      "box": false,
+      "outline": 7,
+      "outline_color": "#000000",
+      "shadow": 0,
+      "letter_spacing": -1
+    }
+  },
+  "subtitle_rules": {
+    "max_chars_per_line": 14,
+    "one_line_only": true,
+    "_emphasis_guide": "문구 단위 단색. yellow=사실/숫자/전환, green=해결·긍정·혜택, cyan=성분·제품명·기술, red=문제·공포·긴급, white=연결 문구"
+  },
+  "audio": {
+    "target_lufs": -14,
+    "voice_gain_db": 0,
+    "bgm_gain_db": -20,
+    "duck": true,
+    "line_gap_sec": 0.05
+  },
+  "capcut": {
+    "px_per_size": 7.16,
+    "_note": "CapCut 글자크기 1 = 1080x1920 캔버스 px(em). 2026-09-27 CapCut 9.4 실측(스크린샷 대비 1.22배) 보정. 자막이 mp4보다 크면 값을 키우고, 작으면 줄인다."
+  }
+}

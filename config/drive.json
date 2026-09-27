@@ -1,0 +1,7 @@
+{
+  "_note": "구글 드라이브 공개 폴더(링크 있는 사람 보기) → 로컬 폴더. tools/drive_sync.py 가 없는 파일만 받는다. 새 제품군을 추가하면 여기에 항목을 추가.",
+  "folders": [
+    {"id": "17wBSYI8pvVVFLw1pecYpyc2Rwguhf5lW", "dest": "참고영상 소스/혈당 레퍼 영상", "kind": "reference", "group": "혈당"},
+    {"id": "1FsJ1_q62zE1nmkbSDw6mvd7PZZq7XTko", "dest": "참고영상 소스/혈당 영상 사용할 소스", "kind": "sources", "group": "혈당"}
+  ]
+}

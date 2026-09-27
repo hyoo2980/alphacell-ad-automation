@@ -1,0 +1,146 @@
+# 매일 자동 광고 제작 + 유튜브 예약 업로드
+# - 04:00 KST(= 19:00 UTC 전날)에 시작. 깃허브 예약 실행은 수십 분 늦을 수 있다(공개 시각은 publishAt 이라 영향 없음).
+# - 채널마다 job 1개(matrix). 채널당 COUNT 편을 Claude Code 가 CLAUDE.md "서버 자동 제작" 절차대로 기획·렌더·업로드.
+# - 결과(EDL, 업로드 기록, 보고서)는 저장소에 커밋, 영상 파일은 Artifacts 로 7일 보관.
+# - 실패(로그인 만료·쿼터·검수 실패)하면 job 이 빨간색 → 깃허브가 계정 메일로 알림.
+name: daily-ads
+
+on:
+  schedule:
+    - cron: "0 19 * * *"
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: "특정 채널만 (비우면 사용 중인 채널 전부)"
+        required: false
+        default: ""
+      count:
+        description: "채널당 제작 편수"
+        required: false
+        default: "2"
+
+concurrency:
+  group: daily-ads
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      channels: ${{ steps.c.outputs.list }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: c
+        env:
+          ONLY_CHANNEL: ${{ github.event.inputs.channel }}
+        run: echo "list=$(cd tools && python3 ci_credentials.py --enabled-channels)" >> "$GITHUB_OUTPUT"
+
+  make:
+    needs: plan
+    if: needs.plan.outputs.channels != '[]'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        channel: ${{ fromJson(needs.plan.outputs.channels) }}
+    env:
+      CHANNEL: ${{ matrix.channel }}
+      COUNT: ${{ github.event.inputs.count || '2' }}
+      PYTHONIOENCODING: utf-8
+      TZ: Asia/Seoul
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fontconfig
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: 파이썬 패키지
+        run: pip install -r requirements.txt
+
+      - name: 소스 캐시 (구글 드라이브)
+        uses: actions/cache@v4
+        with:
+          path: 참고영상 소스
+          key: drive-${{ hashFiles('config/drive.json') }}-${{ github.run_id }}
+          restore-keys: drive-${{ hashFiles('config/drive.json') }}-
+
+      - name: Whisper 모델 캐시
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-small-v1
+
+      - name: 드라이브 동기화 (새 파일만)
+        run: cd tools && python drive_sync.py
+
+      - name: 유튜브 인증 복원 + 로그인 확인
+        env:
+          YT_CREDENTIALS: ${{ secrets.YT_CREDENTIALS }}
+        run: |
+          cd tools && python ci_credentials.py
+          python - <<'EOF'
+          import os, sys
+          from google.oauth2.credentials import Credentials
+          from google.auth.transport.requests import Request
+          ch = os.environ["CHANNEL"]
+          try:
+              c = Credentials.from_authorized_user_file(f"../upload/channels/{ch}/token.json")
+              c.refresh(Request())
+              print(f"{ch}: 로그인 유효")
+          except Exception as e:
+              print(f"::error::{ch} 유튜브 로그인 만료 → PC에서 relogin_windows.bat 실행 ({e})")
+              sys.exit(1)
+          EOF
+
+      - name: .env
+        run: |
+          {
+            echo "TTS_PROVIDER=gemini"
+            echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}"
+            echo "PEXELS_API_KEY=${{ secrets.PEXELS_API_KEY }}"
+          } > .env
+
+      - name: Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: 광고 제작 + 업로드 (Claude)
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          claude -p "CLAUDE.md 의 '서버 자동 제작' 절차를 따라 채널 ${CHANNEL} 에 올릴 새 광고 ${COUNT}편을 만들어 업로드하라. 오늘 날짜는 $(date +%Y-%m-%d) 이다." \
+            --dangerously-skip-permissions --max-turns 200 --output-format text | tee claude_output.txt
+          test -f "reports/$(date +%y%m%d)_${CHANNEL}.md" || { echo "::error::보고서가 없음 → 제작 실패로 간주"; exit 1; }
+          if grep -q "RESULT: FAIL" "reports/$(date +%y%m%d)_${CHANNEL}.md"; then echo "::error::일부 제작/업로드 실패 → 보고서 확인"; exit 1; fi
+
+      - name: 결과 커밋
+        if: always()
+        run: |
+          git config user.name "daily-ads-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add edl reports "upload/channels/${CHANNEL}/logs" || true
+          git diff --cached --quiet && exit 0
+          git commit -m "daily-ads: ${CHANNEL} $(date +%Y-%m-%d)"
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && exit 0; sleep $((i*5)); done
+          exit 1
+
+      - name: 영상 보관 (Artifacts, 7일)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos-${{ matrix.channel }}-${{ github.run_id }}
+          path: |
+            광고 결과 영상/*.mp4
+            upload/channels/${{ matrix.channel }}/hold/
+            claude_output.txt
+          retention-days: 7
+          if-no-files-found: ignore
