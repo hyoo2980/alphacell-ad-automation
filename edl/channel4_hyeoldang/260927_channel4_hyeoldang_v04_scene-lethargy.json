@@ -1,0 +1,139 @@
+{
+ "id": "260927_channel4_hyeoldang_v04_scene-lethargy",
+ "_assign": "assign.py channel4_hyeoldang 2026-09-27 — 확신형 훅 / 증상: 식후 졸림·무기력 / 보이스 gemini Sadachbia / 30~45초. v01(첫컷=계단 숨참)·v02(첫컷=다리 마사지)·v03(첫컷=사무실 조는 여성)과 겹치지 않게 첫컷·훅 문구·헤드라인을 소파에서 늘어지는 여성(무기력) 장면으로 변경, 성분은 자색고구마+귀리 동시 강조",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_hyeolgwan",
+ "layout": "band",
+ "title": "밥 먹고 나면 축 처지던 이유, 따로 있었다",
+ "headline": [
+  {
+   "text": "밥만 먹으면 축 처지는 몸",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|식후 무기력}엔 {green|한 포 습관}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "headline_bg": null,
+ "banner": null,
+ "disclaimer": true,
+ "voice": {
+  "provider": "gemini",
+  "voice": "Sadachbia"
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "장담하는데 이 무기력",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Woman_leaning_on_202604290942.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{red|식후에만} 유독 그렇다"
+  },
+  {
+   "text": "이유는 {yellow|혈당 급상승}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/122.png"
+    }
+   ]
+  },
+  {
+   "text": "{yellow|쌀밥}이 특히 문제다"
+  },
+  {
+   "text": "혈액은 점점 {red|끈적해진다}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 2 (1).mp4"
+    }
+   ]
+  },
+  {
+   "text": "그냥 영양제론 안 되더라",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/This_man_is_202512141033_gaepi.mp4"
+    }
+   ]
+  },
+  {
+   "text": "혈당 수치만 잠깐 내렸다"
+  },
+  {
+   "text": "그래서 알게 된 {purple|알파셀}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/adadca005789830f.mp4"
+    }
+   ]
+  },
+  {
+   "text": "비결은 {pink|자색고구마 안토시아닌}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_3464.mov"
+    }
+   ]
+  },
+  {
+   "text": "독일산 {cyan|귀리 베타글루칸}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_dark_202509132300_vsfbi.mp4"
+    }
+   ]
+  },
+  {
+   "text": "밥 위에 {green|보라색 한 포}만",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/talkv_wzs08OL9aZ_MGj8K8i0JbpBXNOLTnTReK_talkv_high.mov"
+    }
+   ]
+  },
+  {
+   "text": "뿌려 먹으면 끝이다"
+  },
+  {
+   "text": "지금은 {red|기간 한정}으로",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/62_.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{yellow|62%} 할인 중이다",
+   "vo": "육십이 퍼센트 할인 중이다"
+  },
+  {
+   "text": "지금 {yellow|쿠팡}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ]
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를"
+  },
+  {
+   "text": "검색해보세요!",
+   "style": "outline",
+   "hold": 0.3
+  }
+ ]
+}
