@@ -1,0 +1,167 @@
+{
+ "id": "260927_channel4_v03_hook-glucometer",
+ "_brief": "assign.py channel4 2026-09-27 배정: 증상 질문형 훅(식후 몸의 신호를 묻는다), 각도=끈적한 혈액·당독소 비유(애니메이션), voice=edge InJoon +12%, 25~30초. v01(다리 붓음)·v02(가슴 답답)와 겹치지 않게 첫 컷을 혈당측정기 수치를 보고 실망하는 장면으로 바꾸고, 손발 저림이 아니라 '끈적한 혈액' 애니메이션 비유 중심으로 새로 씀.",
+ "ref_script": "참고 스크립트/혈당/참고스크립트1.txt [5]",
+ "title": "혈당 수치보다 무서운 건 끈적해진 혈액이었어요",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_al",
+ "layout": "band",
+ "headline": [
+  {
+   "text": "식후 혈당수치 철렁",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|끈적한 혈액} {green|한 포 관리}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "edge",
+  "voice": "ko-KR-InJoonNeural",
+  "rate": "+12%"
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "식후에 잰 혈당 수치",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/She_disappointed_because_202512142027_zekiu (1).mp4"
+    }
+   ]
+  },
+  {
+   "text": "괜히 심장이 철렁하죠",
+   "style": "outline"
+  },
+  {
+   "text": "그 숫자보다 무서운 건"
+  },
+  {
+   "text": "끈적해진 {yellow|혈액}이에요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관_속_포도당_정체_202608162210.mp4"
+    }
+   ]
+  },
+  {
+   "text": "혈관 속엔 {yellow|당독소}가"
+  },
+  {
+   "text": "조용히 쌓이고 있어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/0329_14.mp4"
+    }
+   ]
+  },
+  {
+   "text": "피가 걸쭉해질수록"
+  },
+  {
+   "text": "손발 끝은 {red|둔해지고}"
+  },
+  {
+   "text": "{red|차갑게} 저려오죠"
+  },
+  {
+   "text": "그런데 관리법 대부분은",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/122.png"
+    }
+   ]
+  },
+  {
+   "text": "숫자만 보고 안심하죠"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}는",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/adadca005789830f.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{green|끈적함 자체}를 관리해요"
+  },
+  {
+   "text": "밥 위에 {green|한 포만 뿌리면}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/제품컷2.mov"
+    }
+   ]
+  },
+  {
+   "text": "{green|식후 혈당 관리} 시작이에요"
+  },
+  {
+   "text": "일본 장수마을 {pink|자색고구마}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/자색 고구마 1.mp4"
+    }
+   ]
+  },
+  {
+   "text": "독일산 {cyan|귀리 베타글루칸}이",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_dark_202509132300_vsfbi.mp4"
+    }
+   ]
+  },
+  {
+   "text": "끈적한 {yellow|혈관 속}까지",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 폭발.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{green|깨끗하게} 신경 써줘요"
+  },
+  {
+   "text": "하루 {green|한 포}면 충분해요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/0816(1).mp4"
+    }
+   ]
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/This_man_is_202512141034_l4rik.mp4"
+    }
+   ]
+  },
+  {
+   "text": "지금 {green|이 링크}에서",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/20260817_164349.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{green|확인해보세요}",
+   "style": "outline",
+   "hold": 0.4
+  }
+ ]
+}
