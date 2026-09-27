@@ -1,5 +1,5 @@
 {
-  "_note": "auto_queue: 렌더 후 inbox 등록 / auto_upload_now: 등록 즉시 upload_daily 실행(비공개+다음 슬롯 예약 공개) / block_risky: check.py [표현위험] 이 있는 영상은 upload/hold/ 로 보류(유튜브 의료 허위정보 정책 경고 방지). 강제로 올리려면 render --force-upload",
+  "_note": "render --upload → 채널 inbox 등록 → 즉시 비공개+publishAt 예약 업로드. 자동 검수·보류 없음(공개 전 사람이 직접 확인). block_risky=true 로 바꾸면 위험 표현 영상은 hold/ 로 보류.",
   "video_dir": "inbox",
   "done_dir": "done",
   "log_dir": "logs",
@@ -7,7 +7,7 @@
     "09:00",
     "19:00"
   ],
-  "max_per_day": 2,
+  "max_per_day": 1,
   "category_id": "26",
   "is_short": true,
   "made_for_kids": false,
@@ -19,5 +19,5 @@
   ],
   "auto_queue": true,
   "auto_upload_now": true,
-  "block_risky": true
+  "block_risky": false
 }

@@ -7,7 +7,8 @@ Claude는 **퍼포먼스 마케터 겸 영상 편집자**로 일한다. HSO(Hook
 
 ## 운영 구조
 - **서버**: GitHub Actions `.github/workflows/daily.yml` 이 매일 04:00 KST 에 사용 중인 채널마다
-  Claude Code 를 실행 → 아래 "서버 자동 제작" 절차로 채널당 2편 제작·업로드 → 결과를 커밋.
+  Claude Code 를 실행 → 아래 "서버 자동 제작" 절차로 채널당 1개 EDL 작성 → 스크립트가 렌더 → 비공개+예약 업로드 → 커밋.
+  **자동 검수 없음**: 공개 시각 전에 사람이 유튜브 스튜디오에서 직접 확인한다(검수·재시도로 토큰 낭비 금지).
 - **로컬(사람)**: 매주 토요일 `relogin_windows.bat` 으로 유튜브 재로그인(테스트 상태 OAuth 7일 만료) →
   토큰이 GitHub 시크릿 `YT_CREDENTIALS` 로 자동 갱신된다.
 - 소스는 구글 드라이브 공개 폴더(`config/drive.json`) → `tools/drive_sync.py` 가 없는 파일만 받는다.
@@ -26,13 +27,12 @@ Claude는 **퍼포먼스 마케터 겸 영상 편집자**로 일한다. HSO(Hook
 | `upload/channels.json` | 채널별 설정(이름·사용 여부·brand·style_profile·group·공개 슬롯) |
 | `upload/channels/<id>/` | 인증(git 제외), `logs/uploaded.jsonl`·`title_state.json`(커밋됨), inbox/done/hold(git 제외) |
 | `edl/<채널id>/` | 서버가 만든 편집계획 json (중복 방지용 이력) |
-| `reports/` | 서버 실행 보고서 `<YYMMDD>_<채널id>.md` |
 | `광고 결과 영상/` | 최종 mp4 (git 제외, 서버는 Artifacts 7일 보관) |
 
 ## 도구 (`tools/` 에서 `python <도구>` 로 실행)
 - `check.py ../edl/x.json` — 렌더 전 검사 (ERR 있으면 렌더 금지)
-- `render.py ../edl/x.json --channel <id> --upload` — 렌더 → 자동 검수 → **통과 시에만** 채널 대기열 → 즉시 예약 업로드.
-  종료 코드 0 성공 / 1 검수 실패(업로드 안 됨) / 2 로그인 만료 / 3 쿼터 초과 / 4 업로드 실패
+- `render.py ../edl/x.json --channel <id> --upload` — 렌더 → 채널 대기열 → 즉시 비공개+예약 업로드.
+  종료 코드 0 성공 / 2 로그인 만료 / 3 쿼터 초과 / 4 업로드 실패
 - `render.py ../edl/x.json --preview` — 540x960 빠른 시안(업로드 없음)
 - `tts.py "문구1" "문구2"` — TTS 테스트 (Gemini, `.env`)
 - `script2edl.py <txt> --brand … --profile … --group … --id … --headline "1줄|2줄|3줄"` — 사람 대본 → EDL 초안
@@ -43,29 +43,25 @@ Claude는 **퍼포먼스 마케터 겸 영상 편집자**로 일한다. HSO(Hook
 - `../upload/scripts/upload_daily.py --channel <id> [--dry-run]` — 대기열 업로드(렌더가 자동 호출)
 
 ## 서버 자동 제작 (GitHub Actions 에서 Claude 가 따르는 절차)
-입력: 채널 id, 편수 N, 오늘 날짜. 사람에게 질문할 수 없다 — 판단은 이 문서·가이드 기준으로 스스로 하고 보고서에 남긴다.
+입력: 채널 id, 개수 N, 오늘 날짜. **할 일은 EDL 파일 작성까지**다. 렌더·업로드·검수·프레임 확인은 하지 않는다
+(워크플로가 렌더·업로드를 한 번 실행한다). 사람에게 질문할 수 없으니 판단은 이 문서·가이드 기준으로 한다. 짧게 끝낸다.
 1. `upload/channels.json` 에서 채널의 `brand`·`style_profile`·`group` 확인. `library/PATTERNS_<group>.md`,
-   `config/brands/<brand>.json`, 가이드 8·9·11-A·13장을 읽는다.
-2. **중복 방지**: `edl/` 아래 최근 EDL(이 채널 + 같은 group 의 다른 채널 최근 14일)과
-   `upload/channels/*/logs/uploaded.jsonl` 의 최근 제목을 읽는다. 훅 문구·헤드라인·첫 컷·스토리 뼈대가
-   겹치지 않게 **바꿀 축 1~2개**를 정한다(같은 골격 연속 업로드 시 쇼츠 노출 0 사례). 같은 날 두 편끼리도 달라야 한다.
+   `config/brands/<brand>.json`, 가이드 9-1(EDL 스키마)·11-A 를 읽는다. 예시는 `edl/examples/`.
+2. 중복 방지: `edl/` 아래 최근 14일 EDL(모든 채널 — 5채널이 같은 제품이다)의 훅·헤드라인·첫 컷을 훑고,
+   겹치지 않게 **바꿀 축 1~2개**를 정한다(같은 골격 연속 업로드 시 쇼츠 노출 0 사례).
 3. 문구 단위 대본(가이드 11-A): 1문구 = 자막 1개 = 0.8~1.3초 = 공백 제외 14자 이내, 첫 문구에 문제/결과,
    3초 안 컷 전환, 인사·브랜드명 시작 금지, 숫자는 `vo` 에 한국어 읽기. 전체 20~45초.
-4. 컷 매칭: `library/index.json` 의 `labels.visual`/`beat`. `has_text=true`·`quality 1` 제외, 같은 컷 반복 피하기,
-   부정적 문맥에 긍정 비주얼 금지. 필요하면 `ffmpeg` 로 소스 프레임을 뽑아 직접 보고 `in`·`focus_x/y` 를 정한다.
-5. `edl/<채널id>/<YYMMDD>_<채널id>_v<번호>_<바꾼축-값>.json` 작성(`voice`: gemini/Puck, `disclaimer: true`)
-   → `check.py` → ERR 는 고치고, `[표현위험]` WARN 이 있으면 **준수 표현으로 바꿔서** 경고 0 을 만든다.
-6. `render.py <edl> --channel <id> --upload`. 검수 실패(종료 1)면 원인(컷 싱크·검은 프레임·음성-자막)을 고쳐
-   다시 렌더, 편당 최대 3회. 렌더 후 결과 mp4 에서 0.5초·문구 전환·마지막 프레임을 뽑아 직접 보고
-   헤드라인 축소·자막 잘림을 확인한다(이상하면 고쳐서 다시 — 단, 이미 업로드됐으면 다음 편에 반영).
-7. 종료 코드 2(로그인 만료)·3(쿼터)이면 더 만들지 말고 즉시 보고서 작성 후 종료.
-8. `reports/<YYMMDD>_<채널id>.md` 작성: 편별 EDL 경로, 바꾼 축, 제목, youtu.be 링크·공개 시각(uploaded.jsonl),
-   검수 결과, 보류/실패 사유. 마지막 줄에 전부 성공이면 `RESULT: OK`, 하나라도 실패면 `RESULT: FAIL`.
-- 비용이 드는 작업(Veo·유료 TTS)은 하지 않는다. git 커밋·푸시는 워크플로가 하므로 Claude 는 하지 않는다.
+4. 컷 매칭: `library/index.json` 의 `labels.visual`/`beat`/`desc`. `has_text=true`·`quality 1` 제외,
+   같은 컷 반복 피하기, 부정적 문맥에 긍정 비주얼 금지. src 는 index 의 경로 그대로.
+5. `edl/<채널id>/<YYMMDD>_<채널id>_v<번호>_<바꾼축-값>.json` 저장(`brand`·`style_profile` 은 채널 설정값,
+   `voice`: {"provider": "gemini", "voice": "Puck"}, `disclaimer: true`).
+6. `cd tools && python check.py ../edl/<채널id>/<파일>.json` 한 번 실행 → ERR(소스 없음 등)만 고친다.
+   `[표현위험]` 이 나오면 준수 표현으로 바꾼다. 그 외 WARN 때문에 반복 수정하지 않는다.
+- git 커밋·푸시, 비용이 드는 작업(Veo·유료 TTS)은 하지 않는다.
 
 ## 자막·편집 규칙 (참고영상과 동일하게)
 - 스타일 값은 `config/style.json`(+`styles/<profile>.json`)에서만. EDL 에서는 `style`·`color`·단어 강조 `{green|단 5일}` 만.
-- 렌더 후 자동 검수(`[검수] 컷 싱크 n/n, 검은 프레임 0`, `음성-자막 n/n`)가 실패하면 업로드하지 않는다(코드로 강제됨).
+- 자동 검수는 기본으로 끈다(`render.py --verify` 로 로컬에서만 선택 실행).
 - 보이스는 Gemini TTS(`gemini-2.5-flash-preview-tts`, Puck). macOS say 는 납품 금지.
 - `disclaimer: true` → 브랜드 고지문구 상시 표기. 구워진 자막이 있는 소스는 쓰지 않는다(원본 우선).
 - 오디오: 보이스 기준 -14 LUFS.

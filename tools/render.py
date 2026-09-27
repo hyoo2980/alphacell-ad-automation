@@ -3,7 +3,8 @@
 흐름: 문구별 TTS → 문구 길이에 맞춰 컷 트림/속도조절 → (필요 시) 기존 자막 제거 → 이어붙이기
       → 헤드라인·배너 합성 → 참고영상 스타일 자막(ASS) → 보이스+BGM 믹스/라우드니스 → mp4
 
-  .venv/bin/python tools/render.py edl/v001.json [--preview]   # --preview: 540x960 빠른 시안
+  python tools/render.py edl/v001.json [--preview]                 # --preview: 540x960 빠른 시안
+  python tools/render.py edl/v001.json --channel <채널id> --upload # 렌더 → 그 채널에 비공개+예약 업로드
 
 EDL 예시는 edl/_example.json 참고. line 필드:
   text   화면 자막 (필수)          vo     읽을 문장(자막과 다를 때: 숫자 읽기 등)
@@ -231,7 +232,7 @@ def verify_voice(timeline, wavs_raw):
 
 
 # ---------- 메인 ----------
-def render(edl_path, preview=False, qa=False, upload=False, force_upload=False, channel=None):
+def render(edl_path, preview=False, qa=False, upload=False, force_upload=False, channel=None, verify_on=False):
     """qa=True: 내부 화면 검수용. 임시 음성(say)으로 work/<id>/qa.mp4 만 만든다(납품물 아님, CapCut 생성 안 함)."""
     edl = load_json(edl_path)
     set_profile(edl.get("style_profile"))
@@ -368,19 +369,14 @@ def render(edl_path, preview=False, qa=False, upload=False, force_upload=False, 
                   for (ln, (a, b)), (w, d) in zip(timeline, wavs_raw)],
         "output": str(out)})
     print(f"완료 → {out} ({total:.1f}s, 문구 {len(timeline)}개)")
+    # 자동 검수(verify/verify_voice)는 쓰지 않는다: 예약 공개 전에 사람이 유튜브 스튜디오에서 직접 확인한다.
     ok = True
-    if not preview:
-        ok = verify(out, segs, seg_times, lay["media"])
-        if not qa:
-            ok = verify_voice(timeline, wavs_raw) and ok
+    if verify_on:
+        ok = verify(out, segs, seg_times, lay["media"]) and verify_voice(timeline, wavs_raw)
     up_rc = None
     if upload and not qa and not preview:
         if not channel:
             raise ValueError("--upload 에는 --channel <채널id> 가 필요합니다")
-        if not ok:
-            # 무인 운영: 자동 검수 실패 영상은 절대 올리지 않는다 (EDL 을 고쳐 다시 렌더)
-            print("[업로드 안 함] 자동 검수 실패 → EDL 수정 후 다시 렌더하세요")
-            return out, ok, None
         from check import risky
         from queue_upload import queue
         ucfg = load_json(ROOT / "upload" / "config.json")
@@ -405,7 +401,8 @@ if __name__ == "__main__":
     ap.add_argument("--upload", action="store_true", help="검수 통과 시 채널 대기열 등록 + 즉시 예약 업로드")
     ap.add_argument("--channel", help="업로드할 채널 id (upload/channels.json)")
     ap.add_argument("--force-upload", action="store_true", help="위험 표현이 있어도 업로드(사람이 확인한 경우만)")
+    ap.add_argument("--verify", action="store_true", help="(선택) 자동 검수 실행 — 기본은 안 함")
     a = ap.parse_args()
-    _, ok, rc = render(a.edl, a.preview, a.qa, a.upload, a.force_upload, a.channel)
-    # 종료 코드: 검수 실패 1, 업로드 스크립트 오류는 그 코드(2 로그인 만료, 3 쿼터, 4 업로드 실패)
+    _, ok, rc = render(a.edl, a.preview, a.qa, a.upload, a.force_upload, a.channel, a.verify)
+    # 종료 코드: --verify 실패 1, 업로드 스크립트 오류는 그 코드(2 로그인 만료, 3 쿼터, 4 업로드 실패)
     sys.exit(1 if not ok else (rc or 0))

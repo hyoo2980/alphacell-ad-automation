@@ -1,8 +1,9 @@
 # 매일 자동 광고 제작 + 유튜브 예약 업로드
 # - 04:00 KST(= 19:00 UTC 전날)에 시작. 깃허브 예약 실행은 수십 분 늦을 수 있다(공개 시각은 publishAt 이라 영향 없음).
-# - 채널마다 job 1개(matrix). 채널당 COUNT 편을 Claude Code 가 CLAUDE.md "서버 자동 제작" 절차대로 기획·렌더·업로드.
+# - 채널마다 job 1개(matrix). Claude Code 가 채널당 COUNT 개 편집계획(EDL)을 쓰고, 스크립트가 렌더 → 비공개+예약 업로드.
+# - 자동 검수 없음: 공개 시각 전에 사람이 유튜브 스튜디오에서 직접 확인한다.
 # - 결과(EDL, 업로드 기록, 보고서)는 저장소에 커밋, 영상 파일은 Artifacts 로 7일 보관.
-# - 실패(로그인 만료·쿼터·검수 실패)하면 job 이 빨간색 → 깃허브가 계정 메일로 알림.
+# - 실패(로그인 만료·쿼터·업로드 오류)하면 job 이 빨간색 → 깃허브가 계정 메일로 알림.
 name: daily-ads
 
 on:
@@ -17,7 +18,7 @@ on:
       count:
         description: "채널당 제작 편수"
         required: false
-        default: "2"
+        default: "1"
 
 concurrency:
   group: daily-ads
@@ -42,15 +43,15 @@ jobs:
     needs: plan
     if: needs.plan.outputs.channels != '[]'
     runs-on: ubuntu-24.04
-    timeout-minutes: 120
+    timeout-minutes: 60
     strategy:
       fail-fast: false
-      max-parallel: 2
+      max-parallel: 5
       matrix:
         channel: ${{ fromJson(needs.plan.outputs.channels) }}
     env:
       CHANNEL: ${{ matrix.channel }}
-      COUNT: ${{ github.event.inputs.count || '2' }}
+      COUNT: ${{ github.event.inputs.count || '1' }}
       PYTHONIOENCODING: utf-8
       TZ: Asia/Seoul
     steps:
@@ -79,6 +80,20 @@ jobs:
         with:
           path: ~/.cache/huggingface
           key: whisper-small-v1
+
+      - name: 폰트 캐시 (G마켓 산스, 무료 폰트)
+        id: font
+        uses: actions/cache@v4
+        with:
+          path: assets/fonts/*.ttf
+          key: gmarket-sans-ttf-v1
+
+      - name: 폰트 받기 (공식 배포처)
+        if: steps.font.outputs.cache-hit != 'true'
+        run: |
+          curl -sSL -o /tmp/gm.zip https://corp.gmarket.com/fonts/GmarketSansTTF.zip
+          unzip -o -j /tmp/gm.zip '*.ttf' -d assets/fonts
+          ls assets/fonts
 
       - name: 드라이브 동기화 (새 파일만)
         run: cd tools && python drive_sync.py
@@ -113,21 +128,33 @@ jobs:
       - name: Claude Code
         run: npm install -g @anthropic-ai/claude-code
 
-      - name: 광고 제작 + 업로드 (Claude)
+      # Claude 는 편집계획(EDL)만 쓴다. 렌더·업로드는 아래 스크립트가 한 번만 실행(재시도·자동 검수 없음 → 토큰 절약)
+      - name: 편집계획 작성 (Claude)
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
-          claude -p "CLAUDE.md 의 '서버 자동 제작' 절차를 따라 채널 ${CHANNEL} 에 올릴 새 광고 ${COUNT}편을 만들어 업로드하라. 오늘 날짜는 $(date +%Y-%m-%d) 이다." \
-            --dangerously-skip-permissions --max-turns 200 --output-format text | tee claude_output.txt
-          test -f "reports/$(date +%y%m%d)_${CHANNEL}.md" || { echo "::error::보고서가 없음 → 제작 실패로 간주"; exit 1; }
-          if grep -q "RESULT: FAIL" "reports/$(date +%y%m%d)_${CHANNEL}.md"; then echo "::error::일부 제작/업로드 실패 → 보고서 확인"; exit 1; fi
+          claude -p "CLAUDE.md 의 '서버 자동 제작' 절차대로 채널 ${CHANNEL} 용 새 EDL ${COUNT}개를 edl/${CHANNEL}/ 에 작성하라. 오늘 날짜는 $(date +%Y-%m-%d), 파일명 앞자리는 $(date +%y%m%d) 이다." \
+            --dangerously-skip-permissions --max-turns 40 --output-format text | tee claude_output.txt
+
+      - name: 렌더 + 예약 업로드
+        run: |
+          cd tools
+          shopt -s nullglob
+          edls=(../edl/${CHANNEL}/$(date +%y%m%d)_*.json)
+          [ ${#edls[@]} -gt 0 ] || { echo "::error::오늘 EDL 이 없음 (Claude 단계 로그 확인)"; exit 1; }
+          rc=0
+          for e in "${edls[@]}"; do
+            echo "=== $e"
+            python render.py "$e" --channel "${CHANNEL}" --upload || { rc=$?; echo "::error::$e 실패 (코드 $rc: 2 로그인 만료 / 3 쿼터 / 4 업로드 실패)"; }
+          done
+          exit $rc
 
       - name: 결과 커밋
         if: always()
         run: |
           git config user.name "daily-ads-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add edl reports "upload/channels/${CHANNEL}/logs" || true
+          git add edl "upload/channels/${CHANNEL}/logs" || true
           git diff --cached --quiet && exit 0
           git commit -m "daily-ads: ${CHANNEL} $(date +%Y-%m-%d)"
           for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && exit 0; sleep $((i*5)); done

@@ -6,7 +6,10 @@
     "brand": "alphacell",
     "style_profile": "hyeoldang",
     "group": "혈당",
-    "publish_slots": ["08:00", "18:00"]
+    "publish_slots": [
+      "08:00",
+      "18:00"
+    ]
   },
   "channel4_hyeoldang": {
     "name": "혈관의비밀",
@@ -14,36 +17,54 @@
     "brand": "alphacell",
     "style_profile": "hyeoldang",
     "group": "혈당",
-    "publish_slots": ["14:00", "16:00"]
+    "publish_slots": [
+      "14:00",
+      "16:00"
+    ]
   },
   "channel1": {
     "name": "건강은 늘 도망가",
-    "enabled": false,
-    "_disabled_reason": "올나잇 세이프 채널 — 올나잇용 참고영상·소스·브랜드 설정이 준비되면 enabled=true",
-    "brand": "alphacell_allnight",
+    "enabled": true,
+    "brand": "alphacell",
     "style_profile": "hyeoldang",
-    "group": "올나잇",
-    "publish_slots": ["09:00", "19:00"]
+    "group": "혈당",
+    "publish_slots": [
+      "09:00",
+      "19:00"
+    ]
   },
   "channel2": {
     "name": "노후비책",
-    "enabled": false,
-    "_disabled_reason": "올나잇 세이프 채널 — 올나잇용 참고영상·소스·브랜드 설정이 준비되면 enabled=true",
-    "brand": "alphacell_allnight",
+    "enabled": true,
+    "brand": "alphacell",
     "style_profile": "hyeoldang",
-    "group": "올나잇",
-    "publish_slots": ["11:00", "20:00"]
+    "group": "혈당",
+    "publish_slots": [
+      "11:00",
+      "20:00"
+    ]
   },
   "channel4": {
     "name": "AL",
-    "enabled": false,
-    "_disabled_reason": "올나잇 세이프 채널 — 올나잇용 참고영상·소스·브랜드 설정이 준비되면 enabled=true",
-    "brand": "alphacell_allnight",
+    "enabled": true,
+    "brand": "alphacell",
     "style_profile": "hyeoldang",
-    "group": "올나잇",
-    "publish_slots": ["15:00", "22:00"]
+    "group": "혈당",
+    "publish_slots": [
+      "15:00",
+      "22:00"
+    ]
   },
-  "channel2_hyeoldang": {"enabled": false, "_disabled_reason": "GCP 프로젝트 쿼터 0 (정책 위반 표시)"},
-  "channel3_hyeoldang": {"enabled": false, "_disabled_reason": "GCP 프로젝트 쿼터 0 (정책 위반 표시)"},
-  "channel3": {"enabled": false, "_disabled_reason": "GCP 프로젝트 쿼터 0 (정책 위반 표시)"}
+  "channel2_hyeoldang": {
+    "enabled": false,
+    "_disabled_reason": "GCP 프로젝트 쿼터 0 (정책 위반 표시)"
+  },
+  "channel3_hyeoldang": {
+    "enabled": false,
+    "_disabled_reason": "GCP 프로젝트 쿼터 0 (정책 위반 표시)"
+  },
+  "channel3": {
+    "enabled": false,
+    "_disabled_reason": "GCP 프로젝트 쿼터 0 (정책 위반 표시)"
+  }
 }
