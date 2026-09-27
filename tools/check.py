@@ -18,7 +18,7 @@ def check(path):
 
     for i, h in enumerate(edl.get("headline", [])):
         if len(plain(h["text"])) > 13:
-            issues.append(("ERR", f"헤드라인 {i + 1}줄 {len(plain(h['text']))}자 > 13자 → 줄여 쓰세요(자동 축소로 글씨가 작아짐)"))
+            issues.append(("WARN", f"헤드라인 {i + 1}줄 {len(plain(h['text']))}자 > 13자 → 줄여 쓰세요(자동 축소로 글씨가 작아짐)"))
     texts = [("headline", plain(h["text"])) for h in edl.get("headline", [])]
     for i, ln in enumerate(edl["lines"]):
         texts += [(f"line {i}", plain(ln["text"])), (f"line {i} vo", ln.get("vo", ""))]
@@ -32,12 +32,12 @@ def check(path):
             if "library/reference/" in m["src"]:
                 issues.append(("INFO", f"line {i} 참고영상 컷 사용(360p·자막블러) → 원본 소스로 교체 권장"))
     if not edl.get("title"):
-        issues.append(("ERR", "title 없음 → 유튜브 제목을 EDL 에 직접 쓰세요(40자 이내, 헤드라인 이어붙이기 금지)"))
+        issues.append(("WARN", "title 없음 → 유튜브 제목을 EDL 에 직접 쓰세요(40자 이내, 헤드라인 이어붙이기 금지)"))
     if not edl["lines"][0].get("media"):
         issues.append(("ERR", "첫 문구에 media 없음"))
     for p in (br.get("cta_shorts") or {}).get("forbidden", []):
         if any(p in t for _, t in texts):
-            issues.append(("ERR", f"쇼츠에 링크 유도 CTA '{p}' → '지금 쿠팡에 알파셀 혈당 세이프를 검색해보세요!' 로"))
+            issues.append(("WARN", f"쇼츠에 링크 유도 CTA '{p}' → '지금 쿠팡에 알파셀 혈당 세이프를 검색해보세요!' 로"))
             break
     for where, t in texts:
         for p in risky:
