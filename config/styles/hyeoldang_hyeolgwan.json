@@ -16,13 +16,21 @@
       "box_color": "#FFE600",
       "italic": false,
       "size": 84,
-      "box_pad": 14
+      "box_pad": 14,
+      "emphasis_map": {
+        "yellow": "red",
+        "green": "#0050FF",
+        "cyan": "#0050FF"
+      }
     },
     "outline": {
       "color": "#FFE600",
       "outline": 7,
       "italic": false,
-      "size": 88
+      "size": 88,
+      "emphasis_map": {
+        "yellow": "red"
+      }
     }
   }
 }

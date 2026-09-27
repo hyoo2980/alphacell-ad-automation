@@ -324,7 +324,7 @@ def synth_lines(texts, v=None):
         try:
             return synth_script_gemini(texts, v, "gemini"), False
         except Exception as e:
-            print(f"[tts] Gemini 실패 → 무료 Edge 음성으로 대체: {str(e)[:200]}")
+            print(f"::warning::Gemini 실패 → Edge 음성으로 대체(품질 낮음, 검수 시 확인): {str(e)[:200]}")
         try:
             return synth_script_gemini(texts, v, "edge"), False
         except Exception as e:

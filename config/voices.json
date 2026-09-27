@@ -1,0 +1,44 @@
+{
+  "_note": "채널별 배정 음성 목록(assign.py). default 또는 환경변수 TTS_PROVIDER 로 선택. elevenlabs 는 ELEVENLABS_API_KEY 등록 후 voice_id 를 채워 쓴다(무료 계정은 라이브러리 보이스 API 불가).",
+  "default": "gemini",
+  "gemini": [
+    {
+      "provider": "gemini",
+      "voice": "Puck"
+    },
+    {
+      "provider": "gemini",
+      "voice": "Orus"
+    },
+    {
+      "provider": "gemini",
+      "voice": "Fenrir"
+    },
+    {
+      "provider": "gemini",
+      "voice": "Sadachbia"
+    },
+    {
+      "provider": "gemini",
+      "voice": "Charon"
+    }
+  ],
+  "elevenlabs": [],
+  "edge": [
+    {
+      "provider": "edge",
+      "voice": "ko-KR-InJoonNeural",
+      "rate": "+12%"
+    },
+    {
+      "provider": "edge",
+      "voice": "ko-KR-HyunsuMultilingualNeural",
+      "rate": "+10%"
+    },
+    {
+      "provider": "edge",
+      "voice": "ko-KR-SunHiNeural",
+      "rate": "+8%"
+    }
+  ]
+}

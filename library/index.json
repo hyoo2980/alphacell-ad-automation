@@ -2080,6 +2080,27 @@
   },
   {
     "idx": 99,
+    "path": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+    "name": "쿠팡.png",
+    "md5": "db1a161aa0f74a60787fb32d70458438",
+    "kind": "source",
+    "group": "혈당",
+    "type": "image",
+    "w": 1320,
+    "h": 782,
+    "duration": 0.0,
+    "has_audio": false,
+    "thumb": "library/sources/혈당/thumbs/099.jpg",
+    "labels": {
+      "visual": "coupang_search",
+      "beat": "offer",
+      "desc": "쿠팡에서 '알파셀 혈당 세이프' 검색 결과 화면(검색창+제품 목록). CTA 전용, focus_x 0.3",
+      "has_text": false,
+      "quality": 3
+    }
+  },
+  {
+    "idx": 100,
     "path": "참고영상 소스/혈당 영상 사용할 소스/행복해하는 중년 여성.mp4",
     "name": "행복해하는 중년 여성.mp4",
     "md5": "1b592d7688d45e54bd3e4884831a9f15",
@@ -2090,7 +2111,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/099.jpg",
+    "thumb": "library/sources/혈당/thumbs/100.jpg",
     "labels": {
       "visual": "ugc_morning_happy",
       "beat": "result",
@@ -2100,7 +2121,7 @@
     }
   },
   {
-    "idx": 100,
+    "idx": 101,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 2 (1).mp4",
     "name": "혈관 하수구 2 (1).mp4",
     "md5": "d4f32a97fc27102dbca506cfa5c039a1",
@@ -2111,7 +2132,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/100.jpg",
+    "thumb": "library/sources/혈당/thumbs/101.jpg",
     "labels": {
       "visual": "anim_vessel_clogged",
       "beat": "enemy",
@@ -2121,7 +2142,7 @@
     }
   },
   {
-    "idx": 101,
+    "idx": 102,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 폭발.mp4",
     "name": "혈관 하수구 폭발.mp4",
     "md5": "f10ffcbb28b68db89158a6429778be1e",
@@ -2132,7 +2153,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/101.jpg",
+    "thumb": "library/sources/혈당/thumbs/102.jpg",
     "labels": {
       "visual": "anim_vessel_clean",
       "beat": "mechanism",
@@ -2142,7 +2163,7 @@
     }
   },
   {
-    "idx": 102,
+    "idx": 103,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈관_속_포도당_정체_202608162210.mp4",
     "name": "혈관_속_포도당_정체_202608162210.mp4",
     "md5": "0bb0ba8269eda95c8e0efd3a76efe6ad",
@@ -2153,7 +2174,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/102.jpg",
+    "thumb": "library/sources/혈당/thumbs/103.jpg",
     "labels": {
       "visual": "anim_vessel_clogged",
       "beat": "enemy",
@@ -2163,7 +2184,7 @@
     }
   },
   {
-    "idx": 103,
+    "idx": 104,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈당 제품 하이라이트 1.mp4",
     "name": "혈당 제품 하이라이트 1.mp4",
     "md5": "cbe7da5084e335e4f9b9a0c5aabdaf66",
@@ -2174,7 +2195,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/103.jpg",
+    "thumb": "library/sources/혈당/thumbs/104.jpg",
     "labels": {
       "visual": "product_reveal",
       "beat": "offer",
@@ -2184,7 +2205,7 @@
     }
   },
   {
-    "idx": 104,
+    "idx": 105,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈당004번_박사.mp4",
     "name": "혈당004번_박사.mp4",
     "md5": "dee2597e4ea293c206dfdfbf9b88b482",
@@ -2195,7 +2216,7 @@
     "h": 1080,
     "duration": 16.05,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/104.jpg",
+    "thumb": "library/sources/혈당/thumbs/105.jpg",
     "labels": {
       "visual": "authority_doctor",
       "beat": "proof",

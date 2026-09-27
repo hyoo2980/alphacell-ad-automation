@@ -32,13 +32,12 @@ ANGLES = [  # 12개 — 같은 날 5채널은 서로 다른 각도, 날마다 �
     "끈적한 혈액·당독소 비유(애니메이션)",
     "다리 붓기·계단 숨참 같은 일상 신호",
 ]
-VOICES = [  # 무료 Edge 음성 (provider=edge). 같은 목소리도 속도를 달리해 채널별 느낌을 다르게
-    {"provider": "edge", "voice": "ko-KR-InJoonNeural", "rate": "+12%"},
-    {"provider": "edge", "voice": "ko-KR-HyunsuMultilingualNeural", "rate": "+10%"},
-    {"provider": "edge", "voice": "ko-KR-SunHiNeural", "rate": "+8%"},
-    {"provider": "edge", "voice": "ko-KR-InJoonNeural", "rate": "+20%"},
-    {"provider": "edge", "voice": "ko-KR-HyunsuMultilingualNeural", "rate": "+16%"},
-]
+# 음성: config/voices.json (provider 별 목록). ElevenLabs 키가 등록되면 elevenlabs 목록을 쓴다.
+def _voices():
+    import os
+    vc = load_json(ROOT / "config" / "voices.json")
+    prov = os.environ.get("TTS_PROVIDER") or vc.get("default", "gemini")
+    return vc[prov]
 LENGTHS = ["25~30초", "35~40초", "30~35초", "40~45초", "28~33초"]
 
 
@@ -67,7 +66,8 @@ def assign(channel, day):
     return {
         "channel": channel, "name": cfg.get("name"), "date": day.isoformat(), "slot": slot,
         "style_profile": cfg.get("style_profile"), "brand": cfg.get("brand"),
-        "hook_type": HOOKS[k], "angle": ANGLES[(day.toordinal() + slot * 2) % len(ANGLES)], "voice": VOICES[k], "length": LENGTHS[k],
+        "hook_type": HOOKS[k], "angle": ANGLES[(day.toordinal() + slot * 2) % len(ANGLES)],
+        "voice": _voices()[k % len(_voices())], "length": LENGTHS[k],
         "hook_sources": [{"src": x.get("path") or x.get("source"), "visual": x["labels"].get("visual"),
                           "desc": x["labels"].get("desc")} for x in mine],
         "reference_script": ref,

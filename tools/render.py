@@ -110,10 +110,13 @@ def t_ass(t):
     return f"{cs // 360000}:{cs // 6000 % 60:02d}:{cs // 100 % 60:02d}.{cs % 100:02d}"
 
 
-def rich_ass(text, boost=None):
-    """{색|단어} 마크업 → ASS 색 태그. 강조 구간이 끝나면 스타일 기본색(\\r 대신 \\c 복원)으로."""
+def rich_ass(text, boost=None, emap=None):
+    """{색|단어} 마크업 → ASS 색 태그. 강조 구간이 끝나면 스타일 기본색(\\r 대신 \\c 복원)으로.
+    emap: 자막 스타일의 emphasis_map — 박스·글자색과 같은 강조색을 잘 보이는 색으로 바꿈(빨강 박스 위 빨강 글자 방지)."""
     out = []
     for seg, c in parse_rich(text):
+        if c and emap:
+            c = emap.get(c, c)
         if c:
             h = hex_to_ass(color(c))
             b3 = "\\3c" + h if boost else ""
@@ -175,7 +178,7 @@ def build_ass(edl, timeline, total, st, lay, path):
         w = text_width(plain(ln["text"]), fam, s["size"], s["bold"], s["letter_spacing"]) + 2 * s.get("box_pad", 0)
         fs = f"\\fs{int(s['size'] * maxw / w)}" if w > maxw else ""
         base = hex_to_ass(color(ln.get("color") or s.get("color", "white")))
-        body = rich_ass(ln["text"]).replace("\\c&HFFFFFFFF&", f"\\c{base}")
+        body = rich_ass(ln["text"], emap=s.get("emphasis_map")).replace("\\c&HFFFFFFFF&", f"\\c{base}")
         lines.append(f"Dialogue: 2,{t_ass(t0)},{t_ass(t1)},{sname},,0,0,0,,"
                      f"{{\\an5\\pos({cx},{lay['subtitle_y']})\\c{base}{fs}}}{body}")
     # 고지 문구(연출·개인차) — 영상 영역 안 작은 글씨, 전체 구간

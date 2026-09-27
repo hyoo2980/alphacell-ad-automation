@@ -18,13 +18,19 @@
       "outline_color": "#000000",
       "shadow": 2,
       "size": 92,
-      "italic": false
+      "italic": false,
+      "emphasis_map": {
+        "cyan": "yellow"
+      }
     },
     "outline": {
       "color": "#1EF0FF",
       "outline": 8,
       "size": 92,
-      "italic": false
+      "italic": false,
+      "emphasis_map": {
+        "cyan": "yellow"
+      }
     }
   }
 }

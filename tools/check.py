@@ -35,6 +35,10 @@ def check(path):
         issues.append(("ERR", "title 없음 → 유튜브 제목을 EDL 에 직접 쓰세요(40자 이내, 헤드라인 이어붙이기 금지)"))
     if not edl["lines"][0].get("media"):
         issues.append(("ERR", "첫 문구에 media 없음"))
+    for p in (br.get("cta_shorts") or {}).get("forbidden", []):
+        if any(p in t for _, t in texts):
+            issues.append(("ERR", f"쇼츠에 링크 유도 CTA '{p}' → '지금 쿠팡에 알파셀 혈당 세이프를 검색해보세요!' 로"))
+            break
     for where, t in texts:
         for p in risky:
             if p and p in t:
