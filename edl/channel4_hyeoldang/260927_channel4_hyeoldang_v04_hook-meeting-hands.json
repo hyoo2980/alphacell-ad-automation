@@ -1,0 +1,206 @@
+{
+ "id": "260927_channel4_hyeoldang_v04_hook-meeting-hands",
+ "_assign": "assign.py channel4_hyeoldang 2026-09-27 — 상황 장면형 훅(회의 중 손끝 저림) / 성분 앵글(자색고구마 안토시아닌 이야기 중심) / 보이스 Fenrir / 30~35초. v01(계단)·v02(다리 마사지)·v03(식곤증)과 겹치지 않게 첫컷·훅 문구·컷 순서·소스를 변경하고 안토시아닌 성분 스토리 비중을 늘림",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_hyeolgwan",
+ "layout": "band",
+ "title": "손끝 저림의 이유, 자색고구마 안토시아닌",
+ "headline": [
+  {
+   "text": "회의 중 내려다본 손끝",
+   "color": "yellow"
+  },
+  {
+   "text": "{pink|자색고구마} {green|한 포의 비밀}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "headline_bg": null,
+ "banner": null,
+ "disclaimer": true,
+ "voice": {
+  "provider": "gemini",
+  "voice": "Fenrir"
+ },
+ "bgm": null,
+ "ref_script": "참고 스크립트/혈당/참고스크립트1.txt [2]",
+ "lines": [
+  {
+   "text": "오후 회의 중, {red|손끝이 저릿}했다",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_looking_at_hands_202608170934 (2).mp4"
+    }
+   ]
+  },
+  {
+   "text": "밥만 먹으면 {red|나른해졌다}",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Woman_leaning_on_202604290942.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{red|방치하면} 큰일 난다고 했다",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/119_Rescuers_entering_building_20260913122131.mp4"
+    }
+   ]
+  },
+  {
+   "text": "매일 먹는 {yellow|흰쌀밥}이 문제였다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Freepik_-Shot-Composition-Closeup-Of-A-Korean-Meal-Table-W_Kling_720P_16-9_24Fps_79599.mp4"
+    }
+   ]
+  },
+  {
+   "text": "몸 속은 이미 {yellow|신호 중}이었다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Pancreas_secretes_minimal_insulin_202608162242.mp4"
+    }
+   ]
+  },
+  {
+   "text": "그냥 넘기면 안 될 것 같았다"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를 알게 됐다",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈당 제품 하이라이트 1.mp4"
+    }
+   ]
+  },
+  {
+   "text": "일본 장수마을 이야기였다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/자색 고구마 1.mp4"
+    }
+   ]
+  },
+  {
+   "text": "그 마을 주식이 {pink|자색고구마}였다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/IMG_3463.mov"
+    }
+   ]
+  },
+  {
+   "text": "쪼개보니 속까지 보랏빛이었다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Splitting_purple_sweet_potato_by…_202608171449.mp4"
+    }
+   ]
+  },
+  {
+   "text": "이게 바로 {pink|안토시아닌}이라고 했다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/1 (2).mp4"
+    }
+   ]
+  },
+  {
+   "text": "독일산 {cyan|귀리 베타글루칸}도 더했다",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_dark_202509132300_vsfbi.mp4"
+    }
+   ]
+  },
+  {
+   "text": "밥 위에 {green|한 포만 뿌리면}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/talkv_wzs08OL9aZ_MGj8K8i0JbpBXNOLTnTReK_talkv_high.mov"
+    }
+   ]
+  },
+  {
+   "text": "{green|식후 혈당 관리}가 시작돼요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Gemini_Generated_Image_sz1cowsz1cowsz1c.png"
+    }
+   ]
+  },
+  {
+   "text": "몸속 {yellow|끈적한 당}까지 {green|깔끔하게}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/3D 인체모형 혈관 개선 1.mp4"
+    }
+   ]
+  },
+  {
+   "text": "저릿하던 손끝이 {green|편안해졌어요}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/4a0a8cc8d8da8eab.mp4"
+    }
+   ]
+  },
+  {
+   "text": "회의도 {green|가뿐하게} 앉아요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_stretching_with_bright_expre…_202608170957 (1).mp4"
+    }
+   ]
+  },
+  {
+   "text": "{purple|이거} 하나면 충분해요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/adadca005789830f.mp4"
+    }
+   ]
+  },
+  {
+   "text": "지금 {yellow|쿠팡}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ]
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ]
+  },
+  {
+   "text": "검색해보세요!",
+   "style": "outline",
+   "hold": 0.3,
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ]
+  }
+ ]
+}
