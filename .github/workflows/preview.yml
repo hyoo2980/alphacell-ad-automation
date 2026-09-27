@@ -11,7 +11,7 @@ jobs:
       PYTHONIOENCODING: utf-8
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fontconfig
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fontconfig fonts-noto-cjk
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -30,6 +30,8 @@ jobs:
         run: |
           curl -sSL -o /tmp/gm.zip https://corp.gmarket.com/fonts/GmarketSansTTF.zip
           unzip -o -j /tmp/gm.zip '*.ttf' -d assets/fonts
+          mkdir -p ~/.local/share/fonts && cp assets/fonts/*.ttf ~/.local/share/fonts/ && fc-cache -f
+          fc-list | grep -i gmarket
       - name: 폰트 확인
         run: |
           ls -la assets/fonts

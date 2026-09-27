@@ -64,7 +64,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: ffmpeg
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fontconfig
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fontconfig fonts-noto-cjk
 
       - uses: actions/setup-python@v5
         with:
@@ -91,7 +91,9 @@ jobs:
         run: |
           curl -sSL --retry 3 -o /tmp/gm.zip https://corp.gmarket.com/fonts/GmarketSansTTF.zip
           unzip -o -j /tmp/gm.zip '*.ttf' -d assets/fonts
-          ls assets/fonts
+          # 리눅스 libass 는 fontsdir 로만 준 글꼴의 한글을 네모로 그림 → 시스템 글꼴로 정식 설치
+          mkdir -p ~/.local/share/fonts && cp assets/fonts/*.ttf ~/.local/share/fonts/ && fc-cache -f
+          fc-list | grep -i gmarket
           cd tools && python -c "from common import ass_family; print('자막 글꼴:', ass_family('Gmarket Sans TTF', True))"
 
       - name: 드라이브 동기화 (새 파일만)

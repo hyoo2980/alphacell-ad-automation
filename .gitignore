@@ -20,3 +20,6 @@ claude_output.txt
 /_legacy/
 /logs/
 upload/channels/*/logs/legacy_log.jsonl
+
+# 폰트는 서버가 공식 배포처에서 받음
+assets/fonts/*.ttf
