@@ -1,0 +1,146 @@
+{
+ "id": "260929_channel3_v02_s49",
+ "title": "손발 저림·숨참, 혈관 속 신호일 수 있어요 #혈당관리 #식후혈당 #혈당스파이크",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_ch8",
+ "layout": "band",
+ "base_script": "알파셀_혈당세이프_스크립트_100개_베타글루칸 #49",
+ "headline": [
+  {
+   "text": "손발 저리고 숨찬 날",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|혈관} {green|한 포로 챙겨요}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "elevenlabs",
+  "model": "eleven_v3",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "name": "George",
+  "stability": 0.5,
+  "speed": 1.0,
+  "account": 7
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "손발이 저리고 계단만 올라도",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/손발저림_01.mp4"
+    }
+   ],
+   "style": "outline"
+  },
+  {
+   "text": "숨이 차오른다면",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Climbing_stairs_out_of_breath_202608171151 (1).mp4"
+    }
+   ]
+  },
+  {
+   "text": "혈관 속 포도당이 쌓이며",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/3D-혈당스파이크_01.mp4"
+    }
+   ]
+  },
+  {
+   "text": "몸이 보내는 신호일 수 있어요"
+  },
+  {
+   "text": "흡수가 빠른 초미립분말로 만든",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/1 (2).mp4"
+    }
+   ]
+  },
+  {
+   "text": "베타글루칸과 항산화 성분을",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_completely_202510272258_3avgo.mp4"
+    }
+   ]
+  },
+  {
+   "text": "몸속 깊은 곳까지 챙겨요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/3D-인슐린전달_01.mp4"
+    }
+   ]
+  },
+  {
+   "text": "식후에 몰려오던 피로",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/피곤_01.mp4"
+    }
+   ]
+  },
+  {
+   "text": "어지러운 느낌도 부담 덜고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/식후졸림-버스_01.mp4"
+    }
+   ]
+  },
+  {
+   "text": "하루 컨디션을 가볍게",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/계단-가벼움_01.mp4"
+    }
+   ]
+  },
+  {
+   "text": "매일 한 포 챙겨보세요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/제품-비빔밥_01.mp4"
+    }
+   ]
+  },
+  {
+   "text": "{red|기간 한정} {yellow|62% 할인} 중이에요",
+   "vo": "기간 한정 육십이 퍼센트 할인 중이에요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/62_.mp4"
+    }
+   ]
+  },
+  {
+   "text": "지금 {yellow|쿠팡}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ]
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를"
+  },
+  {
+   "text": "검색해보세요!",
+   "style": "outline",
+   "hold": 0.4
+  }
+ ]
+}
