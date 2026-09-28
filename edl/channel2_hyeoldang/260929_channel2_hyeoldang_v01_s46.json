@@ -1,0 +1,219 @@
+{
+ "id": "260929_channel2_hyeoldang_v01_s46",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_ch6",
+ "layout": "band",
+ "base_script": "알파셀_혈당세이프_스크립트_100개_베타글루칸 #46",
+ "title": "먹자마자 혈당 훅! 흰쌀밥 먹을 때 이렇게 챙기세요 #혈당관리 #식후혈당 #혈당스파이크",
+ "headline": [
+  {
+   "text": "흰쌀밥 먹으면 혈당 훅",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|손발 저림} {green|이제 편해져요}",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "elevenlabs",
+  "model": "eleven_v3",
+  "voice": "EXAVITQu4vr4xnSDxMaL",
+  "name": "Sarah",
+  "stability": 0.5,
+  "speed": 1.0,
+  "account": 5
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "흰쌀밥 먹고 나면",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈당스파이크-쌀밥_01.mp4"
+    }
+   ],
+   "_visual": "rice_spoon_scoop"
+  },
+  {
+   "text": "{red|혈당}이 훅 올라가요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/122.png"
+    }
+   ],
+   "_visual": "glucometer_high"
+  },
+  {
+   "text": "식후엔 나른하고 졸려요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/식후졸림-버스_01.mp4"
+    }
+   ],
+   "_visual": "ugc_drowsy_bus"
+  },
+  {
+   "text": "{red|손발}도 자꾸 저리고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/발저림-밤_01.mp4"
+    }
+   ],
+   "_visual": "ugc_numb_feet"
+  },
+  {
+   "text": "얼굴도 {red|붓는} 것 같다면",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/붓기_01.mp4"
+    }
+   ],
+   "_visual": "ugc_face_swollen"
+  },
+  {
+   "text": "계단 오르면 숨도 차요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/계단숨참_01.mp4"
+    }
+   ],
+   "_visual": "ugc_breathless"
+  },
+  {
+   "text": "{red|혈당 스파이크}가 반복되면",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관_속_포도당_정체_202608162210.mp4"
+    }
+   ],
+   "_visual": "anim_vessel_clogged"
+  },
+  {
+   "text": "몸 전체에 부담이 돼요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/심장부담_01.mp4"
+    }
+   ],
+   "_visual": "anim_heart_clogged"
+  },
+  {
+   "text": "그래서 {purple|알파셀 혈당 세이프}를",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Man_shaking_stick_202603282231 (1).mp4"
+    }
+   ],
+   "_visual": "ugc_show_stick"
+  },
+  {
+   "text": "{pink|자색고구마} 안토시아닌과",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/자색고구마_01.mp4"
+    }
+   ],
+   "_visual": "sweetpotato_split"
+  },
+  {
+   "text": "장수마을에서 유래했어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/장수마을_01.mp4"
+    }
+   ],
+   "_visual": "village_elderly_harvest"
+  },
+  {
+   "text": "독일산 {cyan|베타글루칸}이",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_dark_202509132300_vsfbi.mp4"
+    }
+   ],
+   "_visual": "ingredient_oat_harvest"
+  },
+  {
+   "text": "연구로 완성한 성분이에요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/c46823daa5a98272.mp4"
+    }
+   ],
+   "_visual": "lab_research"
+  },
+  {
+   "text": "{yellow|식후 혈당 관리}를 도와줘요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Blood_cells_clearing_202603262050_2 (1).mp4"
+    }
+   ],
+   "_visual": "anim_vessel_clean"
+  },
+  {
+   "text": "밥 위에 한 포 뿌려요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/제품-반찬뿌리기_01.mp4"
+    }
+   ],
+   "_visual": "meal_sprinkle_rice"
+  },
+  {
+   "text": "{green|손발 저림}도 편해지고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/손저림-해소_01.mp4"
+    }
+   ],
+   "_visual": "ugc_hand_relief"
+  },
+  {
+   "text": "몸도 한결 {green|가벼워져요}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/운동-개선_01.mp4"
+    }
+   ],
+   "_visual": "ugc_active_happy"
+  },
+  {
+   "text": "{red|기간 한정} {yellow|62% 할인} 중이에요",
+   "vo": "기간 한정 육십이 퍼센트 할인 중이에요",
+   "style": "outline",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/62_.mp4"
+    }
+   ],
+   "_visual": "sign_discount"
+  },
+  {
+   "text": "지금 {yellow|쿠팡}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ],
+   "_visual": "coupang_search"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를"
+  },
+  {
+   "text": "검색해보세요!",
+   "style": "outline",
+   "hold": 0.4
+  }
+ ]
+}
