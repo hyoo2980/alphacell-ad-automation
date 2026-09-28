@@ -1,0 +1,35 @@
+{
+  "_note": "channel2_hyeoldang: 초록 박스+흰 글자, 정자체",
+  "extends": "hyeoldang",
+  "layouts": {
+    "band": {
+      "subtitle_y": 1335
+    }
+  },
+  "headline": {
+    "italic": false,
+    "size": 95
+  },
+  "subtitle_styles": {
+    "box": {
+      "color": "white",
+      "box_color": "#0A7A2F",
+      "italic": false,
+      "size": 84,
+      "box_pad": 12,
+      "emphasis_map": {
+        "green": "yellow"
+      }
+    },
+    "outline": {
+      "color": "#FFFFFF",
+      "outline": 7,
+      "outline_color": "#0A7A2F",
+      "italic": false,
+      "size": 88,
+      "emphasis_map": {
+        "green": "yellow"
+      }
+    }
+  }
+}

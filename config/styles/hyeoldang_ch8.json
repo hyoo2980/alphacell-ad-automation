@@ -1,0 +1,36 @@
+{
+  "_note": "channel3: 보라 박스+흰 글자, 정자체",
+  "extends": "hyeoldang",
+  "layouts": {
+    "band": {
+      "subtitle_y": 1380
+    }
+  },
+  "headline": {
+    "italic": false,
+    "size": 93
+  },
+  "subtitle_styles": {
+    "box": {
+      "color": "white",
+      "box_color": "#6A1B9A",
+      "italic": false,
+      "size": 84,
+      "box_pad": 12,
+      "emphasis_map": {
+        "purple": "yellow",
+        "pink": "yellow"
+      }
+    },
+    "outline": {
+      "color": "#FFFFFF",
+      "outline": 7,
+      "outline_color": "#6A1B9A",
+      "italic": false,
+      "size": 88,
+      "emphasis_map": {
+        "purple": "yellow"
+      }
+    }
+  }
+}

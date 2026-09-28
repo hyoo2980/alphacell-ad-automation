@@ -51,15 +51,30 @@
     ]
   },
   "channel2_hyeoldang": {
-    "enabled": false,
-    "_disabled_reason": "GCP 프로젝트 쿼터 0 (정책 위반 표시)"
+    "enabled": true,
+    "brand": "alphacell",
+    "style_profile": "hyeoldang_ch6",
+    "group": "혈당",
+    "publish_slots": [
+      "12:30"
+    ]
   },
   "channel3_hyeoldang": {
-    "enabled": false,
-    "_disabled_reason": "GCP 프로젝트 쿼터 0 (정책 위반 표시)"
+    "enabled": true,
+    "brand": "alphacell",
+    "style_profile": "hyeoldang_ch7",
+    "group": "혈당",
+    "publish_slots": [
+      "13:30"
+    ]
   },
   "channel3": {
-    "enabled": false,
-    "_disabled_reason": "GCP 프로젝트 쿼터 0 (정책 위반 표시)"
+    "enabled": true,
+    "brand": "alphacell",
+    "style_profile": "hyeoldang_ch8",
+    "group": "혈당",
+    "publish_slots": [
+      "14:30"
+    ]
   }
 }
