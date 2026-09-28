@@ -11,8 +11,8 @@ from common import ROOT, load_json
 
 if "--enabled-channels" in sys.argv:
     chs = load_json(ROOT / "upload" / "channels.json")
-    only = os.environ.get("ONLY_CHANNEL", "").strip()
-    ids = [k for k, v in chs.items() if not k.startswith("_") and v.get("enabled") and (not only or k == only)]
+    only = {c.strip() for c in os.environ.get("ONLY_CHANNEL", "").split(",") if c.strip()}   # 쉼표로 여러 채널
+    ids = [k for k, v in chs.items() if not k.startswith("_") and v.get("enabled") and (not only or k in only)]
     print(json.dumps(ids))
     sys.exit(0)
 
