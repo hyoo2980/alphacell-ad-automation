@@ -1,0 +1,183 @@
+{
+ "id": "260929_channel2_hyeoldang_v02_s47",
+ "brand": "alphacell",
+ "style_profile": "hyeoldang_ch6",
+ "layout": "band",
+ "base_script": "알파셀_혈당세이프_스크립트_100개_베타글루칸 #47",
+ "title": "99%가 모르는 혈당·혈압 관리의 진실 4가지 #혈당관리 #식후혈당 #혈당스파이크",
+ "headline": [
+  {
+   "text": "혈당·혈압 신경 쓰이면",
+   "color": "yellow"
+  },
+  {
+   "text": "{red|손발저림} {green|어지럼}도 체크",
+   "color": "white"
+  },
+  {
+   "text": "알파셀 혈당 세이프",
+   "color": "purple"
+  }
+ ],
+ "disclaimer": true,
+ "voice": {
+  "provider": "elevenlabs",
+  "model": "eleven_v3",
+  "voice": "FGY2WhTYpPnrIDTdsKH5",
+  "name": "Laura",
+  "stability": 0.5,
+  "speed": 1.0,
+  "account": 5
+ },
+ "bgm": null,
+ "lines": [
+  {
+   "text": "혈당, 혈압이 같이 흔들리면",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈당측정기_01.mp4"
+    }
+   ],
+   "_visual": "glucometer_high",
+   "style": "outline"
+  },
+  {
+   "text": "{red|손발저림}, 어지럼이 잦아요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/손발저림_01.mp4"
+    }
+   ],
+   "_visual": "ugc_numb_hands"
+  },
+  {
+   "text": "가슴이 답답할 때도 있고",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/40_3.mp4"
+    }
+   ],
+   "_visual": "ugc_chest_pain"
+  },
+  {
+   "text": "{red|혈관} 건강이 걱정된다면",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈관막힘_01.mp4"
+    }
+   ],
+   "_visual": "anim_vessel_clogged"
+  },
+  {
+   "text": "{red|혈당 스파이크}가 반복되면",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/3D-혈당스파이크_01.mp4"
+    }
+   ],
+   "_visual": "anim_vessel_clogged"
+  },
+  {
+   "text": "심장에도 부담이 쌓여요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/심장부담_01.mp4"
+    }
+   ],
+   "_visual": "anim_heart_clogged"
+  },
+  {
+   "text": "그래서 {purple|알파셀}이 준비했어요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/제품컷2.mov"
+    }
+   ],
+   "_visual": "product_sticks_hand",
+   "style": "outline"
+  },
+  {
+   "text": "독일에서 최초로 유통한",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/In_a_dark_202509132300_vsfbi.mp4"
+    }
+   ],
+   "_visual": "ingredient_oat_harvest"
+  },
+  {
+   "text": "초미립 {cyan|베타글루칸}이에요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/귀리를_수확한다._20260912202041.mp4"
+    }
+   ],
+   "_visual": "ingredient_oat_harvest"
+  },
+  {
+   "text": "건강한 혈당 관리를 위해",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/3D-인슐린전달_01.mp4"
+    }
+   ],
+   "_visual": "anim_pancreas"
+  },
+  {
+   "text": "{green|혈당 관리}에 도움을 줘요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/췌장_01.mp4"
+    }
+   ],
+   "_visual": "anim_pancreas"
+  },
+  {
+   "text": "스틱 한 포로 간편하게",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/제품섭취_01.mp4"
+    }
+   ],
+   "_visual": "ugc_intake"
+  },
+  {
+   "text": "밥에 뿌려 먹어도 좋아요",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/제품-비빔밥_01.mp4"
+    }
+   ],
+   "_visual": "product_stick_open_sprinkle"
+  },
+  {
+   "text": "{red|기간 한정} {yellow|62% 할인}",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/62_.mp4"
+    }
+   ],
+   "_visual": "sign_discount",
+   "vo": "기간 한정 육십이 퍼센트 할인",
+   "style": "outline"
+  },
+  {
+   "text": "지금 {yellow|쿠팡}에",
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+     "focus_x": 0.3
+    }
+   ],
+   "_visual": "coupang_search"
+  },
+  {
+   "text": "{purple|알파셀 혈당 세이프}를"
+  },
+  {
+   "text": "검색해보세요!",
+   "style": "outline",
+   "hold": 0.4
+  }
+ ]
+}
