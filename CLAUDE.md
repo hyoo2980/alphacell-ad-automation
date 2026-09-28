@@ -57,7 +57,9 @@ Claude는 **퍼포먼스 마케터 겸 영상 편집자**로 일한다. HSO(Hook
    여럿이면 덜 쓴 것(앞쪽)을 먼저 쓴다 — 새 소스만 쓰라는 뜻이 아니다. 한 영상 안 같은 소스 반복 금지.
    할인 문구는 `62_.mp4`·제품 박스, CTA 는 `쿠팡.png`(`focus_x: 0.3`).
 4. `edl/<채널id>/<YYMMDD>_<채널id>_v<번호>_s<스크립트번호>.json` 저장: `brand`·`style_profile`·`voice` 는 배정값,
-   `disclaimer: true`, `base_script`: 배정 id, `title`(40자 이내 자연스러운 한 문장), 헤드라인 3줄(한 줄 13자 이내,
+   `disclaimer: true`, `base_script`: 배정 id, `title`: `library/title_trends.json` 의 `top` 제목 10개 정도만 보고
+   그 패턴(숫자·결론형 "~ 4가지", 반전형 "99%가 모르는 ~의 진실", 자극형 "먹자마자 혈당 폭발!", 행동형 "~ 따라하세요",
+   끝에 해시태그 #혈당관리 #식후혈당 #혈당스파이크 등)을 따라 **비슷하게** 짓는다(그대로 복사 금지, 100자 이내), 헤드라인 3줄(한 줄 13자 이내,
    3줄째 "알파셀 혈당 세이프").
 5. `cd tools && python check.py ../edl/<채널id>/<파일>.json` 한 번 → ERR(소스 없음 등 렌더 불가)만 고친다. WARN 무시.
 
