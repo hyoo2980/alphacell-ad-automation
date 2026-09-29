@@ -116,7 +116,25 @@ def ask_eleven():
         print(f"  → 추가 계정 {len(accs)}개 등록 (처음 등록한 계정과 합쳐서 사용). 합계 5개 이상 권장, 6개면 여유.")
 
 
+def ask_google_tts():
+    print("\n=== Google Cloud TTS 키 (정보형 쇼츠 음성) ===")
+    print("console.cloud.google.com → Text-to-Speech API 사용 → 사용자 인증 정보 → API 키 만들기 → 붙여넣고 Enter (건너뛰려면 Enter)")
+    for _ in range(3):
+        k = clean(input("Google TTS 키: "))
+        if not k:
+            return
+        r = requests.post("https://texttospeech.googleapis.com/v1/text:synthesize", params={"key": k}, timeout=30, json={
+            "input": {"text": "테스트"}, "voice": {"languageCode": "ko-KR", "name": "ko-KR-Neural2-C"},
+            "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": 24000}})
+        if r.ok:
+            print("  ✓ 키 정상 동작")
+            gh_set("GOOGLE_TTS_API_KEY", k)
+            return
+        print(f"  ✗ 거절 (HTTP {r.status_code}: {r.text[:150]}) → Text-to-Speech API 사용 설정·결제 연결을 확인하세요")
+
+
 def main():
+    ask_google_tts()
     ask_eleven()
     ask_gemini()
     ask_claude()

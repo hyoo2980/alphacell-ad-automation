@@ -194,9 +194,17 @@ jobs:
           claude -p "CLAUDE.md 의 '서버 자동 제작' 절차대로 채널 ${CHANNEL} 용 새 EDL ${COUNT}개를 edl/${CHANNEL}/ 에 작성하라. 오늘 날짜는 $(date +%Y-%m-%d), 파일명 앞자리는 $(date +%y%m%d) 이다." \
             --dangerously-skip-permissions --max-turns 40 --output-format text | tee claude_output.txt
 
+      - name: 정보형 편집계획 작성 (Claude)
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          claude -p "CLAUDE.md 의 '정보형 쇼츠 제작' 절차대로 채널 ${CHANNEL} 용 정보형 EDL ${COUNT}개를 edl/${CHANNEL}/ 에 작성하라. 오늘 날짜는 $(date +%Y-%m-%d), 파일명 앞자리는 $(date +%y%m%d) 이다." \
+            --dangerously-skip-permissions --max-turns 40 --output-format text | tee -a claude_output.txt
+
       - name: 렌더 + 예약 업로드
         env:
           ELEVENLABS_ACCOUNTS: ${{ secrets.ELEVENLABS_ACCOUNTS }}
+          GOOGLE_TTS_API_KEY: ${{ secrets.GOOGLE_TTS_API_KEY }}
         run: |
           # 채널마다 음성 요청 시점을 40초씩 늦춰 Gemini 분당 한도 충돌 방지
           idx=$(python3 -c "import json,os;print(json.loads(os.environ['ALL'] ).index(os.environ['CHANNEL']))")

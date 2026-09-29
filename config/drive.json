@@ -18,6 +18,18 @@
       "dest": "참고 스크립트/혈당",
       "kind": "scripts",
       "group": "혈당"
+    },
+    {
+      "id": "1UVW1dl3SNwWnziIWtlXTxtdIeZq37OaG",
+      "dest": "참고 스크립트/경쟁사_바르통SOD",
+      "kind": "scripts_competitor",
+      "group": "혈당"
+    },
+    {
+      "id": "10wPvklW66VCCJpQr6lska3XXPXuDFbnh",
+      "dest": "참고 스크립트/경쟁사_솔티스혈관클리어",
+      "kind": "scripts_competitor",
+      "group": "혈당"
     }
   ]
 }

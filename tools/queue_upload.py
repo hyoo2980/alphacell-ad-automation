@@ -55,7 +55,7 @@ def make_title(mf, br, UP):
     return f"{ctx['hook']} ({datetime.now():%m%d})"[:100]
 
 
-def queue(manifest_path, channel, title=None, folder="inbox"):
+def queue(manifest_path, channel, title=None, folder="inbox", slot_group=None):
     mf = load_json(manifest_path)
     UP = UPLOAD / "channels" / channel
     cfg = load_json(UPLOAD / "config.json")
@@ -70,7 +70,7 @@ def queue(manifest_path, channel, title=None, folder="inbox"):
     tags = list(dict.fromkeys(br.get("upload_tags", []) + cfg["default_tags"]))
     edl_title = load_json(mf["edl"]).get("title") if mf.get("edl") else None
     meta = {"title": title or edl_title or make_title(mf, br, UP), "description": desc, "tags": tags,
-            "is_short": mf["duration"] <= 180 and cfg["is_short"]}
+            "is_short": mf["duration"] <= 180 and cfg["is_short"], "slot_group": slot_group}
     save_json(dst.with_suffix(".json"), meta)
     print(f"[업로드 {'대기열' if folder == 'inbox' else folder}] {dst.name}  제목: {meta['title']}")
     return dst

@@ -408,6 +408,16 @@ if __name__ == "__main__":
     ap.add_argument("--force-upload", action="store_true", help="위험 표현이 있어도 업로드(사람이 확인한 경우만)")
     ap.add_argument("--verify", action="store_true", help="(선택) 자동 검수 실행 — 기본은 안 함")
     a = ap.parse_args()
+    if load_json(a.edl).get("format") == "info":   # 정보형 쇼츠 (다른 레이아웃·음성, 저녁 슬롯)
+        from render_info import render_info
+        _, mf = render_info(a.edl)
+        rc = None
+        if a.upload:
+            from queue_upload import queue
+            queue(mf, a.channel, slot_group="info")
+            rc = subprocess.run([sys.executable, str(ROOT / "upload/scripts/upload_daily.py"),
+                                 "--channel", a.channel]).returncode
+        sys.exit(rc or 0)
     _, ok, rc = render(a.edl, a.preview, a.qa, a.upload, a.force_upload, a.channel, a.verify)
     # 종료 코드: --verify 실패 1, 업로드 스크립트 오류는 그 코드(2 로그인 만료, 3 쿼터, 4 업로드 실패)
     sys.exit(1 if not ok else (rc or 0))

@@ -54,7 +54,7 @@ def meta_for(video_path):
     while sum(len(t) for t in tags) > 500:          # 태그 합계 500자 제한
         tags = tags[:-1]
     return {"title": (m.get("title") or name.replace("_", " "))[:100], "description": desc[:4900],
-            "tags": tags, "is_short": m.get("is_short", CFG["is_short"])}
+            "tags": tags, "is_short": m.get("is_short", CFG["is_short"]), "slot_group": m.get("slot_group")}
 
 
 def done_files():
@@ -123,8 +123,9 @@ def main():
         m = meta_for(path)
         # PUBLISH_NOW=1 (또는 --now): 예약 없이 즉시 공개 — 사람이 실시간으로 확인할 때만
         now_mode = os.environ.get("PUBLISH_NOW") == "1" or "--now" in sys.argv
+        slots = CFG.get("publish_slots_info", CFG["publish_slots"]) if m.get("slot_group") == "info" else CFG["publish_slots"]
         publish_at = None if now_mode else compute_publish_at.compute(
-            logp, CFG["publish_slots"], min_lead_hours=CFG.get("min_lead_hours", 0))
+            logp, slots, min_lead_hours=CFG.get("min_lead_hours", 0))
         body = {
             "snippet": {"title": m["title"],
                         "description": m["description"] + ("\n\n#Shorts" if m["is_short"] else ""),

@@ -104,6 +104,48 @@ def assign(channel, day):
     }
 
 
+INFO_TOPICS = ["식후졸음", "혈당 스파이크", "손발 저림·붓기", "끈적한 혈액", "인슐린 저항성", "공복혈당", "당화혈색소",
+               "계절·명절", "뱃살", "50대 이후", "쌀밥·국수", "수면", "스트레스", "갈증", "계단 숨참"]
+INFO_PATTERNS = ["질문형", "의외의 사실", "일상 사례(예를 들어 ~하는 50대)", "체크리스트·Q&A"]
+INFO_VOICES = ["ko-KR-Neural2-C", "ko-KR-Neural2-A", "ko-KR-Neural2-B", "ko-KR-Wavenet-C", "ko-KR-Wavenet-D"]
+INFO_BAN_NAMES = ("58_", "62_", "12_58_", "20260817_164349", "쿠팡", "약사섭취", "0815", "0816", "IMG_3463", "IMG_7333",
+                  "제품컷2")
+INFO_BAN_VISUALS = ("sign_discount", "secret_link_page", "coupang_search", "show_host", "person_studio", "ugc_show_box",
+                    "ugc_show_stick", "ugc_intake", "emergency_119", "import_customs", "warehouse_shipping",
+                    "prior_ad_doctor", "authority_doctor")
+
+
+def assign_info(channel, day):
+    """정보형 쇼츠 배정: 주제(15)·패턴(4)·보이스(5) 순환 + 사용 가능한 소스(금지 소스·세로 영상 제외, 길이 포함)."""
+    chs = load_json(ROOT / "upload" / "channels.json")
+    active = [k for k, v in chs.items() if not k.startswith("_") and v.get("enabled")]
+    slot = active.index(channel) if channel in active else 0
+    ymd = day.strftime("%y%m%d")
+    shift = max([len(list((ROOT / "edl" / c).glob(f"{ymd}_*info*.json"))) for c in active] or [0])
+    o = day.toordinal()
+    usage = source_usage(day)
+    items = [x for x in load_json(LIB / "index.json")
+             if x.get("labels") and not x["labels"].get("has_text") and (x["labels"].get("quality") or 0) >= 2
+             and not any(b in x["name"] for b in INFO_BAN_NAMES) and x["labels"].get("visual") not in INFO_BAN_VISUALS
+             and not ((x.get("h") or 0) > (x.get("w") or 0))]
+    items.sort(key=lambda x: usage.get(x["path"], 0))
+    refs = {}
+    for folder in ("경쟁사_바르통SOD", "경쟁사_솔티스혈관클리어"):
+        fs = sorted((ROOT / "참고 스크립트" / folder).glob("*.txt"))
+        refs[folder] = [f.relative_to(ROOT).as_posix() for f in (fs[(o * 8 + slot + i) % len(fs)] for i in range(2))] if fs else []
+    return {
+        "channel": channel, "date": day.isoformat(), "format": "info",
+        "topic": INFO_TOPICS[(o * 8 + slot + shift) % len(INFO_TOPICS)],
+        "pattern": INFO_PATTERNS[(o + slot + shift) % len(INFO_PATTERNS)],
+        "voice": {"provider": "google", "voice": INFO_VOICES[(o + slot) % len(INFO_VOICES)], "rate": 1.08},
+        "product_script": "참고 스크립트/혈당/참고스크립트1.txt",
+        "competitor_hooks": refs,
+        "sources_by_usage": [f"{usage.get(x['path'], 0)}회 | {x.get('duration', 0)}초 | {x['labels']['visual']} | "
+                             f"{x['labels']['desc']} | {x['path']}" for x in items],
+    }
+
+
 if __name__ == "__main__":
-    d = date.fromisoformat(sys.argv[2]) if len(sys.argv) > 2 else date.today()
-    print(json.dumps(assign(sys.argv[1], d), ensure_ascii=False, indent=2))
+    d = date.fromisoformat(sys.argv[2]) if len(sys.argv) > 2 and not sys.argv[2].startswith("-") else date.today()
+    fn = assign_info if "--info" in sys.argv else assign
+    print(json.dumps(fn(sys.argv[1], d), ensure_ascii=False, indent=2))
