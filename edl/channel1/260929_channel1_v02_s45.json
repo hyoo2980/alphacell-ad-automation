@@ -1,0 +1,153 @@
+{
+  "id": "260929_channel1_v02_s45",
+  "_brief": "assign.py channel1 2026-09-29, base_script #45 각색(손발 저림 훅, 확신형). 수치·치료 표현 제거, CTA 쿠팡 검색 교체.",
+  "title": "이 손 저림, 그냥 넘기면 안 되는 이유 #손발저림 #혈당관리",
+  "brand": "alphacell",
+  "style_profile": "hyeoldang_geongang",
+  "layout": "band",
+  "headline": [
+    {
+      "text": "손끝 찌릿함 {red|장담하는데}",
+      "color": "white"
+    },
+    {
+      "text": "식후 혈당부터 확인",
+      "color": "yellow"
+    },
+    {
+      "text": "알파셀 혈당 세이프",
+      "color": "purple"
+    }
+  ],
+  "disclaimer": true,
+  "base_script": "알파셀_혈당세이프_스크립트_100개_베타글루칸 #45",
+  "voice": {
+    "provider": "elevenlabs",
+    "model": "eleven_v3",
+    "voice": "CwhRBWXzGAHq8TQ4Fs17",
+    "name": "Roger",
+    "stability": 0.5,
+    "speed": 1.0,
+    "account": 2
+  },
+  "bgm": null,
+  "lines": [
+    {
+      "text": "자꾸 {red|손끝이 찌릿}하다면",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Person_rubbing_numb_hand_202608170921.mp4"
+        }
+      ]
+    },
+    {
+      "text": "장담하는데, 이거 {yellow|확인}하세요"
+    },
+    {
+      "text": "주방에서도 {red|손이 저려}",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/0329_14.mp4"
+        }
+      ]
+    },
+    {
+      "text": "밤에 손을 주무르게 되죠",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/Rubbing_cold_hands_together_20260913123647.mp4"
+        }
+      ]
+    },
+    {
+      "text": "식후 혈당이 {red|자꾸 튀면}",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/혈당스파이크-쌀밥_01.mp4"
+        }
+      ]
+    },
+    {
+      "text": "몸은 인슐린을 {yellow|더 애써} 쓰고",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/3D-인슐린전달_01.mp4"
+        }
+      ]
+    },
+    {
+      "text": "혈관도 {yellow|지쳐가요}"
+    },
+    {
+      "text": "그래서 밥에 {purple|한 포}",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/밥뿌리기_01.mp4"
+        }
+      ]
+    },
+    {
+      "text": "{purple|알파셀 혈당 세이프}",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/제품-비빔밥_01.mp4"
+        }
+      ],
+      "style": "outline"
+    },
+    {
+      "text": "귀리 식이섬유가 식후 혈당",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/원료를_연구한다._20260912202234.mp4"
+        }
+      ]
+    },
+    {
+      "text": "상승 억제를 {yellow|도와줘요}"
+    },
+    {
+      "text": "밥에 뿌리기만 하면 끝",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/제품섭취-저녁식탁_01.mp4"
+        }
+      ]
+    },
+    {
+      "text": "가벼운 오후를 {yellow|되찾아보세요}",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/행복해하는 중년 여성.mp4"
+        }
+      ]
+    },
+    {
+      "text": "{yellow|62%} 할인, {red|기간 한정}이에요",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/62_.mp4"
+        }
+      ],
+      "vo": "육십이 퍼센트 할인, 기간 한정이에요",
+      "style": "outline"
+    },
+    {
+      "text": "지금 {yellow|쿠팡}에",
+      "media": [
+        {
+          "src": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
+          "focus_x": 0.3
+        }
+      ]
+    },
+    {
+      "text": "{purple|알파셀 혈당 세이프}를"
+    },
+    {
+      "text": "검색해보세요!",
+      "style": "outline",
+      "hold": 0.4
+    }
+  ]
+}
