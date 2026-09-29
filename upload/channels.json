@@ -78,7 +78,7 @@
     ]
   },
   "channel3_hyeoldang": {
-    "enabled": true,
+    "enabled": false,
     "brand": "alphacell",
     "style_profile": "hyeoldang_ch7",
     "group": "혈당",
@@ -87,10 +87,11 @@
     ],
     "publish_slots_info": [
       "22:00"
-    ]
+    ],
+    "_disabled_reason": "2026-09-30 새 GCP 프로젝트 OAuth 클라이언트도 비활성화됨(disabled_client) — 계정 단위 표시 의심, 재검토 요청 후 재개"
   },
   "channel3": {
-    "enabled": true,
+    "enabled": false,
     "brand": "alphacell",
     "style_profile": "hyeoldang_ch8",
     "group": "혈당",
@@ -99,6 +100,7 @@
     ],
     "publish_slots_info": [
       "22:30"
-    ]
+    ],
+    "_disabled_reason": "2026-09-30 새 GCP 프로젝트 OAuth 클라이언트도 비활성화됨(disabled_client) — 계정 단위 표시 의심, 재검토 요청 후 재개"
   }
 }
