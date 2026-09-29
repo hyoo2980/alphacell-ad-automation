@@ -70,6 +70,20 @@ def base_scripts(group):
     return out
 
 
+SHARED_VISUALS = ("product_", "coupang_search", "sign_discount", "meal_sprinkle_rice", "powder_purple", "ugc_intake")
+
+
+def channel_pool(items, slot, n):
+    """채널별 소스 분리: 필수 장면(제품·뿌리기·쿠팡 등)은 공용, 나머지는 채널마다 1/n 씩 나눠 주로 쓰게 한다.
+    같은 날 8채널이 같은 컷을 쓰지 않게(유사 영상 노출 제한 방지). 자기 묶음이 모자라면 다른 소스도 뒤에 붙인다."""
+    shared = [x for x in items if x["labels"]["visual"].startswith(SHARED_VISUALS)]
+    rest = [x for x in items if x not in shared]
+    rest_sorted = sorted(rest, key=lambda x: x["path"])
+    mine = [x for i, x in enumerate(rest_sorted) if i % n == slot]
+    others = [x for x in rest if x not in mine]
+    return mine + shared, others
+
+
 def assign(channel, day):
     chs = load_json(ROOT / "upload" / "channels.json")
     active = [k for k, v in chs.items() if not k.startswith("_") and v.get("enabled")]
@@ -100,7 +114,10 @@ def assign(channel, day):
         "title_style": TITLE_STYLES[(day.toordinal() * 3 + slot + shift) % len(TITLE_STYLES)],
         "first_cut_candidates": [f"{x['labels']['desc']} | {x['path']}" for x in hook_cuts],
         "sources_by_usage": [f"{usage.get(x['path'], 0)}회 | {x['labels']['visual']} | {x['labels']['beat']} | "
-                             f"{x['labels']['desc']} | {x['path']}" for x in items],
+                             f"{x['labels']['desc']} | {x['path']}" for x in channel_pool(items, slot, len(active))[0]],
+        "sources_other_channels": [f"{x['labels']['visual']} | {x['labels']['desc']} | {x['path']}"
+                                   for x in channel_pool(items, slot, len(active))[1]],
+        "source_rule": "sources_by_usage(이 채널 전용 묶음 + 필수 공용)에서 먼저 고른다. 맞는 게 정말 없을 때만 sources_other_channels.",
     }
 
 
@@ -141,7 +158,10 @@ def assign_info(channel, day):
         "product_script": "참고 스크립트/혈당/참고스크립트1.txt",
         "competitor_hooks": refs,
         "sources_by_usage": [f"{usage.get(x['path'], 0)}회 | {x.get('duration', 0)}초 | {x['labels']['visual']} | "
-                             f"{x['labels']['desc']} | {x['path']}" for x in items],
+                             f"{x['labels']['desc']} | {x['path']}" for x in channel_pool(items, slot, len(active))[0]],
+        "sources_other_channels": [f"{x.get('duration', 0)}초 | {x['labels']['visual']} | {x['labels']['desc']} | {x['path']}"
+                                   for x in channel_pool(items, slot, len(active))[1]],
+        "source_rule": "sources_by_usage(이 채널 전용 묶음 + 필수 공용)에서 먼저 고른다. 맞는 게 정말 없을 때만 sources_other_channels.",
     }
 
 
