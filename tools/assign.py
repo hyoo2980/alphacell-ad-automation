@@ -24,6 +24,15 @@ SYMPTOM_VISUALS = {  # 훅 증상에 맞는 첫 컷 비주얼
     "손발 저림·찌릿함": ("ugc_numb_hands", "hands_still", "ugc_leg_pain"),
     "식후 혈당 급상승(흰 쌀밥)": ("glucometer_high", "glucose_test", "meal_sprinkle_rice"),
 }
+TITLE_STYLES = [  # 제목 스타일 순환 (같은 날 채널끼리 다르게, 인기 제목 패턴 중 하나만)
+    "숫자형 — '~하는 3가지', '40초만 따라하세요'",
+    "반전·진실형 — '~의 진실', '알고 보니 ~였어요'",
+    "질문형 — '~하시나요?', '왜 ~할까?'",
+    "경고·자극형 — '먹자마자 혈당 폭발!', '이거 모르면 ~'",
+    "경험·고백형 — '~했더니 ~ 싹 잡혔어요', '저도 몰랐어요'",
+    "상황 묘사형 — '점심 먹고 2시, 눈꺼풀이 내려앉는다면'",
+    "비교형 — 'A 말고 B', '~보다 먼저 챙길 것'",
+]
 LENGTHS = ["30~35초", "35~40초", "40~45초", "32~38초", "36~42초"]
 
 
@@ -88,6 +97,7 @@ def assign(channel, day):
         "hook_type": HOOKS[k], "hook_symptom": symptom,
         "voice": {**voices[(day.toordinal() * 5 + slot + shift) % len(voices)], "account": slot},   # 목소리 14종 순환   # account: 채널 담당 ElevenLabs 계정
         "length": LENGTHS[slot % len(LENGTHS)],
+        "title_style": TITLE_STYLES[(day.toordinal() * 3 + slot + shift) % len(TITLE_STYLES)],
         "first_cut_candidates": [f"{x['labels']['desc']} | {x['path']}" for x in hook_cuts],
         "sources_by_usage": [f"{usage.get(x['path'], 0)}회 | {x['labels']['visual']} | {x['labels']['beat']} | "
                              f"{x['labels']['desc']} | {x['path']}" for x in items],
