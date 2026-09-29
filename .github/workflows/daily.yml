@@ -19,6 +19,10 @@ on:
         description: "채널당 제작 편수"
         required: false
         default: "1"
+      formats:
+        description: "만들 형식: both(광고형+정보형) / ad / info"
+        required: false
+        default: "both"
       publish_now:
         description: "예약 없이 즉시 공개 (실시간 확인용)"
         type: boolean
@@ -188,6 +192,7 @@ jobs:
 
       # Claude 는 편집계획(EDL)만 쓴다. 렌더·업로드는 아래 스크립트가 한 번만 실행(재시도·자동 검수 없음 → 토큰 절약)
       - name: 편집계획 작성 (Claude)
+        if: github.event.inputs.formats != 'info'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
@@ -195,6 +200,7 @@ jobs:
             --dangerously-skip-permissions --max-turns 40 --output-format text | tee claude_output.txt
 
       - name: 정보형 편집계획 작성 (Claude)
+        if: github.event.inputs.formats != 'ad'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
