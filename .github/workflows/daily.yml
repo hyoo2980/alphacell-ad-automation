@@ -23,6 +23,11 @@ on:
         description: "만들 형식: both(광고형+정보형) / ad / info"
         required: false
         default: "both"
+      no_upload:
+        description: "업로드 없이 영상만 만들기 (검토용, Artifacts 로 받음)"
+        type: boolean
+        required: false
+        default: false
       publish_now:
         description: "예약 없이 즉시 공개 (실시간 확인용)"
         type: boolean
@@ -223,7 +228,8 @@ jobs:
           rc=0
           for e in "${edls[@]}"; do
             echo "=== $e"
-            python render.py "$e" --channel "${CHANNEL}" --upload || { rc=$?; echo "::error::$e 실패 (코드 $rc: 2 로그인 만료 / 3 쿼터 / 4 업로드 실패)"; }
+            up="--upload"; [ "${{ github.event.inputs.no_upload }}" = "true" ] && up=""
+            python render.py "$e" --channel "${CHANNEL}" $up || { rc=$?; echo "::error::$e 실패 (코드 $rc: 2 로그인 만료 / 3 쿼터 / 4 업로드 실패)"; }
           done
           exit $rc
 
