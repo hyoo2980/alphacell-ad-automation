@@ -2227,6 +2227,27 @@
   },
   {
     "idx": 106,
+    "path": "참고영상 소스/혈당 영상 사용할 소스/식후피로-사무실_01.mp4",
+    "name": "식후피로-사무실_01.mp4",
+    "md5": "06027bfde03d5fcdde5bbee2f78c844b",
+    "kind": "source",
+    "group": "혈당",
+    "type": "video",
+    "w": 1280,
+    "h": 720,
+    "duration": 8.0,
+    "has_audio": true,
+    "thumb": "library/sources/혈당/thumbs/106.jpg",
+    "labels": {
+      "visual": "ugc_drowsy_office",
+      "beat": "problem",
+      "desc": "사무실에서 식후 피로로 머리 짚고 졸려하는 중년 남성",
+      "has_text": false,
+      "quality": 3
+    }
+  },
+  {
+    "idx": 107,
     "path": "참고영상 소스/혈당 영상 사용할 소스/심장부담_01.mp4",
     "name": "심장부담_01.mp4",
     "md5": "c3b2d3da08e5ab2de55a3bd10d42ece8",
@@ -2237,7 +2258,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/106.jpg",
+    "thumb": "library/sources/혈당/thumbs/107.jpg",
     "labels": {
       "visual": "anim_heart_clogged",
       "beat": "enemy",
@@ -2247,7 +2268,7 @@
     }
   },
   {
-    "idx": 107,
+    "idx": 108,
     "path": "참고영상 소스/혈당 영상 사용할 소스/안토시아닌 분말 손 가득.mp4",
     "name": "안토시아닌 분말 손 가득.mp4",
     "md5": "a9ff73f91a0f98696ee384f2fcbc55f8",
@@ -2258,7 +2279,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/107.jpg",
+    "thumb": "library/sources/혈당/thumbs/108.jpg",
     "labels": {
       "visual": "powder_purple_hands",
       "beat": "ingredient",
@@ -2268,7 +2289,7 @@
     }
   },
   {
-    "idx": 108,
+    "idx": 109,
     "path": "참고영상 소스/혈당 영상 사용할 소스/안토시아닌 폭발 1.mp4",
     "name": "안토시아닌 폭발 1.mp4",
     "md5": "01e3895a840e5a3a3f818f1c1552e31c",
@@ -2279,7 +2300,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/108.jpg",
+    "thumb": "library/sources/혈당/thumbs/109.jpg",
     "labels": {
       "visual": "powder_purple_particles",
       "beat": "mechanism",
@@ -2289,7 +2310,7 @@
     }
   },
   {
-    "idx": 109,
+    "idx": 110,
     "path": "참고영상 소스/혈당 영상 사용할 소스/약사섭취_01.mp4",
     "name": "약사섭취_01.mp4",
     "md5": "72e15311a7bec3837112759cd6a777f3",
@@ -2300,7 +2321,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/109.jpg",
+    "thumb": "library/sources/혈당/thumbs/110.jpg",
     "labels": {
       "visual": "pharmacist_intake",
       "beat": "proof",
@@ -2310,7 +2331,7 @@
     }
   },
   {
-    "idx": 110,
+    "idx": 111,
     "path": "참고영상 소스/혈당 영상 사용할 소스/운동-개선_01.mp4",
     "name": "운동-개선_01.mp4",
     "md5": "f91ca167a811c8c0131016fb69c8a424",
@@ -2321,7 +2342,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/110.jpg",
+    "thumb": "library/sources/혈당/thumbs/111.jpg",
     "labels": {
       "visual": "ugc_active_happy",
       "beat": "result",
@@ -2331,7 +2352,7 @@
     }
   },
   {
-    "idx": 111,
+    "idx": 112,
     "path": "참고영상 소스/혈당 영상 사용할 소스/원료-귀리_01.mp4",
     "name": "원료-귀리_01.mp4",
     "md5": "aa72fb397be36971cbe0cf287f9a5caa",
@@ -2342,7 +2363,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/111.jpg",
+    "thumb": "library/sources/혈당/thumbs/112.jpg",
     "labels": {
       "visual": "ingredient_oat_harvest",
       "beat": "ingredient",
@@ -2352,7 +2373,7 @@
     }
   },
   {
-    "idx": 112,
+    "idx": 113,
     "path": "참고영상 소스/혈당 영상 사용할 소스/원료를_연구한다._20260912202234.mp4",
     "name": "원료를_연구한다._20260912202234.mp4",
     "md5": "9f5ed1f042bf255b8edbd1e99c97ee05",
@@ -2363,7 +2384,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/112.jpg",
+    "thumb": "library/sources/혈당/thumbs/113.jpg",
     "labels": {
       "visual": "lab_research",
       "beat": "proof",
@@ -2373,7 +2394,7 @@
     }
   },
   {
-    "idx": 113,
+    "idx": 114,
     "path": "참고영상 소스/혈당 영상 사용할 소스/자색 고구마 1.mp4",
     "name": "자색 고구마 1.mp4",
     "md5": "5d54ba7873e6cc44694cbbc4b1c0a0b4",
@@ -2384,7 +2405,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/113.jpg",
+    "thumb": "library/sources/혈당/thumbs/114.jpg",
     "labels": {
       "visual": "sweetpotato_field",
       "beat": "ingredient",
@@ -2394,7 +2415,7 @@
     }
   },
   {
-    "idx": 114,
+    "idx": 115,
     "path": "참고영상 소스/혈당 영상 사용할 소스/자색고구마_01.mp4",
     "name": "자색고구마_01.mp4",
     "md5": "67665e17b0fe0e0f0489ae3f21d54be5",
@@ -2405,7 +2426,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/114.jpg",
+    "thumb": "library/sources/혈당/thumbs/115.jpg",
     "labels": {
       "visual": "sweetpotato_split",
       "beat": "ingredient",
@@ -2415,7 +2436,7 @@
     }
   },
   {
-    "idx": 115,
+    "idx": 116,
     "path": "참고영상 소스/혈당 영상 사용할 소스/장수마을_01.mp4",
     "name": "장수마을_01.mp4",
     "md5": "464e05363c44f36c44aa171491bd91cf",
@@ -2426,7 +2447,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/115.jpg",
+    "thumb": "library/sources/혈당/thumbs/116.jpg",
     "labels": {
       "visual": "village_elderly_harvest",
       "beat": "ingredient",
@@ -2436,7 +2457,7 @@
     }
   },
   {
-    "idx": 116,
+    "idx": 117,
     "path": "참고영상 소스/혈당 영상 사용할 소스/제품-반찬뿌리기_01.mp4",
     "name": "제품-반찬뿌리기_01.mp4",
     "md5": "df7c7f2f8ef46cca238ad1ff15ce63af",
@@ -2447,7 +2468,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/116.jpg",
+    "thumb": "library/sources/혈당/thumbs/117.jpg",
     "labels": {
       "visual": "meal_sprinkle_rice",
       "beat": "usage",
@@ -2457,7 +2478,7 @@
     }
   },
   {
-    "idx": 117,
+    "idx": 118,
     "path": "참고영상 소스/혈당 영상 사용할 소스/제품-비빔밥_01.mp4",
     "name": "제품-비빔밥_01.mp4",
     "md5": "23e8dd458865656bb78fab62050f6182",
@@ -2468,7 +2489,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/117.jpg",
+    "thumb": "library/sources/혈당/thumbs/118.jpg",
     "labels": {
       "visual": "product_stick_open_sprinkle",
       "beat": "usage",
@@ -2478,7 +2499,7 @@
     }
   },
   {
-    "idx": 118,
+    "idx": 119,
     "path": "참고영상 소스/혈당 영상 사용할 소스/제품섭취-저녁식탁_01.mp4",
     "name": "제품섭취-저녁식탁_01.mp4",
     "md5": "4c39bb57a0bd4a5d43f7aa472229bdaa",
@@ -2489,7 +2510,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/118.jpg",
+    "thumb": "library/sources/혈당/thumbs/119.jpg",
     "labels": {
       "visual": "meal_sprinkle_rice",
       "beat": "usage",
@@ -2499,7 +2520,7 @@
     }
   },
   {
-    "idx": 119,
+    "idx": 120,
     "path": "참고영상 소스/혈당 영상 사용할 소스/제품섭취_01.mp4",
     "name": "제품섭취_01.mp4",
     "md5": "175a44fcfbdb91638d01c7bd16b8bb7f",
@@ -2510,7 +2531,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/119.jpg",
+    "thumb": "library/sources/혈당/thumbs/120.jpg",
     "labels": {
       "visual": "ugc_intake",
       "beat": "usage",
@@ -2520,7 +2541,7 @@
     }
   },
   {
-    "idx": 120,
+    "idx": 121,
     "path": "참고영상 소스/혈당 영상 사용할 소스/제품컷2.mov",
     "name": "제품컷2.mov",
     "md5": "cf3b10415f2437b00e5ac9f899ea9bef",
@@ -2531,7 +2552,7 @@
     "h": 1920,
     "duration": 3.4,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/120.jpg",
+    "thumb": "library/sources/혈당/thumbs/121.jpg",
     "labels": {
       "visual": "product_sticks_hand",
       "beat": "offer",
@@ -2541,7 +2562,7 @@
     }
   },
   {
-    "idx": 121,
+    "idx": 122,
     "path": "참고영상 소스/혈당 영상 사용할 소스/췌장 인슐린 회복 5.mp4",
     "name": "췌장 인슐린 회복 5.mp4",
     "md5": "57b4383a687049ff379c346cc99d916b",
@@ -2552,7 +2573,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/121.jpg",
+    "thumb": "library/sources/혈당/thumbs/122.jpg",
     "labels": {
       "visual": "anim_pancreas_recover",
       "beat": "mechanism",
@@ -2562,7 +2583,7 @@
     }
   },
   {
-    "idx": 122,
+    "idx": 123,
     "path": "참고영상 소스/혈당 영상 사용할 소스/췌장_01.mp4",
     "name": "췌장_01.mp4",
     "md5": "855098dfec5a23c2a4ee30d95784334e",
@@ -2573,7 +2594,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/122.jpg",
+    "thumb": "library/sources/혈당/thumbs/123.jpg",
     "labels": {
       "visual": "anim_pancreas",
       "beat": "mechanism",
@@ -2583,7 +2604,7 @@
     }
   },
   {
-    "idx": 123,
+    "idx": 124,
     "path": "참고영상 소스/혈당 영상 사용할 소스/쿠팡.png",
     "name": "쿠팡.png",
     "md5": "db1a161aa0f74a60787fb32d70458438",
@@ -2594,7 +2615,7 @@
     "h": 782,
     "duration": 0.0,
     "has_audio": false,
-    "thumb": "library/sources/혈당/thumbs/123.jpg",
+    "thumb": "library/sources/혈당/thumbs/124.jpg",
     "labels": {
       "visual": "coupang_search",
       "beat": "offer",
@@ -2604,7 +2625,7 @@
     }
   },
   {
-    "idx": 124,
+    "idx": 125,
     "path": "참고영상 소스/혈당 영상 사용할 소스/피곤_01.mp4",
     "name": "피곤_01.mp4",
     "md5": "478f419d9cbbc91eab05c35933bdaf76",
@@ -2615,7 +2636,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/124.jpg",
+    "thumb": "library/sources/혈당/thumbs/125.jpg",
     "labels": {
       "visual": "ugc_drowsy_after_meal",
       "beat": "problem",
@@ -2625,7 +2646,7 @@
     }
   },
   {
-    "idx": 125,
+    "idx": 126,
     "path": "참고영상 소스/혈당 영상 사용할 소스/행복해하는 중년 여성.mp4",
     "name": "행복해하는 중년 여성.mp4",
     "md5": "1b592d7688d45e54bd3e4884831a9f15",
@@ -2636,7 +2657,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/125.jpg",
+    "thumb": "library/sources/혈당/thumbs/126.jpg",
     "labels": {
       "visual": "ugc_morning_happy",
       "beat": "result",
@@ -2646,7 +2667,7 @@
     }
   },
   {
-    "idx": 126,
+    "idx": 127,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 2 (1).mp4",
     "name": "혈관 하수구 2 (1).mp4",
     "md5": "d4f32a97fc27102dbca506cfa5c039a1",
@@ -2657,7 +2678,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/126.jpg",
+    "thumb": "library/sources/혈당/thumbs/127.jpg",
     "labels": {
       "visual": "anim_vessel_clogged",
       "beat": "enemy",
@@ -2667,7 +2688,7 @@
     }
   },
   {
-    "idx": 127,
+    "idx": 128,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈관 하수구 폭발.mp4",
     "name": "혈관 하수구 폭발.mp4",
     "md5": "f10ffcbb28b68db89158a6429778be1e",
@@ -2678,7 +2699,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/127.jpg",
+    "thumb": "library/sources/혈당/thumbs/128.jpg",
     "labels": {
       "visual": "anim_vessel_clean",
       "beat": "mechanism",
@@ -2688,31 +2709,10 @@
     }
   },
   {
-    "idx": 128,
+    "idx": 129,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈관_속_포도당_정체_202608162210.mp4",
     "name": "혈관_속_포도당_정체_202608162210.mp4",
     "md5": "0bb0ba8269eda95c8e0efd3a76efe6ad",
-    "kind": "source",
-    "group": "혈당",
-    "type": "video",
-    "w": 1280,
-    "h": 720,
-    "duration": 8.0,
-    "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/128.jpg",
-    "labels": {
-      "visual": "anim_vessel_clogged",
-      "beat": "enemy",
-      "desc": "혈관 속 포도당 정체",
-      "has_text": false,
-      "quality": 3
-    }
-  },
-  {
-    "idx": 129,
-    "path": "참고영상 소스/혈당 영상 사용할 소스/혈관막힘_01.mp4",
-    "name": "혈관막힘_01.mp4",
-    "md5": "8d21cec35a193aa5af2505918657e934",
     "kind": "source",
     "group": "혈당",
     "type": "video",
@@ -2724,13 +2724,34 @@
     "labels": {
       "visual": "anim_vessel_clogged",
       "beat": "enemy",
-      "desc": "혈관 속 혈구가 노란 찌꺼기 사이로 좁게 통과",
+      "desc": "혈관 속 포도당 정체",
       "has_text": false,
       "quality": 3
     }
   },
   {
     "idx": 130,
+    "path": "참고영상 소스/혈당 영상 사용할 소스/혈관막힘_01.mp4",
+    "name": "혈관막힘_01.mp4",
+    "md5": "8d21cec35a193aa5af2505918657e934",
+    "kind": "source",
+    "group": "혈당",
+    "type": "video",
+    "w": 1280,
+    "h": 720,
+    "duration": 8.0,
+    "has_audio": true,
+    "thumb": "library/sources/혈당/thumbs/130.jpg",
+    "labels": {
+      "visual": "anim_vessel_clogged",
+      "beat": "enemy",
+      "desc": "혈관 속 혈구가 노란 찌꺼기 사이로 좁게 통과",
+      "has_text": false,
+      "quality": 3
+    }
+  },
+  {
+    "idx": 131,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈관비유-투명호스_01.mp4",
     "name": "혈관비유-투명호스_01.mp4",
     "md5": "23f8dffb2e9e7a6d98803b38db8c00af",
@@ -2741,7 +2762,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/130.jpg",
+    "thumb": "library/sources/혈당/thumbs/131.jpg",
     "labels": {
       "visual": "analogy_clogged_hose",
       "beat": "mechanism",
@@ -2751,7 +2772,7 @@
     }
   },
   {
-    "idx": 131,
+    "idx": 132,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈관청소_01.mp4",
     "name": "혈관청소_01.mp4",
     "md5": "c8eb56968c5c995fe28af5f08e0a799b",
@@ -2762,7 +2783,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/131.jpg",
+    "thumb": "library/sources/혈당/thumbs/132.jpg",
     "labels": {
       "visual": "anim_vessel_clean",
       "beat": "mechanism",
@@ -2772,7 +2793,7 @@
     }
   },
   {
-    "idx": 132,
+    "idx": 133,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈당 제품 하이라이트 1.mp4",
     "name": "혈당 제품 하이라이트 1.mp4",
     "md5": "cbe7da5084e335e4f9b9a0c5aabdaf66",
@@ -2783,7 +2804,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/132.jpg",
+    "thumb": "library/sources/혈당/thumbs/133.jpg",
     "labels": {
       "visual": "product_reveal",
       "beat": "offer",
@@ -2793,7 +2814,7 @@
     }
   },
   {
-    "idx": 133,
+    "idx": 134,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈당스파이크-쌀밥_01.mp4",
     "name": "혈당스파이크-쌀밥_01.mp4",
     "md5": "15ebaa29a1d47cd58a8d371a61245396",
@@ -2804,7 +2825,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/133.jpg",
+    "thumb": "library/sources/혈당/thumbs/134.jpg",
     "labels": {
       "visual": "rice_spoon_scoop",
       "beat": "enemy",
@@ -2814,7 +2835,7 @@
     }
   },
   {
-    "idx": 134,
+    "idx": 135,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈당측정기_01.mp4",
     "name": "혈당측정기_01.mp4",
     "md5": "069509dea940687f8058d08744a6170a",
@@ -2825,7 +2846,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/134.jpg",
+    "thumb": "library/sources/혈당/thumbs/135.jpg",
     "labels": {
       "visual": "glucometer_high",
       "beat": "problem",
@@ -2835,7 +2856,7 @@
     }
   },
   {
-    "idx": 135,
+    "idx": 136,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈액끈적_01.mp4",
     "name": "혈액끈적_01.mp4",
     "md5": "b8df18c19b793c32dff13401f14b888c",
@@ -2846,7 +2867,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/135.jpg",
+    "thumb": "library/sources/혈당/thumbs/136.jpg",
     "labels": {
       "visual": "anim_vessel_clogged",
       "beat": "enemy",
@@ -2856,7 +2877,7 @@
     }
   },
   {
-    "idx": 136,
+    "idx": 137,
     "path": "참고영상 소스/혈당 영상 사용할 소스/혈액비유-미숫가루_01.mp4",
     "name": "혈액비유-미숫가루_01.mp4",
     "md5": "8aae7c3f911775d8a5bcac847d54dbed",
@@ -2867,7 +2888,7 @@
     "h": 720,
     "duration": 8.0,
     "has_audio": true,
-    "thumb": "library/sources/혈당/thumbs/136.jpg",
+    "thumb": "library/sources/혈당/thumbs/137.jpg",
     "labels": {
       "visual": "analogy_thick_blood_drink",
       "beat": "agitate",
