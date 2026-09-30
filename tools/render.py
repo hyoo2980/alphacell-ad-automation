@@ -414,7 +414,7 @@ if __name__ == "__main__":
         rc = None
         if a.upload:
             from queue_upload import queue
-            queue(mf, a.channel, slot_group="info")
+            queue(mf, a.channel, slot_group=load_json(a.edl).get("slot_group", "info"))
             rc = subprocess.run([sys.executable, str(ROOT / "upload/scripts/upload_daily.py"),
                                  "--channel", a.channel]).returncode
         sys.exit(rc or 0)

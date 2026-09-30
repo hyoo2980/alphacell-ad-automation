@@ -132,13 +132,13 @@ INFO_BAN_VISUALS = ("sign_discount", "secret_link_page", "coupang_search", "show
                     "prior_ad_doctor", "authority_doctor")
 
 
-def assign_info(channel, day):
+def assign_info(channel, day, ad=False):
     """정보형 쇼츠 배정: 주제(15)·패턴(4)·보이스(5) 순환 + 사용 가능한 소스(금지 소스·세로 영상 제외, 길이 포함)."""
     chs = load_json(ROOT / "upload" / "channels.json")
     active = [k for k, v in chs.items() if not k.startswith("_") and v.get("enabled")]
     slot = active.index(channel) if channel in active else 0
     ymd = day.strftime("%y%m%d")
-    shift = max([len(list((ROOT / "edl" / c).glob(f"{ymd}_*info*.json"))) for c in active] or [0])
+    shift = max([len(list((ROOT / "edl" / c).glob(f"{ymd}_*{'docad' if ad else 'info'}*.json"))) for c in active] or [0])
     o = day.toordinal()
     usage = source_usage(day)
     items = [x for x in load_json(LIB / "index.json")
@@ -152,9 +152,12 @@ def assign_info(channel, day):
         refs[folder] = [f.relative_to(ROOT).as_posix() for f in (fs[(o * 8 + slot + i) % len(fs)] for i in range(2))] if fs else []
     return {
         "channel": channel, "date": day.isoformat(), "format": "info",
-        "topic": INFO_TOPICS[(o * 8 + slot + shift) % len(INFO_TOPICS)],
-        "pattern": INFO_PATTERNS[(o + slot + shift) % len(INFO_PATTERNS)],
-        "voice": {"provider": "google", "voice": INFO_VOICES[(o + slot) % len(INFO_VOICES)], "rate": 1.08},
+        "topic": INFO_TOPICS[(o * 8 + slot + shift + (7 if ad else 0)) % len(INFO_TOPICS)],
+        "pattern": INFO_PATTERNS[(o + slot + shift + (2 if ad else 0)) % len(INFO_PATTERNS)],
+        "voice": ({**_voices()[(o * 5 + slot) % len(_voices())], "account": slot} if ad else
+                  {"provider": "google", "voice": INFO_VOICES[(o + slot) % len(INFO_VOICES)], "rate": 1.08}),
+        "base_script": (lambda b: b[(o * 5 + slot + shift) % len(b)][1] if b else None)(base_scripts("혈당")) if ad else None,
+        "title_style": TITLE_STYLES[(o * 3 + slot + shift) % len(TITLE_STYLES)],
         "product_script": "참고 스크립트/혈당/참고스크립트1.txt",
         "competitor_hooks": refs,
         "sources_by_usage": [f"{usage.get(x['path'], 0)}회 | {x.get('duration', 0)}초 | {x['labels']['visual']} | "
@@ -167,5 +170,7 @@ def assign_info(channel, day):
 
 if __name__ == "__main__":
     d = date.fromisoformat(sys.argv[2]) if len(sys.argv) > 2 and not sys.argv[2].startswith("-") else date.today()
-    fn = assign_info if "--info" in sys.argv else assign
-    print(json.dumps(fn(sys.argv[1], d), ensure_ascii=False, indent=2))
+    if "--info" in sys.argv:
+        print(json.dumps(assign_info(sys.argv[1], d, ad="--ad" in sys.argv), ensure_ascii=False, indent=2))
+    else:
+        print(json.dumps(assign(sys.argv[1], d), ensure_ascii=False, indent=2))

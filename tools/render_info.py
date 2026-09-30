@@ -28,6 +28,8 @@ CTA_TOP = "식약처 인정 기능성 원료 · 귀리 식이섬유"
 CTA_BRAND = "알파셀 혈당 세이프"
 CTA_SUB = "밥에 톡톡 뿌려 드시는 혈당 관리"
 CTA_BTN = "'알파셀 혈당 세이프'를 검색해보세요!"
+CTA_COUPANG = {"top": "기간 한정 62% 할인 중", "sub": "밥에 톡톡 뿌려 드시는 혈당 관리",
+               "btn": "쿠팡에서 '알파셀 혈당 세이프' 검색!"}
 CACHE = WORK / "tts_cache_info"
 
 
@@ -62,8 +64,25 @@ def google_tts(text, voice, rate, out):
 
 
 def synth_line(text, v, rate, out):
-    """한 줄 음성. Google 이 안 되면(키 없음 등) 같은 줄을 Edge 음성으로(경고)."""
+    """한 줄 음성. provider=elevenlabs 면 채널 계정으로, 아니면 Google. 안 되면 Edge 로(경고)."""
     try:
+        if v.get("provider") == "elevenlabs":
+            import tts
+            accs = tts.xi_accounts()
+            if not accs:
+                raise RuntimeError("ElevenLabs 계정 없음")
+            last = None
+            for i in range(len(accs)):
+                a = accs[(int(v.get("account", 0)) + i) % len(accs)]
+                try:
+                    cfg = tts.voice_cfg({"provider": "elevenlabs", "model": v.get("model", "eleven_v3"),
+                                         "voice": v.get("voice") or a["voice_id"],
+                                         "stability": v.get("stability", 0.5), "speed": v.get("speed", 1.0)})
+                    tts._eleven_call(text, {**cfg, "api_key": a["key"]}, out)
+                    return
+                except Exception as e:
+                    last = e
+            raise RuntimeError(f"ElevenLabs 전 계정 실패: {last}")
         google_tts(text, v.get("voice", "ko-KR-Neural2-C"), rate, out)
     except Exception as e:
         if not getattr(synth_line, "_warned", False):
@@ -161,15 +180,17 @@ def build_ass(edl, timeline, total, path):
         ev(4, a, total, "P", f"{{\\an7\\pos({x0},{t0})\\fad(400,0)\\bord0\\shad0\\c{hex_to_ass(col)}\\p1}}"
                              f"m 0 0 l {bw} 0 {bw} {t1 - t0} 0 {t1 - t0}{{\\p0}}")
     cx = x0 + bw // 2
-    ev(5, a, total, "C", f"{{\\pos({cx},{y0 + 170})\\fad(400,0)\\fs36\\c{hex_to_ass('#E6D6FF')}}}{CTA_TOP}")
+    cp = CTA_COUPANG if edl.get("cta") == "coupang" else None
+    top, sub, btn = (cp["top"], cp["sub"], cp["btn"]) if cp else (CTA_TOP, CTA_SUB, CTA_BTN)
+    ev(5, a, total, "C", f"{{\\pos({cx},{y0 + 170})\\fad(400,0)\\fs{44 if cp else 36}\\c{hex_to_ass(YELLOW if cp else '#E6D6FF')}}}{top}")
     ev(5, a, total, "C", f"{{\\pos({cx},{y0 + 290})\\fad(400,0)\\fs104{fit(CTA_BRAND, 104)}}}{CTA_BRAND}")
-    ev(5, a, total, "C", f"{{\\pos({cx},{y0 + 400})\\fad(400,0)\\fs44}}{CTA_SUB}")
+    ev(5, a, total, "C", f"{{\\pos({cx},{y0 + 400})\\fad(400,0)\\fs44}}{sub}")
     pw, ph = 920, 112
     px, py = cx - pw // 2, y0 + 500
     r = ph // 2
     pill = (f"m {r} 0 l {pw - r} 0 b {pw} 0 {pw} {ph} {pw - r} {ph} l {r} {ph} b 0 {ph} 0 0 {r} 0")
     ev(5, a, total, "P", f"{{\\an7\\pos({px},{py})\\fad(400,0)\\bord0\\shad0\\c{hex_to_ass(YELLOW)}\\p1}}{pill}{{\\p0}}")
-    ev(6, a, total, "C", f"{{\\pos({cx},{py + ph // 2})\\fad(400,0)\\fs44\\c{blk}{fit(CTA_BTN, 44, pw - 60)}}}{CTA_BTN}")
+    ev(6, a, total, "C", f"{{\\pos({cx},{py + ph // 2})\\fad(400,0)\\fs44\\c{blk}{fit(btn, 44, pw - 60)}}}{btn}")
     Path(path).write_text("\n".join(L) + "\n", encoding="utf-8")
 
 

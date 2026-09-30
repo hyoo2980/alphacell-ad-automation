@@ -96,7 +96,32 @@ def sync(folder, list_only=False):
         print(f"  ({n}/{len(new)}) {name}")
 
 
+def sync_stock():
+    """library/sources/stock_*/catalog.json 의 무료 스톡(url 기록) 중 없는 파일만 원본 주소에서 받는다(키 불필요)."""
+    from common import LIB
+    for cp in sorted(LIB.glob("sources/stock_*/catalog.json")):
+        miss = [c for c in load_json(cp) if c.get("url") and not (ROOT / c["path"]).exists()]
+        print(f"[{cp.parent.name}] 새로 받을 스톡 {len(miss)}개")
+        for c in miss:
+            dst = ROOT / c["path"]
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            try:
+                with requests.get(c["url"], headers=UA, stream=True, timeout=300) as r:
+                    r.raise_for_status()
+                    with open(str(dst) + ".part", "wb") as f:
+                        for chunk in r.iter_content(1 << 20):
+                            f.write(chunk)
+                os.replace(str(dst) + ".part", dst)
+            except Exception as e:
+                print(f"  실패 {c['path']}: {e}")
+
+
 if __name__ == "__main__":
+    import os
+    try:
+        sync_stock()
+    except Exception as e:
+        print(f"::warning::스톡 동기화 실패 → 기존 파일로 진행: {e}")
     for fo in load_json(CONFIG / "drive.json")["folders"]:
         try:
             sync(fo, "--list" in sys.argv)
