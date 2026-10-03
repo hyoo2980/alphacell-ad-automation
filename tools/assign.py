@@ -185,7 +185,7 @@ def assign_info(channel, day, ad=False):
     return {
         "channel": channel, "date": day.isoformat(), "format": "info",
         "mode": "test" if (o + slot + (1 if ad else 0)) % 5 >= 3 else "trend",   # 약 60% 경향 / 40% 시험
-        "topic": (TEST_TOPICS[(o * 8 + slot + shift) % len(TEST_TOPICS)] if (o + slot + (1 if ad else 0)) % 5 >= 3
+        "topic": (TEST_TOPICS[(o * 8 + slot + shift + (3 if ad else 0)) % len(TEST_TOPICS)] if (o + slot + (1 if ad else 0)) % 5 >= 3
                   else INFO_TOPICS[(o * 8 + slot + shift + (7 if ad else 0)) % len(INFO_TOPICS)]),
         "trends": _trend_digest(),
         "recent_topics": _recent_topics(day),
