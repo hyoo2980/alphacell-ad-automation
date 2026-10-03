@@ -121,8 +121,12 @@ def assign(channel, day):
     }
 
 
-INFO_TOPICS = ["식후졸음", "혈당 스파이크", "손발 저림·붓기", "끈적한 혈액", "인슐린 저항성", "공복혈당", "당화혈색소",
-               "계절·명절", "뱃살", "50대 이후", "쌀밥·국수", "수면", "스트레스", "갈증", "계단 숨참"]
+# 인기 쇼츠·우리 상위 영상 경향(2026-10-03): 매일 하는 행동·먹는 음식, 목록형·비교형·실험형·따라 하기.
+# 증상으로 겁주는 주제(발 저림·붓기·숨참·갈증)와 막연한 피로는 뺐다.
+INFO_TOPICS = ["50대 이후 식후 졸음", "아침에 하지 말아야 할 습관", "점심 국수·면 요리", "라면에 밥 말기", "과일·과일주스",
+               "빵·떡 먹는 법", "식후 걷기·가벼운 운동", "착한 탄수화물", "밥 먹는 순서", "흰쌀밥 vs 잡곡밥",
+               "믹스커피·단 음료", "야식·늦은 저녁", "운동해도 안 빠지는 뱃살", "스트레스와 단 음식", "건강검진 혈당 수치"]
+TEST_TOPICS = ["수면과 혈당", "당화혈색소", "공복혈당", "계절·명절 음식", "인슐린 저항성", "혈관 나이", "외식 메뉴 고르기"]
 INFO_PATTERNS = ["질문형", "의외의 사실", "일상 사례(예를 들어 ~하는 50대)", "체크리스트·Q&A"]
 INFO_VOICES = ["ko-KR-Neural2-C", "ko-KR-Neural2-A", "ko-KR-Neural2-B", "ko-KR-Wavenet-C", "ko-KR-Wavenet-D"]
 INFO_BAN_NAMES = ("58_", "62_", "12_58_", "20260817_164349", "쿠팡", "약사섭취", "0815", "0816", "IMG_3463", "IMG_7333",
@@ -130,6 +134,34 @@ INFO_BAN_NAMES = ("58_", "62_", "12_58_", "20260817_164349", "쿠팡", "약사�
 INFO_BAN_VISUALS = ("sign_discount", "secret_link_page", "coupang_search", "show_host", "person_studio", "ugc_show_box",
                     "ugc_show_stick", "ugc_intake", "emergency_119", "import_customs", "warehouse_shipping",
                     "prior_ad_doctor", "authority_doctor")
+
+
+def _trend_digest():
+    """유튜브 인기 쇼츠(하루 평균 조회수 상위 10) + 우리 상위·하위 5 요약 — 주제·훅·제목 참고용."""
+    out = {}
+    tp, op = LIB / "title_trends.json", LIB / "our_performance.json"
+    if tp.exists():
+        out["youtube_hot"] = [f"{x['views_per_day']:,}/일 | {x['title'][:70]}" for x in load_json(tp).get("hot_by_views_per_day", [])[:10]]
+    if op.exists():
+        d = load_json(op)
+        out["our_top"] = [f"x{r['ratio']} {r['views']}회 | {r['title'][:60]} | 훅: {(r.get('hook') or '')[:40]}" for r in d.get("top5", [])]
+        out["our_bottom"] = [f"x{r['ratio']} {r['views']}회 | {r['title'][:60]}" for r in d.get("bottom5", [])]
+        out["format_avg_ratio"] = d.get("format_avg_ratio")
+    return out
+
+
+def _recent_topics(day, days=7):
+    """최근 7일 모든 채널 EDL 의 주제 라벨·제목 (겹치지 않게)."""
+    since = (day - timedelta(days=days)).strftime("%y%m%d")
+    out = []
+    for p in (ROOT / "edl").glob("*/*.json"):
+        if p.parent.name != "examples" and p.name[:6] >= since:
+            try:
+                e = json.loads(p.read_text(encoding="utf-8"))
+                out.append(e.get("topic_label") or (e.get("title") or "")[:30])
+            except Exception:
+                pass
+    return sorted({t for t in out if t})
 
 
 def assign_info(channel, day, ad=False):
@@ -152,7 +184,11 @@ def assign_info(channel, day, ad=False):
         refs[folder] = [f.relative_to(ROOT).as_posix() for f in (fs[(o * 8 + slot + i) % len(fs)] for i in range(2))] if fs else []
     return {
         "channel": channel, "date": day.isoformat(), "format": "info",
-        "topic": INFO_TOPICS[(o * 8 + slot + shift + (7 if ad else 0)) % len(INFO_TOPICS)],
+        "mode": "test" if (o + slot + (1 if ad else 0)) % 5 >= 3 else "trend",   # 약 60% 경향 / 40% 시험
+        "topic": (TEST_TOPICS[(o * 8 + slot + shift) % len(TEST_TOPICS)] if (o + slot + (1 if ad else 0)) % 5 >= 3
+                  else INFO_TOPICS[(o * 8 + slot + shift + (7 if ad else 0)) % len(INFO_TOPICS)]),
+        "trends": _trend_digest(),
+        "recent_topics": _recent_topics(day),
         "pattern": INFO_PATTERNS[(o + slot + shift + (2 if ad else 0)) % len(INFO_PATTERNS)],
         "voice": ({**_voices()[(o * 5 + slot) % len(_voices())], "account": slot} if ad else
                   {"provider": "google", "voice": INFO_VOICES[(o + slot) % len(INFO_VOICES)], "rate": 1.08}),

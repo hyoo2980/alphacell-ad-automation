@@ -1,0 +1,174 @@
+{
+  "updated": "2026-10-03 22:12",
+  "n": 63,
+  "top5": [
+    {
+      "channel": "혈관의비밀",
+      "views": 1018,
+      "ratio": 509.0,
+      "format": "info",
+      "title": "50대 이후 밥만 먹으면 졸린 이유, 식후 혈당부터 확인해 보세요 #혈당관리 #식후혈당 #건강정보",
+      "topic": "50대 이후 식후 혈당",
+      "headline": [
+        "50대 이후,",
+        "왜 밥 먹으면 졸릴까?"
+      ],
+      "hook": "{yellow|50대 이후}, 밥만 먹으면 유독 졸리지 않으시나요?",
+      "published": "10-02 20:30"
+    },
+    {
+      "channel": "channel2_hyeoldang",
+      "views": 106,
+      "ratio": 106.0,
+      "format": "info",
+      "title": "계단 숨참, 심장만 의심하지 마세요 — 혈관이 보내는 3가지 신호 #혈당 #혈관건강 #건강정보",
+      "topic": "숨참과 혈관 건강",
+      "headline": [
+        "계단 숨참,",
+        "심장 탓만은 아닙니다"
+      ],
+      "hook": "계단 조금만 올라도 숨이 차다면, {yellow|심장 탓}만은 아닙니다.",
+      "published": "10-02 21:30"
+    },
+    {
+      "channel": "무병백세",
+      "views": 91,
+      "ratio": 91.0,
+      "format": "info",
+      "title": "운동해도 뱃살이 그대로인 진짜 이유, 알고 보니 식후 혈당이었어요 #뱃살 #혈당관리 #식후혈당",
+      "topic": "뱃살과 식후 혈당",
+      "headline": [
+        "뱃살이 안 빠지는",
+        "진짜 이유의 진실"
+      ],
+      "hook": "운동도 하고 굶기도 했는데 {yellow|뱃살}만 그대로라면, 이 중에 몇 개나 해당되시나요?",
+      "published": "10-02 19:00"
+    },
+    {
+      "channel": "AL",
+      "views": 187,
+      "ratio": 23.38,
+      "format": "info",
+      "title": "스트레스 받으면 단 게 당기고 밥 먹고 축 처진다면? 식후 혈당부터 확인하세요 #스트레스 #혈당관리 #건강정보",
+      "topic": "스트레스와 식후 혈당",
+      "headline": [
+        "스트레스 받으면",
+        "혈당도 흔들릴까?"
+      ],
+      "hook": "요즘 스트레스 받을 때마다 단 게 당기고, 밥 먹고 나면 축 처지시나요?",
+      "published": "10-02 21:00"
+    },
+    {
+      "channel": "channel2_hyeoldang",
+      "views": 21,
+      "ratio": 21.0,
+      "format": "docad",
+      "title": "당화혈색소 낮추려면 꼭 알아야 할 3가지, 혈관부터 확인하세요 #당화혈색소 #혈당 #혈관건강",
+      "topic": "당화혈색소와 혈당",
+      "headline": [
+        "당화혈색소는 혈당이 아니라",
+        "혈관이 남긴 기록입니다"
+      ],
+      "hook": "당화혈색소 수치, {yellow|혈당만 재서는} 다 알 수 없습니다.",
+      "published": "10-02 12:30"
+    }
+  ],
+  "bottom5": [
+    {
+      "channel": "channel2_hyeoldang",
+      "views": 0,
+      "ratio": 0.0,
+      "format": "ad",
+      "title": "99%가 모르는 혈당·혈압 관리의 진실 4가지 #혈당관리 #식후혈당 #혈당스파이크",
+      "topic": null,
+      "headline": [
+        {
+          "text": "혈당·혈압 신경 쓰이면",
+          "color": "yellow"
+        },
+        {
+          "text": "{red|손발저림} {green|어지럼}도 체크",
+          "color": "white"
+        },
+        {
+          "text": "알파셀 혈당 세이프",
+          "color": "purple"
+        }
+      ],
+      "hook": "혈당, 혈압이 같이 흔들리면",
+      "published": "09-29 12:30"
+    },
+    {
+      "channel": "channel2_hyeoldang",
+      "views": 0,
+      "ratio": 0.0,
+      "format": "info",
+      "title": "물 마셔도 계속 목마를 때, 식후 혈당 체크리스트 #혈당관리 #갈증",
+      "topic": "갈증과 혈당",
+      "headline": [
+        "자꾸 목마른 이유",
+        "혹시 식후 혈당?"
+      ],
+      "hook": "물을 마셔도 자꾸 목이 마르다면, 이 체크리스트 해당되시나요?",
+      "published": "09-30 21:30"
+    },
+    {
+      "channel": "channel2_hyeoldang",
+      "views": 0,
+      "ratio": 0.0,
+      "format": "ad",
+      "title": "점심 먹고 눈꺼풀이 무거운 진짜 원인, 혹시 알고 계셨나요? #식후졸음 #혈당관리",
+      "topic": null,
+      "headline": [
+        {
+          "text": "밥 먹고 쏟아지는 졸음",
+          "color": "yellow"
+        },
+        {
+          "text": "{red|식후 혈당} 때문일까?",
+          "color": "white"
+        },
+        {
+          "text": "알파셀 혈당 세이프",
+          "color": "purple"
+        }
+      ],
+      "hook": "흰쌀밥 먹고 눈꺼풀이 천근만근?",
+      "published": "09-30 12:30"
+    },
+    {
+      "channel": "channel2_hyeoldang",
+      "views": 0,
+      "ratio": 0.0,
+      "format": "docad",
+      "title": "저도 몰랐어요, 자꾸 갈증 나는 이유 혈관에서 시작됩니다 #혈당 #갈증 #혈관건강",
+      "topic": "갈증과 혈당",
+      "headline": [
+        "당뇨는 혈당이 아니라",
+        "혈관에서 시작됩니다"
+      ],
+      "hook": "자꾸 {yellow|물이 당기는 갈증}, 단순히 더워서만은 아닙니다.",
+      "published": "10-01 12:30"
+    },
+    {
+      "channel": "channel2_hyeoldang",
+      "views": 0,
+      "ratio": 0.0,
+      "format": "info",
+      "title": "당화혈색소, 수치만 보고 넘기시나요? 밥에 뿌리는 습관 #당화혈색소 #혈당관리 #shorts",
+      "topic": "당화혈색소와 식후 혈당",
+      "headline": [
+        "당화혈색소,",
+        "수치만 보세요?"
+      ],
+      "hook": "{yellow|당화혈색소}, 수치만 보고 넘기고 계신가요?",
+      "published": "10-01 21:30"
+    }
+  ],
+  "format_avg_ratio": {
+    "info": 32.2,
+    "docad": 3.5,
+    "ad": 1.45
+  },
+  "note": "채널 중앙값 대비 배수. 표본이 적어 우연이 크다 — 한두 개로 방향을 크게 바꾸지 않는다."
+}

@@ -86,9 +86,9 @@ jobs:
           PYTHONIOENCODING: utf-8
           YT_CREDENTIALS: ${{ secrets.YT_CREDENTIALS }}
         run: |
-          cd tools && python ci_credentials.py >/dev/null && python title_research.py || echo "::warning::제목 수집 실패(이전 목록 사용)"
+          cd tools && python ci_credentials.py >/dev/null && { python title_research.py || echo "::warning::인기 쇼츠 수집 실패(이전 목록 사용)"; python our_performance.py || echo "::warning::우리 성적 정리 실패"; }
           cd .. && git config user.name "daily-ads-bot" && git config user.email "actions@users.noreply.github.com"
-          git add library/title_trends.json && git diff --cached --quiet || { git commit -q -m "titles: refresh trending titles"; for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done; }
+          git add library/title_trends.json library/our_performance.json && git diff --cached --quiet || { git commit -q -m "trends: refresh YouTube hot shorts and our performance"; for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done; }
       - id: c
         env:
           ONLY_CHANNEL: ${{ github.event.inputs.channel }}
