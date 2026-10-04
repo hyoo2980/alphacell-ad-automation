@@ -7,7 +7,7 @@
     "style_profile": "hyeoldang_mubyeong",
     "group": "혈당",
     "publish_slots": [
-      "07:30"
+      "04:00"
     ],
     "publish_slots_info": [
       "19:00"
@@ -20,7 +20,7 @@
     "style_profile": "hyeoldang_hyeolgwan",
     "group": "혈당",
     "publish_slots": [
-      "10:30"
+      "04:45"
     ],
     "publish_slots_info": [
       "20:30"
@@ -33,7 +33,7 @@
     "style_profile": "hyeoldang_geongang",
     "group": "혈당",
     "publish_slots": [
-      "08:30"
+      "04:15"
     ],
     "publish_slots_info": [
       "19:30"
@@ -46,7 +46,7 @@
     "style_profile": "hyeoldang_nohu",
     "group": "혈당",
     "publish_slots": [
-      "09:30"
+      "04:30"
     ],
     "publish_slots_info": [
       "20:00"
@@ -59,7 +59,7 @@
     "style_profile": "hyeoldang_al",
     "group": "혈당",
     "publish_slots": [
-      "11:30"
+      "05:00"
     ],
     "publish_slots_info": [
       "21:00"
@@ -71,7 +71,7 @@
     "style_profile": "hyeoldang_ch6",
     "group": "혈당",
     "publish_slots": [
-      "12:30"
+      "05:15"
     ],
     "publish_slots_info": [
       "21:30"
@@ -83,7 +83,7 @@
     "style_profile": "hyeoldang_ch7",
     "group": "혈당",
     "publish_slots": [
-      "13:30"
+      "05:30"
     ],
     "publish_slots_info": [
       "22:00"
@@ -96,7 +96,7 @@
     "style_profile": "hyeoldang_ch8",
     "group": "혈당",
     "publish_slots": [
-      "14:30"
+      "05:45"
     ],
     "publish_slots_info": [
       "22:30"
