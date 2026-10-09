@@ -1,0 +1,180 @@
+{
+ "format": "info",
+ "id": "261010_channel2_docad_v01",
+ "slot_group": "ad",
+ "cta": "coupang",
+ "brand": "alphacell",
+ "title": "혈관 나이 먼저 늙게 하는 식사 습관 3가지 #혈관건강 #혈당관리 #알파셀",
+ "subtitle_top": "혈관 나이",
+ "headline": [
+  "당뇨는 혈당이 아니라",
+  "혈관에서 시작됩니다"
+ ],
+ "topic_label": "혈관 나이",
+ "voice": {
+  "provider": "elevenlabs",
+  "model": "eleven_v3",
+  "voice": "cgSgspJ2msm6clMCkdW9",
+  "name": "Jessica",
+  "stability": 0.5,
+  "speed": 1.0,
+  "account": 3
+ },
+ "trend_note": {
+  "ref": "인기 쇼츠의 목록형 제목('~하는 3가지')과 정보형 훅",
+  "avoided": "증상 겁주기·나이 탓 질문 훅",
+  "test": true
+ },
+ "lines": [
+  {
+   "text": "{yellow|혈관 나이}는 실제 나이와 다를 수 있습니다.",
+   "scene_break": true,
+   "media": [
+    {
+     "src": "참고영상 소스/스톡_다큐/pixabay_11850.mp4",
+     "in": 0
+    },
+    {
+     "src": "참고영상 소스/스톡_다큐/pixabay_49813.mp4",
+     "in": 0
+    }
+   ]
+  },
+  {
+   "text": "당뇨는 혈당이 아니라 {yellow|혈관}에서 시작됩니다.",
+   "scene_break": false,
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/3D-말초혈류_01.mp4",
+     "in": 0
+    },
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/3D-말초혈류_01.mp4",
+     "in": 4
+    }
+   ]
+  },
+  {
+   "text": "식후 혈당이 치솟으면 췌장이 인슐린을 쏟아내며 지칩니다.",
+   "scene_break": true,
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/A_3d_medicalstyle_202509271649_gbzto.mp4",
+     "in": 0
+    },
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/A_3d_medicalstyle_202509271649_gbzto.mp4",
+     "in": 4
+    }
+   ]
+  },
+  {
+   "text": "혈액이 끈적해져 혈관에도 부담이 쌓이죠.",
+   "scene_break": false,
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/Pancreas_failing_and_vessels_clo…_20260913125028.mp4",
+     "in": 0
+    }
+   ]
+  },
+  {
+   "text": "그래서 쌀밥의 {yellow|당지수}를 낮추는 게 중요합니다.",
+   "scene_break": true,
+   "media": [
+    {
+     "src": "참고영상 소스/스톡_다큐/pixabay_11606.mp4",
+     "in": 0
+    },
+    {
+     "src": "참고영상 소스/스톡_다큐/pixabay_11606.mp4",
+     "in": 4
+    }
+   ]
+  },
+  {
+   "text": "흰 쌀밥은 당이 빨리 흡수돼 식후 혈당이 치솟습니다.",
+   "scene_break": false,
+   "media": [
+    {
+     "src": "참고영상 소스/스톡_다큐/pixabay_11606.mp4",
+     "in": 8
+    },
+    {
+     "src": "참고영상 소스/스톡_다큐/pixabay_11606.mp4",
+     "in": 12
+    }
+   ]
+  },
+  {
+   "text": "식이섬유는 당 흡수를 늦춰 주는데, 대표적인 게 귀리입니다.",
+   "scene_break": false,
+   "media": [
+    {
+     "src": "참고영상 소스/스톡_다큐/pixabay_11606.mp4",
+     "in": 16
+    },
+    {
+     "src": "참고영상 소스/스톡_다큐/pixabay_11606.mp4",
+     "in": 20
+    }
+   ]
+  },
+  {
+   "text": "요즘은 밥에 보라색 한 포를 뿌려 드시는데요, 바로 {yellow|알파셀 혈당 세이프}입니다.",
+   "scene_break": true,
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/제품-밥뿌리기1인칭_01.mp4",
+     "in": 0
+    },
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/제품-밥위슬로모션_01.mp4",
+     "in": 0
+    }
+   ]
+  },
+  {
+   "text": "자색고구마 안토시아닌과 귀리 식이섬유가 식후 혈당 상승 억제에 도움을 줍니다.",
+   "scene_break": false,
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/원료-안토시아닌_01.mp4",
+     "in": 0
+    },
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/자색고구마_01.mp4",
+     "in": 0
+    }
+   ]
+  },
+  {
+   "text": "식후 30분 억제 효과는 논문·임상 확인, 2025 중앙일보 후원 브랜드 대상 1위입니다.",
+   "scene_break": false,
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/제품-첫술_01.mp4",
+     "in": 0
+    },
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/혈당 제품 하이라이트 1.mp4",
+     "in": 0
+    }
+   ]
+  },
+  {
+   "text": "기간 한정 {yellow|62% 할인} 중, 쿠팡에서 알파셀 혈당 세이프를 검색해 보세요.",
+   "scene_break": true,
+   "media": [
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/12_1.mp4",
+     "in": 0
+    },
+    {
+     "src": "참고영상 소스/혈당 영상 사용할 소스/1 (3).mp4",
+     "in": 0
+    }
+   ]
+  }
+ ]
+}
