@@ -85,10 +85,19 @@ def synth_line(text, v, rate, out):
             raise RuntimeError(f"ElevenLabs 전 계정 실패: {last}")
         google_tts(text, v.get("voice", "ko-KR-Neural2-C"), rate, out)
     except Exception as e:
-        if not getattr(synth_line, "_warned", False):
-            print(f"::warning::Google TTS 사용 불가 → Edge 음성으로 대체 ({str(e)[:150]})")
-            synth_line._warned = True
         import tts
+        if not getattr(synth_line, "_warned", False):
+            print(f"::warning::Google TTS 사용 불가 → Gemini 음성으로 대체 ({str(e)[:150]})")
+            synth_line._warned = True
+        try:   # 2026-10-13 부터 Edge 가 서버에서 403 → Gemini 먼저
+            g = Path(str(out) + ".g.wav")
+            tts._gemini_call(text, {"model": "gemini-2.5-flash-preview-tts", "voice": "Puck",
+                                    "style": "Say in a calm, clear Korean documentary narrator tone"}, g)
+            ffmpeg("-i", g, "-af", f"atempo={rate}", out)
+            g.unlink()
+            return
+        except Exception as ge:
+            print(f"::warning::Gemini 음성 실패 → Edge 시도 ({str(ge)[:150]})")
         tts._edge_call(text, {"voice": "ko-KR-InJoonNeural", "rate": f"+{int((rate - 1) * 100)}%"}, out)
 
 
