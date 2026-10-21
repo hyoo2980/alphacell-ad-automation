@@ -190,8 +190,8 @@ def assign_info(channel, day, ad=False):
         "trends": _trend_digest(),
         "recent_topics": _recent_topics(day),
         "pattern": INFO_PATTERNS[(o + slot + shift + (2 if ad else 0)) % len(INFO_PATTERNS)],
-        "voice": ({**_voices()[(o * 5 + slot) % len(_voices())], "account": slot} if ad else
-                  {"provider": "google", "voice": INFO_VOICES[(o + slot) % len(INFO_VOICES)], "rate": 1.08}),
+        # 2026-10-21 ElevenLabs 무료 크레딧 소진 → 오전 광고형도 Google TTS (저녁과 겹치지 않게 오프셋)
+        "voice": {"provider": "google", "voice": INFO_VOICES[(o + slot + (2 if ad else 0)) % len(INFO_VOICES)], "rate": 1.08},
         "base_script": (lambda b: b[(o * 5 + slot + shift) % len(b)][1] if b else None)(base_scripts("혈당")) if ad else None,
         "title_style": TITLE_STYLES[(o * 3 + slot + shift) % len(TITLE_STYLES)],
         "product_script": "참고 스크립트/혈당/참고스크립트1.txt",

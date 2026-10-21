@@ -86,6 +86,12 @@ def synth_line(text, v, rate, out):
         google_tts(text, v.get("voice", "ko-KR-Neural2-C"), rate, out)
     except Exception as e:
         import tts
+        if os.environ.get("GOOGLE_TTS_API_KEY") and v.get("provider") == "elevenlabs":   # ElevenLabs 실패 → Google
+            try:
+                google_tts(text, "ko-KR-Neural2-C", rate, out)
+                return
+            except Exception as ge:
+                print(f"::warning::Google TTS 실패 ({str(ge)[:120]})")
         if not getattr(synth_line, "_warned", False):
             print(f"::warning::Google TTS 사용 불가 → Gemini 음성으로 대체 ({str(e)[:150]})")
             synth_line._warned = True
