@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21 07:11",
+  "updated": "2026-10-22 07:10",
   "keywords": [
     "혈당",
     "혈당 스파이크",
@@ -16,24 +16,14 @@
   ],
   "hot_by_views_per_day": [
     {
-      "id": "9Aa5IbNW-Is",
-      "keyword": "공복혈당",
-      "title": "🩺 건강검진 전에 꼭 보세요! 기본 건강 수치 14가지 총정리",
-      "channel": "지혜人TV",
-      "published": "2026-10-20",
-      "seconds": 6,
-      "views": 128147,
-      "views_per_day": 171538
-    },
-    {
       "id": "mPOCY5qH1es",
       "keyword": "중년 건강 습관",
       "title": "함익병원장이 말하는 당장 바꿔야 하는 습관 #함익병 #중년건강 #4060공감",
       "channel": "딱중년템",
       "published": "2026-10-18",
       "seconds": 24,
-      "views": 393506,
-      "views_per_day": 156936
+      "views": 503377,
+      "views_per_day": 143525
     },
     {
       "id": "DKhL41BZdq0",
@@ -42,8 +32,8 @@
       "channel": "김소형채널H",
       "published": "2026-10-13",
       "seconds": 172,
-      "views": 836474,
-      "views_per_day": 120260
+      "views": 884657,
+      "views_per_day": 111202
     },
     {
       "id": "1fm043q84Rw",
@@ -52,8 +42,18 @@
       "channel": "유한양행 와이즈바이옴",
       "published": "2026-09-17",
       "seconds": 16,
-      "views": 3567546,
-      "views_per_day": 105339
+      "views": 3646437,
+      "views_per_day": 104581
+    },
+    {
+      "id": "9Aa5IbNW-Is",
+      "keyword": "공복혈당",
+      "title": "🩺 건강검진 전에 꼭 보세요! 기본 건강 수치 14가지 총정리",
+      "channel": "지혜人TV",
+      "published": "2026-10-20",
+      "seconds": 6,
+      "views": 176152,
+      "views_per_day": 100839
     },
     {
       "id": "fRxh4coGZ4I",
@@ -62,18 +62,18 @@
       "channel": "100세 헬스케어",
       "published": "2026-10-16",
       "seconds": 174,
-      "views": 460409,
-      "views_per_day": 97630
+      "views": 517276,
+      "views_per_day": 90501
     },
     {
-      "id": "IpcdysJ6m14",
-      "keyword": "혈관 건강",
-      "title": "나토키나제 혈관 건강에 도움 될까?",
-      "channel": "오늘",
-      "published": "2026-10-16",
-      "seconds": 46,
-      "views": 353783,
-      "views_per_day": 89206
+      "id": "dqHu4MQTBGY",
+      "keyword": "중년 건강 습관",
+      "title": "10년 젊게 사는 사람들의 돈 안 드는 10가지 습관  #건강습관 #생활습관 #시니어건강 #건강정보 #혈액순환 #바른자세",
+      "channel": "인생 조언",
+      "published": "2026-10-21",
+      "seconds": 6,
+      "views": 67411,
+      "views_per_day": 86632
     },
     {
       "id": "66bTRI_sDAU",
@@ -82,8 +82,18 @@
       "channel": "건강쏙쏙",
       "published": "2026-08-16",
       "seconds": 6,
-      "views": 5172732,
-      "views_per_day": 79508
+      "views": 5216923,
+      "views_per_day": 78973
+    },
+    {
+      "id": "IpcdysJ6m14",
+      "keyword": "혈관 건강",
+      "title": "나토키나제 혈관 건강에 도움 될까?",
+      "channel": "오늘",
+      "published": "2026-10-16",
+      "seconds": 46,
+      "views": 383666,
+      "views_per_day": 77263
     },
     {
       "id": "xrnwCaDP58w",
@@ -92,18 +102,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-09",
       "seconds": 163,
-      "views": 5096782,
-      "views_per_day": 70833
-    },
-    {
-      "id": "X2jbOgSZgqU",
-      "keyword": "혈당",
-      "title": "\"진짜\" 검은콩 두유 고르는 법",
-      "channel": "헬씨약사",
-      "published": "2026-09-27",
-      "seconds": 40,
-      "views": 1547762,
-      "views_per_day": 66409
+      "views": 5130038,
+      "views_per_day": 70318
     },
     {
       "id": "AFz-pzOVJqw",
@@ -112,18 +112,18 @@
       "channel": "Accu-Chek Korea",
       "published": "2026-08-18",
       "seconds": 43,
-      "views": 4230756,
-      "views_per_day": 66249
+      "views": 4285908,
+      "views_per_day": 66078
     },
     {
-      "id": "Cn8HRq8ujUE",
-      "keyword": "혈관 건강",
-      "title": "🚨 혈관이 막히면 몸이 먼저 알려줍니다! 절대 놓치면 안 되는 위험신호 9가지",
-      "channel": "지혜人TV",
-      "published": "2026-10-15",
-      "seconds": 7,
-      "views": 354659,
-      "views_per_day": 64521
+      "id": "X2jbOgSZgqU",
+      "keyword": "혈당",
+      "title": "\"진짜\" 검은콩 두유 고르는 법",
+      "channel": "헬씨약사",
+      "published": "2026-09-27",
+      "seconds": 40,
+      "views": 1584159,
+      "views_per_day": 65175
     },
     {
       "id": "CobIlSZqlRs",
@@ -132,8 +132,8 @@
       "channel": "인생 조언",
       "published": "2026-08-27",
       "seconds": 6,
-      "views": 3446030,
-      "views_per_day": 63864
+      "views": 3486262,
+      "views_per_day": 63434
     },
     {
       "id": "Js6FvhXM65s",
@@ -142,8 +142,18 @@
       "channel": "건강 스케치",
       "published": "2026-10-18",
       "seconds": 95,
-      "views": 168748,
-      "views_per_day": 61199
+      "views": 231226,
+      "views_per_day": 61542
+    },
+    {
+      "id": "Cn8HRq8ujUE",
+      "keyword": "혈관 건강",
+      "title": "🚨 혈관이 막히면 몸이 먼저 알려줍니다! 절대 놓치면 안 되는 위험신호 9가지",
+      "channel": "지혜人TV",
+      "published": "2026-10-15",
+      "seconds": 7,
+      "views": 395204,
+      "views_per_day": 60832
     },
     {
       "id": "-8wuUmOz2YM",
@@ -152,8 +162,8 @@
       "channel": "온도한스푼",
       "published": "2026-10-08",
       "seconds": 6,
-      "views": 698888,
-      "views_per_day": 55878
+      "views": 761546,
+      "views_per_day": 56381
     },
     {
       "id": "YbqysAt6i3A",
@@ -162,8 +172,8 @@
       "channel": "맛도리팸 레시피",
       "published": "2026-10-08",
       "seconds": 39,
-      "views": 675036,
-      "views_per_day": 54719
+      "views": 714879,
+      "views_per_day": 53604
     },
     {
       "id": "yj1p3JezCTs",
@@ -172,18 +182,18 @@
       "channel": "오늘의 건강명언",
       "published": "2026-10-01",
       "seconds": 6,
-      "views": 1042060,
-      "views_per_day": 52944
+      "views": 1076021,
+      "views_per_day": 52026
     },
     {
-      "id": "zYXm341W0Ys",
-      "keyword": "혈당 스파이크",
-      "title": "【성창힐】45세 오윤아가 설탕 끊고 선택한 ‘이것’... 혈당 스파이크 막는 반전의 비밀 #오윤아 #올리고당 #플락토올리고당",
-      "channel": "성창힐_Growth.Creative.Healing",
-      "published": "2026-10-20",
-      "seconds": 45,
-      "views": 31749,
-      "views_per_day": 40049
+      "id": "nyW-NHdLGsY",
+      "keyword": "혈관 건강",
+      "title": "나이 들수록 몸이 쑤신다면 밥상부터 당장 점검해라  #건강정보 #식습관 #중장년건강 #혈관건강 #만성피로",
+      "channel": "인생 조언",
+      "published": "2026-10-08",
+      "seconds": 6,
+      "views": 525866,
+      "views_per_day": 38783
     },
     {
       "id": "TI01I99k83U",
@@ -192,8 +202,8 @@
       "channel": "리틀약사 Shorts",
       "published": "2026-08-21",
       "seconds": 20,
-      "views": 2345215,
-      "views_per_day": 38733
+      "views": 2358115,
+      "views_per_day": 38313
     },
     {
       "id": "dnwU19DjM0U",
@@ -202,18 +212,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-23",
       "seconds": 172,
-      "views": 2193831,
-      "views_per_day": 37854
-    },
-    {
-      "id": "p7FiCeCxM4I",
-      "keyword": "중년 건강 습관",
-      "title": "병원 가기 싫다면 집에서 돈 굳는 매일 1분 습관  #건강정보 #시니어건강 #생활습관 #혈액순환 #관절건강 #스트레칭 #건강비결",
-      "channel": "인생 조언",
-      "published": "2026-10-12",
-      "seconds": 6,
-      "views": 310884,
-      "views_per_day": 35416
+      "views": 2208394,
+      "views_per_day": 37459
     },
     {
       "id": "SanV2VbPJbs",
@@ -222,8 +222,18 @@
       "channel": "유한양행 와이즈바이옴",
       "published": "2026-09-17",
       "seconds": 11,
-      "views": 1163263,
-      "views_per_day": 34351
+      "views": 1186541,
+      "views_per_day": 34034
+    },
+    {
+      "id": "p7FiCeCxM4I",
+      "keyword": "중년 건강 습관",
+      "title": "병원 가기 싫다면 집에서 돈 굳는 매일 1분 습관  #건강정보 #시니어건강 #생활습관 #혈액순환 #관절건강 #스트레칭 #건강비결",
+      "channel": "인생 조언",
+      "published": "2026-10-12",
+      "seconds": 6,
+      "views": 329795,
+      "views_per_day": 33729
     },
     {
       "id": "TAM1jor-MKA",
@@ -232,8 +242,8 @@
       "channel": "살림레이더",
       "published": "2026-10-06",
       "seconds": 109,
-      "views": 450357,
-      "views_per_day": 31066
+      "views": 456551,
+      "views_per_day": 29461
     },
     {
       "id": "-_VP8GcCgmw",
@@ -242,8 +252,8 @@
       "channel": "시니어노후준비",
       "published": "2026-10-09",
       "seconds": 10,
-      "views": 331770,
-      "views_per_day": 30011
+      "views": 340830,
+      "views_per_day": 28274
     },
     {
       "id": "ab_t5jnZvck",
@@ -252,8 +262,8 @@
       "channel": "김소형채널H",
       "published": "2026-09-03",
       "seconds": 179,
-      "views": 1344061,
-      "views_per_day": 28624
+      "views": 1350808,
+      "views_per_day": 28168
     },
     {
       "id": "G1JPfWSkn50",
@@ -262,28 +272,8 @@
       "channel": "100세 헬스케어",
       "published": "2026-10-09",
       "seconds": 162,
-      "views": 318800,
-      "views_per_day": 27211
-    },
-    {
-      "id": "DTEVJBXkQeg",
-      "keyword": "혈당 스파이크",
-      "title": "혈당스파이크 와서 피곤한 치이와 하치 ㅋㅋ",
-      "channel": "C급쇼",
-      "published": "2026-10-12",
-      "seconds": 19,
-      "views": 216888,
-      "views_per_day": 27157
-    },
-    {
-      "id": "jOabU6mgJl8",
-      "keyword": "혈당",
-      "title": "박술녀가 알려주는 혈당 줄이기 운동(안 따라 하시면 후회합니다)",
-      "channel": "박술녀한복 [Hanbok]",
-      "published": "2026-08-24",
-      "seconds": 54,
-      "views": 1538414,
-      "views_per_day": 26742
+      "views": 337431,
+      "views_per_day": 26536
     },
     {
       "id": "3gmrksuBDgs",
@@ -292,18 +282,28 @@
       "channel": "마음가짐",
       "published": "2026-08-11",
       "seconds": 11,
-      "views": 1869605,
-      "views_per_day": 26376
+      "views": 1893092,
+      "views_per_day": 26336
     },
     {
-      "id": "C-2Ui_kToQs",
-      "keyword": "중년 건강 습관",
-      "title": "나이 들수록 몸이 찌뿌둥하다면 오늘부터 이것 꼭 하세요 #건강습관 #중년건강 #시니어건강 #생활체조 #바른자세 #관절건강",
-      "channel": "인생 조언",
-      "published": "2026-10-14",
-      "seconds": 6,
-      "views": 153479,
-      "views_per_day": 25682
+      "id": "jOabU6mgJl8",
+      "keyword": "혈당",
+      "title": "박술녀가 알려주는 혈당 줄이기 운동(안 따라 하시면 후회합니다)",
+      "channel": "박술녀한복 [Hanbok]",
+      "published": "2026-08-24",
+      "seconds": 54,
+      "views": 1539283,
+      "views_per_day": 26300
+    },
+    {
+      "id": "zYXm341W0Ys",
+      "keyword": "혈당 스파이크",
+      "title": "【성창힐】45세 오윤아가 설탕 끊고 선택한 ‘이것’... 혈당 스파이크 막는 반전의 비밀 #오윤아 #올리고당 #플락토올리고당",
+      "channel": "성창힐_Growth.Creative.Healing",
+      "published": "2026-10-20",
+      "seconds": 45,
+      "views": 47082,
+      "views_per_day": 26265
     },
     {
       "id": "LesbeWev11E",
@@ -312,8 +312,8 @@
       "channel": "김소형채널H",
       "published": "2026-09-01",
       "seconds": 132,
-      "views": 1249241,
-      "views_per_day": 25518
+      "views": 1256787,
+      "views_per_day": 25158
     }
   ],
   "top_by_views": [
@@ -324,8 +324,8 @@
       "channel": "건강쏙쏙",
       "published": "2026-08-16",
       "seconds": 6,
-      "views": 5172732,
-      "views_per_day": 79508
+      "views": 5216923,
+      "views_per_day": 78973
     },
     {
       "id": "xrnwCaDP58w",
@@ -334,8 +334,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-09",
       "seconds": 163,
-      "views": 5096782,
-      "views_per_day": 70833
+      "views": 5130038,
+      "views_per_day": 70318
     },
     {
       "id": "AFz-pzOVJqw",
@@ -344,8 +344,8 @@
       "channel": "Accu-Chek Korea",
       "published": "2026-08-18",
       "seconds": 43,
-      "views": 4230756,
-      "views_per_day": 66249
+      "views": 4285908,
+      "views_per_day": 66078
     },
     {
       "id": "1fm043q84Rw",
@@ -354,8 +354,8 @@
       "channel": "유한양행 와이즈바이옴",
       "published": "2026-09-17",
       "seconds": 16,
-      "views": 3567546,
-      "views_per_day": 105339
+      "views": 3646437,
+      "views_per_day": 104581
     },
     {
       "id": "CobIlSZqlRs",
@@ -364,8 +364,8 @@
       "channel": "인생 조언",
       "published": "2026-08-27",
       "seconds": 6,
-      "views": 3446030,
-      "views_per_day": 63864
+      "views": 3486262,
+      "views_per_day": 63434
     },
     {
       "id": "TI01I99k83U",
@@ -374,8 +374,8 @@
       "channel": "리틀약사 Shorts",
       "published": "2026-08-21",
       "seconds": 20,
-      "views": 2345215,
-      "views_per_day": 38733
+      "views": 2358115,
+      "views_per_day": 38313
     },
     {
       "id": "dnwU19DjM0U",
@@ -384,8 +384,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-23",
       "seconds": 172,
-      "views": 2193831,
-      "views_per_day": 37854
+      "views": 2208394,
+      "views_per_day": 37459
     },
     {
       "id": "3gmrksuBDgs",
@@ -394,8 +394,8 @@
       "channel": "마음가짐",
       "published": "2026-08-11",
       "seconds": 11,
-      "views": 1869605,
-      "views_per_day": 26376
+      "views": 1893092,
+      "views_per_day": 26336
     },
     {
       "id": "X2jbOgSZgqU",
@@ -404,8 +404,8 @@
       "channel": "헬씨약사",
       "published": "2026-09-27",
       "seconds": 40,
-      "views": 1547762,
-      "views_per_day": 66409
+      "views": 1584159,
+      "views_per_day": 65175
     },
     {
       "id": "jOabU6mgJl8",
@@ -414,8 +414,8 @@
       "channel": "박술녀한복 [Hanbok]",
       "published": "2026-08-24",
       "seconds": 54,
-      "views": 1538414,
-      "views_per_day": 26742
+      "views": 1539283,
+      "views_per_day": 26300
     },
     {
       "id": "ab_t5jnZvck",
@@ -424,8 +424,8 @@
       "channel": "김소형채널H",
       "published": "2026-09-03",
       "seconds": 179,
-      "views": 1344061,
-      "views_per_day": 28624
+      "views": 1350808,
+      "views_per_day": 28168
     },
     {
       "id": "T0WHY0LtTI8",
@@ -434,18 +434,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-26",
       "seconds": 165,
-      "views": 1294691,
-      "views_per_day": 23559
-    },
-    {
-      "id": "LesbeWev11E",
-      "keyword": "혈당",
-      "title": "먹자마자 혈당 폭발! 당뇨 환자가 절대 먹으면 안 되는 최악의 밥 4가지! #혈당관리 #당뇨식단 #식후혈당 #당뇨전단계 #혈당스파이크 #김소형한의사",
-      "channel": "김소형채널H",
-      "published": "2026-09-01",
-      "seconds": 132,
-      "views": 1249241,
-      "views_per_day": 25518
+      "views": 1302573,
+      "views_per_day": 23279
     },
     {
       "id": "4kejcXVbw04",
@@ -454,8 +444,18 @@
       "channel": "지식 쇼츠",
       "published": "2026-09-01",
       "seconds": 90,
-      "views": 1237350,
-      "views_per_day": 24847
+      "views": 1265021,
+      "views_per_day": 24902
+    },
+    {
+      "id": "LesbeWev11E",
+      "keyword": "혈당",
+      "title": "먹자마자 혈당 폭발! 당뇨 환자가 절대 먹으면 안 되는 최악의 밥 4가지! #혈당관리 #당뇨식단 #식후혈당 #당뇨전단계 #혈당스파이크 #김소형한의사",
+      "channel": "김소형채널H",
+      "published": "2026-09-01",
+      "seconds": 132,
+      "views": 1256787,
+      "views_per_day": 25158
     },
     {
       "id": "SanV2VbPJbs",
@@ -464,8 +464,8 @@
       "channel": "유한양행 와이즈바이옴",
       "published": "2026-09-17",
       "seconds": 11,
-      "views": 1163263,
-      "views_per_day": 34351
+      "views": 1186541,
+      "views_per_day": 34034
     },
     {
       "id": "2tdRoFdcYl4",
@@ -474,8 +474,8 @@
       "channel": "오늘",
       "published": "2026-08-29",
       "seconds": 42,
-      "views": 1118142,
-      "views_per_day": 21530
+      "views": 1120595,
+      "views_per_day": 21170
     },
     {
       "id": "yj1p3JezCTs",
@@ -484,8 +484,8 @@
       "channel": "오늘의 건강명언",
       "published": "2026-10-01",
       "seconds": 6,
-      "views": 1042060,
-      "views_per_day": 52944
+      "views": 1076021,
+      "views_per_day": 52026
     },
     {
       "id": "4pcVKi6kyeU",
@@ -494,18 +494,8 @@
       "channel": "어떤약사",
       "published": "2026-08-12",
       "seconds": 17,
-      "views": 998345,
-      "views_per_day": 14301
-    },
-    {
-      "id": "PAJcxH7-SBM",
-      "keyword": "혈당",
-      "title": "아침 대신 두부는 이렇게 구워서 드세요! 혈당, 뱃살 잡는 영양가득 든든한 최고의 아침식사",
-      "channel": "루다 테이블 Luda Table",
-      "published": "2026-08-10",
-      "seconds": 57,
-      "views": 924071,
-      "views_per_day": 12944
+      "views": 1001250,
+      "views_per_day": 14140
     },
     {
       "id": "6-VmB50YpEI",
@@ -514,8 +504,8 @@
       "channel": "닥터케이 김지은",
       "published": "2026-08-15",
       "seconds": 16,
-      "views": 906713,
-      "views_per_day": 13574
+      "views": 906738,
+      "views_per_day": 13374
     },
     {
       "id": "zl5O4Yfn06o",
@@ -524,28 +514,8 @@
       "channel": "김소형채널H",
       "published": "2026-07-29",
       "seconds": 163,
-      "views": 893995,
-      "views_per_day": 10777
-    },
-    {
-      "id": "zlLVBt-kNgY",
-      "keyword": "혈당 스파이크",
-      "title": "모유 독점한 외동고양이의 최후 (혈당스파이크옴)",
-      "channel": "아니,근데",
-      "published": "2026-09-14",
-      "seconds": 18,
-      "views": 871441,
-      "views_per_day": 23679
-    },
-    {
-      "id": "Z4CvkV-At3I",
-      "keyword": "혈당",
-      "title": "매일 마시는 믹스커피, 텁텁함은 싹 잡고 혈당은 덜어내는 꿀팁",
-      "channel": "원더홈",
-      "published": "2026-08-23",
-      "seconds": 26,
-      "views": 847133,
-      "views_per_day": 14475
+      "views": 903958,
+      "views_per_day": 10767
     },
     {
       "id": "DKhL41BZdq0",
@@ -554,8 +524,18 @@
       "channel": "김소형채널H",
       "published": "2026-10-13",
       "seconds": 172,
-      "views": 836474,
-      "views_per_day": 120260
+      "views": 884657,
+      "views_per_day": 111202
+    },
+    {
+      "id": "zlLVBt-kNgY",
+      "keyword": "혈당 스파이크",
+      "title": "모유 독점한 외동고양이의 최후 (혈당스파이크옴)",
+      "channel": "아니,근데",
+      "published": "2026-09-14",
+      "seconds": 18,
+      "views": 871568,
+      "views_per_day": 23056
     },
     {
       "id": "97S44oyLk4k",
@@ -564,8 +544,8 @@
       "channel": "새로건강 - 영양제 추천",
       "published": "2026-07-27",
       "seconds": 24,
-      "views": 825520,
-      "views_per_day": 9706
+      "views": 834062,
+      "views_per_day": 9693
     },
     {
       "id": "EqIt5xx_hyk",
@@ -574,18 +554,8 @@
       "channel": "김소형채널H",
       "published": "2026-09-12",
       "seconds": 180,
-      "views": 820229,
-      "views_per_day": 21610
-    },
-    {
-      "id": "y4KvMEE33TE",
-      "keyword": "혈당",
-      "title": "혈당이 걱정된다면 식초에 ‘이것’을 넣어야 하는 이유 혈당 관리 식초 레시피와 주의사항 #식초 #여주 #여주식초 #혈당 #당뇨관리",
-      "channel": "김소형채널H",
-      "published": "2026-08-19",
-      "seconds": 178,
-      "views": 740666,
-      "views_per_day": 11955
+      "views": 828189,
+      "views_per_day": 21260
     },
     {
       "id": "-8wuUmOz2YM",
@@ -594,8 +564,18 @@
       "channel": "온도한스푼",
       "published": "2026-10-08",
       "seconds": 6,
-      "views": 698888,
-      "views_per_day": 55878
+      "views": 761546,
+      "views_per_day": 56381
+    },
+    {
+      "id": "y4KvMEE33TE",
+      "keyword": "혈당",
+      "title": "혈당이 걱정된다면 식초에 ‘이것’을 넣어야 하는 이유 혈당 관리 식초 레시피와 주의사항 #식초 #여주 #여주식초 #혈당 #당뇨관리",
+      "channel": "김소형채널H",
+      "published": "2026-08-19",
+      "seconds": 178,
+      "views": 742618,
+      "views_per_day": 11796
     },
     {
       "id": "YbqysAt6i3A",
@@ -604,8 +584,8 @@
       "channel": "맛도리팸 레시피",
       "published": "2026-10-08",
       "seconds": 39,
-      "views": 675036,
-      "views_per_day": 54719
+      "views": 714879,
+      "views_per_day": 53604
     },
     {
       "id": "kIu-Uf_d3IM",
@@ -614,8 +594,28 @@
       "channel": "건강하고 행복하게 ",
       "published": "2026-09-14",
       "seconds": 7,
-      "views": 672314,
-      "views_per_day": 18311
+      "views": 672316,
+      "views_per_day": 17826
+    },
+    {
+      "id": "DfOXD4cwFx0",
+      "keyword": "혈당",
+      "title": "혈당 낮추려면 이 운동이 정답입니다",
+      "channel": "오늘",
+      "published": "2026-08-14",
+      "seconds": 21,
+      "views": 663521,
+      "views_per_day": 9763
+    },
+    {
+      "id": "-LSz941Wwmc",
+      "keyword": "당뇨 전단계",
+      "title": "당뇨병 당뇨전단계 최고의 운동",
+      "channel": "위·대장내시경은 성모우리내과",
+      "published": "2026-08-30",
+      "seconds": 138,
+      "views": 648758,
+      "views_per_day": 12346
     }
   ]
 }
