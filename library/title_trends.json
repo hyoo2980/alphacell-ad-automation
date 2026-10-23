@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23 07:10",
+  "updated": "2026-10-24 06:55",
   "keywords": [
     "혈당",
     "혈당 스파이크",
@@ -22,18 +22,8 @@
       "channel": "내 새끼에게 들려주는 이야기",
       "published": "2026-10-22",
       "seconds": 6,
-      "views": 263792,
-      "views_per_day": 333237
-    },
-    {
-      "id": "gy1bC6D3G0w",
-      "keyword": "혈당 스파이크",
-      "title": "먹방 유튜버 회사의 혈당스파이크 복지",
-      "channel": "돼끼 baby_pig_rabbit",
-      "published": "2026-10-21",
-      "seconds": 53,
-      "views": 201801,
-      "views_per_day": 130316
+      "views": 339741,
+      "views_per_day": 190684
     },
     {
       "id": "mPOCY5qH1es",
@@ -42,28 +32,8 @@
       "channel": "딱중년템",
       "published": "2026-10-18",
       "seconds": 24,
-      "views": 582687,
-      "views_per_day": 129292
-    },
-    {
-      "id": "IcMyEuTiPPw",
-      "keyword": "혈당",
-      "title": "매일 달걀 2알을 먹어야 하는 진짜 이유! #혈당조절 #뱃살빼기 #치매예방 #달걀효능 #콜레스테롤",
-      "channel": "김소형채널H",
-      "published": "2026-10-17",
-      "seconds": 112,
-      "views": 547766,
-      "views_per_day": 110792
-    },
-    {
-      "id": "DKhL41BZdq0",
-      "keyword": "혈관 건강",
-      "title": "뇌로 가는 혈관이 막히면 생기는 일! 뇌혈류 뻥 뚫어주는 기적의 5분 마사지 #뇌혈류개선 #두통 #어지럼증 #이명 #흉쇄유돌근",
-      "channel": "김소형채널H",
-      "published": "2026-10-13",
-      "seconds": 172,
-      "views": 931143,
-      "views_per_day": 103982
+      "views": 632924,
+      "views_per_day": 115143
     },
     {
       "id": "1fm043q84Rw",
@@ -72,28 +42,38 @@
       "channel": "유한양행 와이즈바이옴",
       "published": "2026-09-17",
       "seconds": 16,
-      "views": 3723903,
-      "views_per_day": 103826
+      "views": 3800930,
+      "views_per_day": 103127
     },
     {
-      "id": "reTXQmteD6Y",
-      "keyword": "중년 건강 습관",
-      "title": "#돈복#재물운#부자습관#시니어공감#인생의지혜##지혜#생활#건강#명언#마음#인생#삶#습관#공감#꿀팁#방법#지식#정보#좋은글#공감글귀#멋진글귀#50대#60대#70대#노후#노년#중년#",
-      "channel": "지혜로운 생활",
-      "published": "2026-10-22",
-      "seconds": 6,
-      "views": 56192,
-      "views_per_day": 89439
-    },
-    {
-      "id": "fRxh4coGZ4I",
+      "id": "DKhL41BZdq0",
       "keyword": "혈관 건강",
-      "title": "혈관 건강 지키면서 근육 늘리는 50대 맞춤 고단백 식품 추천!",
-      "channel": "100세 헬스케어",
-      "published": "2026-10-16",
-      "seconds": 174,
-      "views": 552326,
-      "views_per_day": 82250
+      "title": "뇌로 가는 혈관이 막히면 생기는 일! 뇌혈류 뻥 뚫어주는 기적의 5분 마사지 #뇌혈류개선 #두통 #어지럼증 #이명 #흉쇄유돌근",
+      "channel": "김소형채널H",
+      "published": "2026-10-13",
+      "seconds": 172,
+      "views": 976529,
+      "views_per_day": 98193
+    },
+    {
+      "id": "F3ZK3ma33V0",
+      "keyword": "중년 건강 습관",
+      "title": "굶으면 건강해진다? 중년엔 독이 됩니다!",
+      "channel": "황금 노후_건강한 식탁",
+      "published": "2026-10-23",
+      "seconds": 6,
+      "views": 75641,
+      "views_per_day": 97689
+    },
+    {
+      "id": "IcMyEuTiPPw",
+      "keyword": "혈당",
+      "title": "매일 달걀 2알을 먹어야 하는 진짜 이유! #혈당조절 #뱃살빼기 #치매예방 #달걀효능 #콜레스테롤",
+      "channel": "김소형채널H",
+      "published": "2026-10-17",
+      "seconds": 112,
+      "views": 570696,
+      "views_per_day": 96171
     },
     {
       "id": "66bTRI_sDAU",
@@ -102,8 +82,28 @@
       "channel": "건강쏙쏙",
       "published": "2026-08-16",
       "seconds": 6,
-      "views": 5261293,
-      "views_per_day": 78458
+      "views": 5289334,
+      "views_per_day": 77728
+    },
+    {
+      "id": "fRxh4coGZ4I",
+      "keyword": "혈관 건강",
+      "title": "혈관 건강 지키면서 근육 늘리는 50대 맞춤 고단백 식품 추천!",
+      "channel": "100세 헬스케어",
+      "published": "2026-10-16",
+      "seconds": 174,
+      "views": 572481,
+      "views_per_day": 74297
+    },
+    {
+      "id": "H-TfD61aG-M",
+      "keyword": "혈당 스파이크",
+      "title": "건강식인 줄 알았는데 혈당 올리는 음식 10가지",
+      "channel": "황금 노후_건강한 식탁",
+      "published": "2026-10-22",
+      "seconds": 6,
+      "views": 69678,
+      "views_per_day": 72478
     },
     {
       "id": "xrnwCaDP58w",
@@ -112,38 +112,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-09",
       "seconds": 163,
-      "views": 5168655,
-      "views_per_day": 69890
-    },
-    {
-      "id": "IpcdysJ6m14",
-      "keyword": "혈관 건강",
-      "title": "나토키나제 혈관 건강에 도움 될까?",
-      "channel": "오늘",
-      "published": "2026-10-16",
-      "seconds": 46,
-      "views": 408750,
-      "views_per_day": 68522
-    },
-    {
-      "id": "9Aa5IbNW-Is",
-      "keyword": "공복혈당",
-      "title": "🩺 건강검진 전에 꼭 보세요! 기본 건강 수치 14가지 총정리",
-      "channel": "지혜人TV",
-      "published": "2026-10-20",
-      "seconds": 6,
-      "views": 187084,
-      "views_per_day": 68120
-    },
-    {
-      "id": "AFz-pzOVJqw",
-      "keyword": "혈당",
-      "title": "130년 로슈의 혈당 측정 시스템, 아큐-첵",
-      "channel": "Accu-Chek Korea",
-      "published": "2026-08-18",
-      "seconds": 43,
-      "views": 4345167,
-      "views_per_day": 65975
+      "views": 5231515,
+      "views_per_day": 69805
     },
     {
       "id": "Js6FvhXM65s",
@@ -152,8 +122,18 @@
       "channel": "건강 스케치",
       "published": "2026-10-18",
       "seconds": 95,
-      "views": 310490,
-      "views_per_day": 65274
+      "views": 384178,
+      "views_per_day": 66851
+    },
+    {
+      "id": "AFz-pzOVJqw",
+      "keyword": "혈당",
+      "title": "130년 로슈의 혈당 측정 시스템, 아큐-첵",
+      "channel": "Accu-Chek Korea",
+      "published": "2026-08-18",
+      "seconds": 43,
+      "views": 4405382,
+      "views_per_day": 65898
     },
     {
       "id": "CobIlSZqlRs",
@@ -162,8 +142,8 @@
       "channel": "인생 조언",
       "published": "2026-08-27",
       "seconds": 6,
-      "views": 3546274,
-      "views_per_day": 63374
+      "views": 3605067,
+      "views_per_day": 63304
     },
     {
       "id": "X2jbOgSZgqU",
@@ -172,18 +152,18 @@
       "channel": "헬씨약사",
       "published": "2026-09-27",
       "seconds": 40,
-      "views": 1600158,
-      "views_per_day": 63233
+      "views": 1628114,
+      "views_per_day": 61915
     },
     {
-      "id": "Cn8HRq8ujUE",
+      "id": "IpcdysJ6m14",
       "keyword": "혈관 건강",
-      "title": "🚨 혈관이 막히면 몸이 먼저 알려줍니다! 절대 놓치면 안 되는 위험신호 9가지",
-      "channel": "지혜人TV",
-      "published": "2026-10-15",
-      "seconds": 7,
-      "views": 432985,
-      "views_per_day": 57761
+      "title": "나토키나제 혈관 건강에 도움 될까?",
+      "channel": "오늘",
+      "published": "2026-10-16",
+      "seconds": 46,
+      "views": 427033,
+      "views_per_day": 61396
     },
     {
       "id": "-8wuUmOz2YM",
@@ -192,8 +172,18 @@
       "channel": "온도한스푼",
       "published": "2026-10-08",
       "seconds": 6,
-      "views": 817650,
-      "views_per_day": 56364
+      "views": 847980,
+      "views_per_day": 54720
+    },
+    {
+      "id": "Cn8HRq8ujUE",
+      "keyword": "혈관 건강",
+      "title": "🚨 혈관이 막히면 몸이 먼저 알려줍니다! 절대 놓치면 안 되는 위험신호 9가지",
+      "channel": "지혜人TV",
+      "published": "2026-10-15",
+      "seconds": 7,
+      "views": 456512,
+      "views_per_day": 53794
     },
     {
       "id": "YbqysAt6i3A",
@@ -202,8 +192,18 @@
       "channel": "맛도리팸 레시피",
       "published": "2026-10-08",
       "seconds": 39,
-      "views": 756249,
-      "views_per_day": 52753
+      "views": 823107,
+      "views_per_day": 53707
+    },
+    {
+      "id": "9Aa5IbNW-Is",
+      "keyword": "공복혈당",
+      "title": "🩺 건강검진 전에 꼭 보세요! 기본 건강 수치 14가지 총정리",
+      "channel": "지혜人TV",
+      "published": "2026-10-20",
+      "seconds": 6,
+      "views": 194224,
+      "views_per_day": 51981
     },
     {
       "id": "yj1p3JezCTs",
@@ -212,18 +212,18 @@
       "channel": "오늘의 건강명언",
       "published": "2026-10-01",
       "seconds": 6,
-      "views": 1105769,
-      "views_per_day": 51000
+      "views": 1121778,
+      "views_per_day": 49479
     },
     {
-      "id": "dqHu4MQTBGY",
-      "keyword": "중년 건강 습관",
-      "title": "10년 젊게 사는 사람들의 돈 안 드는 10가지 습관  #건강습관 #생활습관 #시니어건강 #건강정보 #혈액순환 #바른자세",
-      "channel": "인생 조언",
-      "published": "2026-10-21",
+      "id": "A3E4cYefv8w",
+      "keyword": "혈관 건강",
+      "title": "💎🥇맛있다고 계속 드셨죠? 혈관 막히는 습관 10가지 체크하세요",
+      "channel": "지혜人TV",
+      "published": "2026-07-29",
       "seconds": 6,
-      "views": 81006,
-      "views_per_day": 45570
+      "views": 3689664,
+      "views_per_day": 42498
     },
     {
       "id": "TI01I99k83U",
@@ -232,8 +232,8 @@
       "channel": "리틀약사 Shorts",
       "published": "2026-08-21",
       "seconds": 20,
-      "views": 2367240,
-      "views_per_day": 37847
+      "views": 2373576,
+      "views_per_day": 37357
     },
     {
       "id": "dnwU19DjM0U",
@@ -242,8 +242,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-23",
       "seconds": 172,
-      "views": 2224091,
-      "views_per_day": 37096
+      "views": 2238660,
+      "views_per_day": 36733
     },
     {
       "id": "SanV2VbPJbs",
@@ -252,28 +252,28 @@
       "channel": "유한양행 와이즈바이옴",
       "published": "2026-09-17",
       "seconds": 11,
-      "views": 1209794,
-      "views_per_day": 33734
+      "views": 1234613,
+      "views_per_day": 33501
     },
     {
-      "id": "pEC3q3fdmmI",
+      "id": "dqHu4MQTBGY",
       "keyword": "중년 건강 습관",
-      "title": "#65세건강#노년식사#시니어건강#건강한식습관#건강상식##건강#명언#지혜#습관#노후#노년#중년#행복#힐링#마음#생활#장수#몸#방법#인생#삶#50대#60대#70대#보약#",
-      "channel": "오늘의 건강명언",
+      "title": "10년 젊게 사는 사람들의 돈 안 드는 10가지 습관  #건강습관 #생활습관 #시니어건강 #건강정보 #혈액순환 #바른자세",
+      "channel": "인생 조언",
       "published": "2026-10-21",
       "seconds": 6,
-      "views": 51974,
-      "views_per_day": 29280
+      "views": 86259,
+      "views_per_day": 31166
     },
     {
-      "id": "TAM1jor-MKA",
+      "id": "cuKzJFCM9iE",
       "keyword": "혈당",
-      "title": "파스타 먹고 혈당 90대, 82세 선우용여의 건강 레시피는?",
-      "channel": "살림레이더",
-      "published": "2026-10-06",
-      "seconds": 109,
-      "views": 460768,
-      "views_per_day": 27932
+      "title": "홍혜걸박사가 설명하는 혈당이 가장 중요한 이유 #홍혜걸 #함익병 #혈당 #당뇨",
+      "channel": "1분동안",
+      "published": "2026-10-08",
+      "seconds": 47,
+      "views": 439198,
+      "views_per_day": 28073
     },
     {
       "id": "ab_t5jnZvck",
@@ -282,18 +282,18 @@
       "channel": "김소형채널H",
       "published": "2026-09-03",
       "seconds": 179,
-      "views": 1357873,
-      "views_per_day": 27737
+      "views": 1373663,
+      "views_per_day": 27504
     },
     {
-      "id": "-_VP8GcCgmw",
-      "keyword": "혈관 건강",
-      "title": "아무 기름이나 쓰면 혈관 다 막힙니다! 내 몸 살리는 식용유 선택법 #식용유추천 #건강상식",
-      "channel": "시니어노후준비",
-      "published": "2026-10-09",
-      "seconds": 10,
-      "views": 348180,
-      "views_per_day": 26672
+      "id": "TAM1jor-MKA",
+      "keyword": "혈당",
+      "title": "파스타 먹고 혈당 90대, 82세 선우용여의 건강 레시피는?",
+      "channel": "살림레이더",
+      "published": "2026-10-06",
+      "seconds": 109,
+      "views": 465998,
+      "views_per_day": 26649
     },
     {
       "id": "3gmrksuBDgs",
@@ -302,18 +302,18 @@
       "channel": "마음가짐",
       "published": "2026-08-11",
       "seconds": 11,
-      "views": 1919061,
-      "views_per_day": 26331
+      "views": 1939245,
+      "views_per_day": 26252
     },
     {
-      "id": "G1JPfWSkn50",
-      "keyword": "혈당 스파이크",
-      "title": "당뇨·혈당 고민이시라면 사과 대신 '이 과일' 드세요! 혈당지수가 사과 보다 낮은 외의과일 4가지! #저혈당과일 #혈당관리 #당뇨과일 #혈당스파이크#딸기효능#자두효능 #혈당낮추는법",
-      "channel": "100세 헬스케어",
+      "id": "-_VP8GcCgmw",
+      "keyword": "혈관 건강",
+      "title": "아무 기름이나 쓰면 혈관 다 막힙니다! 내 몸 살리는 식용유 선택법 #식용유추천 #건강상식",
+      "channel": "시니어노후준비",
       "published": "2026-10-09",
-      "seconds": 162,
-      "views": 357867,
-      "views_per_day": 26093
+      "seconds": 10,
+      "views": 358974,
+      "views_per_day": 25560
     }
   ],
   "top_by_views": [
@@ -324,8 +324,8 @@
       "channel": "건강쏙쏙",
       "published": "2026-08-16",
       "seconds": 6,
-      "views": 5261293,
-      "views_per_day": 78458
+      "views": 5289334,
+      "views_per_day": 77728
     },
     {
       "id": "xrnwCaDP58w",
@@ -334,8 +334,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-09",
       "seconds": 163,
-      "views": 5168655,
-      "views_per_day": 69890
+      "views": 5231515,
+      "views_per_day": 69805
     },
     {
       "id": "AFz-pzOVJqw",
@@ -344,8 +344,8 @@
       "channel": "Accu-Chek Korea",
       "published": "2026-08-18",
       "seconds": 43,
-      "views": 4345167,
-      "views_per_day": 65975
+      "views": 4405382,
+      "views_per_day": 65898
     },
     {
       "id": "1fm043q84Rw",
@@ -354,8 +354,18 @@
       "channel": "유한양행 와이즈바이옴",
       "published": "2026-09-17",
       "seconds": 16,
-      "views": 3723903,
-      "views_per_day": 103826
+      "views": 3800930,
+      "views_per_day": 103127
+    },
+    {
+      "id": "A3E4cYefv8w",
+      "keyword": "혈관 건강",
+      "title": "💎🥇맛있다고 계속 드셨죠? 혈관 막히는 습관 10가지 체크하세요",
+      "channel": "지혜人TV",
+      "published": "2026-07-29",
+      "seconds": 6,
+      "views": 3689664,
+      "views_per_day": 42498
     },
     {
       "id": "CobIlSZqlRs",
@@ -364,8 +374,8 @@
       "channel": "인생 조언",
       "published": "2026-08-27",
       "seconds": 6,
-      "views": 3546274,
-      "views_per_day": 63374
+      "views": 3605067,
+      "views_per_day": 63304
     },
     {
       "id": "TI01I99k83U",
@@ -374,8 +384,8 @@
       "channel": "리틀약사 Shorts",
       "published": "2026-08-21",
       "seconds": 20,
-      "views": 2367240,
-      "views_per_day": 37847
+      "views": 2373576,
+      "views_per_day": 37357
     },
     {
       "id": "dnwU19DjM0U",
@@ -384,8 +394,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-23",
       "seconds": 172,
-      "views": 2224091,
-      "views_per_day": 37096
+      "views": 2238660,
+      "views_per_day": 36733
     },
     {
       "id": "3gmrksuBDgs",
@@ -394,8 +404,8 @@
       "channel": "마음가짐",
       "published": "2026-08-11",
       "seconds": 11,
-      "views": 1919061,
-      "views_per_day": 26331
+      "views": 1939245,
+      "views_per_day": 26252
     },
     {
       "id": "X2jbOgSZgqU",
@@ -404,8 +414,8 @@
       "channel": "헬씨약사",
       "published": "2026-09-27",
       "seconds": 40,
-      "views": 1600158,
-      "views_per_day": 63233
+      "views": 1628114,
+      "views_per_day": 61915
     },
     {
       "id": "jOabU6mgJl8",
@@ -414,8 +424,8 @@
       "channel": "박술녀한복 [Hanbok]",
       "published": "2026-08-24",
       "seconds": 54,
-      "views": 1540027,
-      "views_per_day": 25871
+      "views": 1540887,
+      "views_per_day": 25462
     },
     {
       "id": "ab_t5jnZvck",
@@ -424,8 +434,8 @@
       "channel": "김소형채널H",
       "published": "2026-09-03",
       "seconds": 179,
-      "views": 1357873,
-      "views_per_day": 27737
+      "views": 1373663,
+      "views_per_day": 27504
     },
     {
       "id": "T0WHY0LtTI8",
@@ -434,8 +444,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-26",
       "seconds": 165,
-      "views": 1308738,
-      "views_per_day": 22979
+      "views": 1316546,
+      "views_per_day": 22721
     },
     {
       "id": "4kejcXVbw04",
@@ -444,8 +454,8 @@
       "channel": "지식 쇼츠",
       "published": "2026-09-01",
       "seconds": 90,
-      "views": 1281252,
-      "views_per_day": 24735
+      "views": 1302282,
+      "views_per_day": 24670
     },
     {
       "id": "LesbeWev11E",
@@ -454,8 +464,8 @@
       "channel": "김소형채널H",
       "published": "2026-09-01",
       "seconds": 132,
-      "views": 1264086,
-      "views_per_day": 24808
+      "views": 1271501,
+      "views_per_day": 24478
     },
     {
       "id": "SanV2VbPJbs",
@@ -464,8 +474,18 @@
       "channel": "유한양행 와이즈바이옴",
       "published": "2026-09-17",
       "seconds": 11,
-      "views": 1209794,
-      "views_per_day": 33734
+      "views": 1234613,
+      "views_per_day": 33501
+    },
+    {
+      "id": "qUaAIrBo6xY",
+      "keyword": "혈관 건강",
+      "title": "생각보다 어려운 이 동작? ⚡ 4가지 다 따라 하면 혈관 나이 20대 인정 #혈액순환 #손박수 #건강테스트 #건강꿀팁",
+      "channel": "백세건강비법",
+      "published": "2026-08-21",
+      "seconds": 27,
+      "views": 1154278,
+      "views_per_day": 18313
     },
     {
       "id": "2tdRoFdcYl4",
@@ -474,8 +494,8 @@
       "channel": "오늘",
       "published": "2026-08-29",
       "seconds": 42,
-      "views": 1123900,
-      "views_per_day": 20839
+      "views": 1126508,
+      "views_per_day": 20511
     },
     {
       "id": "yj1p3JezCTs",
@@ -484,8 +504,8 @@
       "channel": "오늘의 건강명언",
       "published": "2026-10-01",
       "seconds": 6,
-      "views": 1105769,
-      "views_per_day": 51000
+      "views": 1121778,
+      "views_per_day": 49479
     },
     {
       "id": "4pcVKi6kyeU",
@@ -494,8 +514,8 @@
       "channel": "어떤약사",
       "published": "2026-08-12",
       "seconds": 17,
-      "views": 1002817,
-      "views_per_day": 13965
+      "views": 1004775,
+      "views_per_day": 13802
     },
     {
       "id": "DKhL41BZdq0",
@@ -504,8 +524,8 @@
       "channel": "김소형채널H",
       "published": "2026-10-13",
       "seconds": 172,
-      "views": 931143,
-      "views_per_day": 103982
+      "views": 976529,
+      "views_per_day": 98193
     },
     {
       "id": "zl5O4Yfn06o",
@@ -514,8 +534,8 @@
       "channel": "김소형채널H",
       "published": "2026-07-29",
       "seconds": 163,
-      "views": 909516,
-      "views_per_day": 10706
+      "views": 918439,
+      "views_per_day": 10686
     },
     {
       "id": "6-VmB50YpEI",
@@ -524,8 +544,8 @@
       "channel": "닥터케이 김지은",
       "published": "2026-08-15",
       "seconds": 16,
-      "views": 906740,
-      "views_per_day": 13180
+      "views": 906748,
+      "views_per_day": 12993
     },
     {
       "id": "zlLVBt-kNgY",
@@ -534,38 +554,8 @@
       "channel": "아니,근데",
       "published": "2026-09-14",
       "seconds": 18,
-      "views": 871694,
-      "views_per_day": 22465
-    },
-    {
-      "id": "Z4CvkV-At3I",
-      "keyword": "혈당",
-      "title": "매일 마시는 믹스커피, 텁텁함은 싹 잡고 혈당은 덜어내는 꿀팁",
-      "channel": "원더홈",
-      "published": "2026-08-23",
-      "seconds": 26,
-      "views": 847604,
-      "views_per_day": 14005
-    },
-    {
-      "id": "EqIt5xx_hyk",
-      "keyword": "중년 건강 습관",
-      "title": "60대 가늘어진 팔다리 꽉 채워주는 단백질 음식 4가지 #근손실방지 #단백질음식 #근육강화 #중년다이어트 #건강습관",
-      "channel": "김소형채널H",
-      "published": "2026-09-12",
-      "seconds": 180,
-      "views": 836775,
-      "views_per_day": 20943
-    },
-    {
-      "id": "97S44oyLk4k",
-      "keyword": "혈관 건강",
-      "title": "이 기름 매일먹으면 혈관청소 끝입니다.#혈관청소 #혈관건강 #기름의효능 #건강정보 #심혈관질환예방 #혈액순환 #건강식품 #혈관청소음식 #심장건강 #생활건강팁#건강",
-      "channel": "새로건강 - 영양제 추천",
-      "published": "2026-07-27",
-      "seconds": 24,
-      "views": 836774,
-      "views_per_day": 9613
+      "views": 871805,
+      "views_per_day": 21909
     },
     {
       "id": "-8wuUmOz2YM",
@@ -574,8 +564,28 @@
       "channel": "온도한스푼",
       "published": "2026-10-08",
       "seconds": 6,
-      "views": 817650,
-      "views_per_day": 56364
+      "views": 847980,
+      "views_per_day": 54720
+    },
+    {
+      "id": "EqIt5xx_hyk",
+      "keyword": "중년 건강 습관",
+      "title": "60대 가늘어진 팔다리 꽉 채워주는 단백질 음식 4가지 #근손실방지 #단백질음식 #근육강화 #중년다이어트 #건강습관",
+      "channel": "김소형채널H",
+      "published": "2026-09-12",
+      "seconds": 180,
+      "views": 844563,
+      "views_per_day": 20627
+    },
+    {
+      "id": "97S44oyLk4k",
+      "keyword": "혈관 건강",
+      "title": "이 기름 매일먹으면 혈관청소 끝입니다.#혈관청소 #혈관건강 #기름의효능 #건강정보 #심혈관질환예방 #혈액순환 #건강식품 #혈관청소음식 #심장건강 #생활건강팁#건강",
+      "channel": "새로건강 - 영양제 추천",
+      "published": "2026-07-27",
+      "seconds": 24,
+      "views": 840669,
+      "views_per_day": 9549
     },
     {
       "id": "YbqysAt6i3A",
@@ -584,8 +594,8 @@
       "channel": "맛도리팸 레시피",
       "published": "2026-10-08",
       "seconds": 39,
-      "views": 756249,
-      "views_per_day": 52753
+      "views": 823107,
+      "views_per_day": 53707
     },
     {
       "id": "y4KvMEE33TE",
@@ -594,8 +604,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-19",
       "seconds": 178,
-      "views": 744025,
-      "views_per_day": 11634
+      "views": 745365,
+      "views_per_day": 11477
     },
     {
       "id": "kIu-Uf_d3IM",
@@ -604,18 +614,8 @@
       "channel": "건강하고 행복하게 ",
       "published": "2026-09-14",
       "seconds": 7,
-      "views": 672317,
-      "views_per_day": 17366
-    },
-    {
-      "id": "DfOXD4cwFx0",
-      "keyword": "혈당",
-      "title": "혈당 낮추려면 이 운동이 정답입니다",
-      "channel": "오늘",
-      "published": "2026-08-14",
-      "seconds": 21,
-      "views": 666649,
-      "views_per_day": 9667
+      "views": 672318,
+      "views_per_day": 16933
     }
   ]
 }
