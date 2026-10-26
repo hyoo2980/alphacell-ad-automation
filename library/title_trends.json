@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26 06:30",
+  "updated": "2026-10-27 08:06",
   "keywords": [
     "혈당",
     "혈당 스파이크",
@@ -16,14 +16,24 @@
   ],
   "hot_by_views_per_day": [
     {
+      "id": "_Me9ZGEc-54",
+      "keyword": "당뇨에 좋은 음식",
+      "title": "3대째 내려 온 건강밥상 비법! 당뇨식단 변비에도 좋다는데 #당뇨식단",
+      "channel": "더살자",
+      "published": "2026-10-22",
+      "seconds": 42,
+      "views": 811040,
+      "views_per_day": 175309
+    },
+    {
       "id": "4fTWZ_ZL5tg",
       "keyword": "중년 건강 습관",
       "title": "장수하는 사람들의 최고 건강 습관 10가지! 50대부터 꼭 실천하세요 #장수습관 #건강상식 #shorts#장수 #생활상식 #유튜브쇼츠",
       "channel": "내 새끼에게 들려주는 이야기",
       "published": "2026-10-22",
       "seconds": 6,
-      "views": 498517,
-      "views_per_day": 132441
+      "views": 589084,
+      "views_per_day": 121949
     },
     {
       "id": "1fm043q84Rw",
@@ -32,18 +42,8 @@
       "channel": "유한양행 와이즈바이옴",
       "published": "2026-09-17",
       "seconds": 16,
-      "views": 3960468,
-      "views_per_day": 101971
-    },
-    {
-      "id": "R19CGx-ZnB0",
-      "keyword": "혈당 스파이크",
-      "title": "엄마 쭈쭈 먹자마자 혈당 스파이크 슈바오! #송바오 #슈바오 #panda #ShuBao",
-      "channel": "바오일기",
-      "published": "2026-10-24",
-      "seconds": 38,
-      "views": 129931,
-      "views_per_day": 95201
+      "views": 3988234,
+      "views_per_day": 99941
     },
     {
       "id": "mPOCY5qH1es",
@@ -52,8 +52,8 @@
       "channel": "딱중년템",
       "published": "2026-10-18",
       "seconds": 24,
-      "views": 708680,
-      "views_per_day": 94753
+      "views": 723610,
+      "views_per_day": 84675
     },
     {
       "id": "DKhL41BZdq0",
@@ -62,8 +62,8 @@
       "channel": "김소형채널H",
       "published": "2026-10-13",
       "seconds": 172,
-      "views": 1046660,
-      "views_per_day": 87753
+      "views": 1089613,
+      "views_per_day": 83856
     },
     {
       "id": "IcMyEuTiPPw",
@@ -72,8 +72,8 @@
       "channel": "김소형채널H",
       "published": "2026-10-17",
       "seconds": 112,
-      "views": 669196,
-      "views_per_day": 84531
+      "views": 701672,
+      "views_per_day": 78110
     },
     {
       "id": "66bTRI_sDAU",
@@ -82,28 +82,8 @@
       "channel": "건강쏙쏙",
       "published": "2026-08-16",
       "seconds": 6,
-      "views": 5308803,
-      "views_per_day": 75806
-    },
-    {
-      "id": "yZbZrN8E1t0",
-      "keyword": "혈당 낮추는 음식",
-      "title": "#혈당관리#당뇨식단#혈당낮추는식습관#시니어건강#건강한음식선택##지혜#생활#건강#명언#습관#공감#꿀팁#방법#지식#정보#좋은글#공감글귀#멋진글귀#50대#60대#70대#노후#노년#중년#",
-      "channel": "지혜로운 생활",
-      "published": "2026-10-24",
-      "seconds": 6,
-      "views": 121860,
-      "views_per_day": 73409
-    },
-    {
-      "id": "OJsIUujOkKk",
-      "keyword": "혈관 건강",
-      "title": "【성창힐】\"혈관 망가지는 지름길\" 심장 전문의가 절대 안 먹는 최악의 간식 2가지 #육포 #감자칩 #심장",
-      "channel": "성창힐_Growth.Creative.Healing",
-      "published": "2026-10-23",
-      "seconds": 57,
-      "views": 173771,
-      "views_per_day": 71163
+      "views": 5317259,
+      "views_per_day": 74788
     },
     {
       "id": "xrnwCaDP58w",
@@ -112,8 +92,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-09",
       "seconds": 163,
-      "views": 5343415,
-      "views_per_day": 69461
+      "views": 5412651,
+      "views_per_day": 69399
     },
     {
       "id": "AFz-pzOVJqw",
@@ -122,18 +102,8 @@
       "channel": "Accu-Chek Korea",
       "published": "2026-08-18",
       "seconds": 43,
-      "views": 4527568,
-      "views_per_day": 65776
-    },
-    {
-      "id": "fRxh4coGZ4I",
-      "keyword": "혈관 건강",
-      "title": "혈관 건강 지키면서 근육 늘리는 50대 맞춤 고단백 식품 추천!",
-      "channel": "100세 헬스케어",
-      "published": "2026-10-16",
-      "seconds": 174,
-      "views": 618488,
-      "views_per_day": 63843
+      "views": 4580092,
+      "views_per_day": 65523
     },
     {
       "id": "CobIlSZqlRs",
@@ -142,28 +112,38 @@
       "channel": "인생 조언",
       "published": "2026-08-27",
       "seconds": 6,
-      "views": 3737795,
-      "views_per_day": 63427
+      "views": 3799010,
+      "views_per_day": 63320
     },
     {
-      "id": "uAZHJHnosNE",
+      "id": "fRxh4coGZ4I",
+      "keyword": "혈관 건강",
+      "title": "혈관 건강 지키면서 근육 늘리는 50대 맞춤 고단백 식품 추천!",
+      "channel": "100세 헬스케어",
+      "published": "2026-10-16",
+      "seconds": 174,
+      "views": 644372,
+      "views_per_day": 59918
+    },
+    {
+      "id": "24CVZhYg7-g",
       "keyword": "중년 건강 습관",
-      "title": "#청소#사람#지혜#생활#건강#명언#마음#인생#삶#습관#공감#위로#꿀팁#방법#지식#정보#좋은글#공감글귀#멋진글귀#50대#60대#70대#노후#노년#중년#",
-      "channel": "지혜로운 생활",
-      "published": "2026-10-24",
+      "title": "🔥 100세 장수 노인들의 아침 습관! 눕자마자 따라 하는 근력 운동 10가지",
+      "channel": "지혜人TV",
+      "published": "2026-10-15",
       "seconds": 6,
-      "views": 105262,
-      "views_per_day": 59812
+      "views": 699876,
+      "views_per_day": 59809
     },
     {
-      "id": "Js6FvhXM65s",
-      "keyword": "혈당",
-      "title": "아침 공복 사과 먹기 전 '이것' 먼저 먹었더니 치솟던 혈당 뚝 떨어졌습니다",
-      "channel": "건강 스케치",
-      "published": "2026-10-18",
-      "seconds": 95,
-      "views": 458599,
-      "views_per_day": 59333
+      "id": "R19CGx-ZnB0",
+      "keyword": "혈당 스파이크",
+      "title": "엄마 쭈쭈 먹자마자 혈당 스파이크 슈바오! #송바오 #슈바오 #panda #ShuBao",
+      "channel": "바오일기",
+      "published": "2026-10-24",
+      "seconds": 38,
+      "views": 141586,
+      "views_per_day": 58234
     },
     {
       "id": "X2jbOgSZgqU",
@@ -172,28 +152,28 @@
       "channel": "헬씨약사",
       "published": "2026-09-27",
       "seconds": 40,
-      "views": 1667151,
-      "views_per_day": 58955
+      "views": 1692215,
+      "views_per_day": 57667
     },
     {
-      "id": "YbqysAt6i3A",
+      "id": "Js6FvhXM65s",
       "keyword": "혈당",
-      "title": "혈당·체중 관리에 관심 있다면 이것부터 먹어보세요 😳 #건강간식 #식단관리  #레시피",
-      "channel": "맛도리팸 레시피",
-      "published": "2026-10-08",
-      "seconds": 39,
-      "views": 945142,
-      "views_per_day": 54606
+      "title": "아침 공복 사과 먹기 전 '이것' 먼저 먹었더니 치솟던 혈당 뚝 떨어졌습니다",
+      "channel": "건강 스케치",
+      "published": "2026-10-18",
+      "seconds": 95,
+      "views": 488381,
+      "views_per_day": 55525
     },
     {
-      "id": "_gMx3xxuhBs",
-      "keyword": "혈당 스파이크",
-      "title": "감자 vs 고구마, 당뇨 환자에게 더 나쁜 음식과 혈당 낮추는 조리법 #노비노 #노비노건강TV #이재동 #감자 #고구마 #당뇨",
-      "channel": "노비노 건강TV",
+      "id": "OJsIUujOkKk",
+      "keyword": "혈관 건강",
+      "title": "【성창힐】\"혈관 망가지는 지름길\" 심장 전문의가 절대 안 먹는 최악의 간식 2가지 #육포 #감자칩 #심장",
+      "channel": "성창힐_Growth.Creative.Healing",
       "published": "2026-10-23",
-      "seconds": 106,
-      "views": 107615,
-      "views_per_day": 53252
+      "seconds": 57,
+      "views": 192668,
+      "views_per_day": 54917
     },
     {
       "id": "-8wuUmOz2YM",
@@ -202,8 +182,8 @@
       "channel": "온도한스푼",
       "published": "2026-10-08",
       "seconds": 6,
-      "views": 925603,
-      "views_per_day": 52955
+      "views": 980134,
+      "views_per_day": 52850
     },
     {
       "id": "F3ZK3ma33V0",
@@ -212,38 +192,28 @@
       "channel": "황금 노후_건강한 식탁",
       "published": "2026-10-23",
       "seconds": 6,
-      "views": 141932,
-      "views_per_day": 51487
+      "views": 192557,
+      "views_per_day": 50366
     },
     {
-      "id": "IpcdysJ6m14",
-      "keyword": "혈관 건강",
-      "title": "나토키나제 혈관 건강에 도움 될까?",
-      "channel": "오늘",
-      "published": "2026-10-16",
-      "seconds": 46,
-      "views": 438846,
-      "views_per_day": 49100
-    },
-    {
-      "id": "H-TfD61aG-M",
-      "keyword": "혈당 스파이크",
-      "title": "건강식인 줄 알았는데 혈당 올리는 음식 10가지",
-      "channel": "황금 노후_건강한 식탁",
-      "published": "2026-10-22",
-      "seconds": 6,
-      "views": 141749,
-      "views_per_day": 48153
-    },
-    {
-      "id": "WqtSQByu0XU",
-      "keyword": "중년 건강 습관",
-      "title": "#건강에나쁜습관#절대하지마세요#시니어건강#생활건강상식#건강한노후##지혜#생활#건강#명언#꿀팁#방법#지식#정보#좋은글#공감글귀#멋진글귀#50대#60대#70대#노후#노년#중년#",
+      "id": "yZbZrN8E1t0",
+      "keyword": "혈당 낮추는 음식",
+      "title": "#혈당관리#당뇨식단#혈당낮추는식습관#시니어건강#건강한음식선택##지혜#생활#건강#명언#습관#공감#꿀팁#방법#지식#정보#좋은글#공감글귀#멋진글귀#50대#60대#70대#노후#노년#중년#",
       "channel": "지혜로운 생활",
       "published": "2026-10-24",
       "seconds": 6,
-      "views": 70567,
-      "views_per_day": 47351
+      "views": 134493,
+      "views_per_day": 49328
+    },
+    {
+      "id": "uAZHJHnosNE",
+      "keyword": "중년 건강 습관",
+      "title": "#청소#사람#지혜#생활#건강#명언#마음#인생#삶#습관#공감#위로#꿀팁#방법#지식#정보#좋은글#공감글귀#멋진글귀#50대#60대#70대#노후#노년#중년#",
+      "channel": "지혜로운 생활",
+      "published": "2026-10-24",
+      "seconds": 6,
+      "views": 131478,
+      "views_per_day": 46518
     },
     {
       "id": "yj1p3JezCTs",
@@ -252,8 +222,48 @@
       "channel": "오늘의 건강명언",
       "published": "2026-10-01",
       "seconds": 6,
-      "views": 1157544,
-      "views_per_day": 46951
+      "views": 1167310,
+      "views_per_day": 45384
+    },
+    {
+      "id": "_gMx3xxuhBs",
+      "keyword": "혈당 스파이크",
+      "title": "감자 vs 고구마, 당뇨 환자에게 더 나쁜 음식과 혈당 낮추는 조리법 #노비노 #노비노건강TV #이재동 #감자 #고구마 #당뇨",
+      "channel": "노비노 건강TV",
+      "published": "2026-10-23",
+      "seconds": 106,
+      "views": 137219,
+      "views_per_day": 44445
+    },
+    {
+      "id": "IpcdysJ6m14",
+      "keyword": "혈관 건강",
+      "title": "나토키나제 혈관 건강에 도움 될까?",
+      "channel": "오늘",
+      "published": "2026-10-16",
+      "seconds": 46,
+      "views": 444103,
+      "views_per_day": 44392
+    },
+    {
+      "id": "H-TfD61aG-M",
+      "keyword": "혈당 스파이크",
+      "title": "건강식인 줄 알았는데 혈당 올리는 음식 10가지",
+      "channel": "황금 노후_건강한 식탁",
+      "published": "2026-10-22",
+      "seconds": 6,
+      "views": 177244,
+      "views_per_day": 44198
+    },
+    {
+      "id": "ZooMl5Sw4Gc",
+      "keyword": "혈관 건강",
+      "title": "체지방 태우고 혈관 청소까지! 매일 아침 사과를 껍질째 먹어야 하는 이유 #노비노 #노비노다이어트 #이재동 #사과",
+      "channel": "노비노 건강TV",
+      "published": "2026-09-29",
+      "seconds": 132,
+      "views": 1147971,
+      "views_per_day": 42380
     },
     {
       "id": "Cn8HRq8ujUE",
@@ -262,8 +272,18 @@
       "channel": "지혜人TV",
       "published": "2026-10-15",
       "seconds": 7,
-      "views": 474691,
-      "views_per_day": 45344
+      "views": 481041,
+      "views_per_day": 41702
+    },
+    {
+      "id": "3riPF1gGiBY",
+      "keyword": "혈관 건강",
+      "title": "자고 일어나도 만성 피로할 때? 손가락 3곳 밀면 활력 충전! ⚡ (feat. 혈관 나이 테스트)#Shorts#건강#만성피로#혈액순환",
+      "channel": "백세건강비법",
+      "published": "2026-10-23",
+      "seconds": 127,
+      "views": 116735,
+      "views_per_day": 37920
     },
     {
       "id": "TI01I99k83U",
@@ -272,8 +292,8 @@
       "channel": "리틀약사 Shorts",
       "published": "2026-08-21",
       "seconds": 20,
-      "views": 2381333,
-      "views_per_day": 36345
+      "views": 2382245,
+      "views_per_day": 35776
     },
     {
       "id": "dnwU19DjM0U",
@@ -282,38 +302,18 @@
       "channel": "김소형채널H",
       "published": "2026-08-23",
       "seconds": 172,
-      "views": 2266536,
-      "views_per_day": 36018
+      "views": 2282882,
+      "views_per_day": 35674
     },
     {
-      "id": "9Aa5IbNW-Is",
-      "keyword": "공복혈당",
-      "title": "🩺 건강검진 전에 꼭 보세요! 기본 건강 수치 14가지 총정리",
-      "channel": "지혜人TV",
-      "published": "2026-10-20",
+      "id": "FkCU-9YbUj0",
+      "keyword": "중년 건강 습관",
+      "title": "#시니어건강#건강한식습관#노후건강관리#건강상식#장수습관##건강#명언#지혜#습관#노후#노년#중년#행복#힐링#마음#생활#장수#몸#방법#인생#삶#50대#60대#70대#보약#",
+      "channel": "오늘의 건강명언",
+      "published": "2026-10-25",
       "seconds": 6,
-      "views": 200923,
-      "views_per_day": 35134
-    },
-    {
-      "id": "ab_t5jnZvck",
-      "keyword": "혈당",
-      "title": "혈당 안 오르게 빵 먹는 3가지 비법 🍞 #당뇨#혈당#저항성전분 #식초#김소형한의사",
-      "channel": "김소형채널H",
-      "published": "2026-09-03",
-      "seconds": 179,
-      "views": 1391886,
-      "views_per_day": 26805
-    },
-    {
-      "id": "3gmrksuBDgs",
-      "keyword": "혈관 건강",
-      "title": "혈관이 막히기 싫다면 이 운동부터 하세요",
-      "channel": "마음가짐",
-      "published": "2026-08-11",
-      "seconds": 11,
-      "views": 1953416,
-      "views_per_day": 25752
+      "views": 53928,
+      "views_per_day": 33734
     }
   ],
   "top_by_views": [
@@ -324,8 +324,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-09",
       "seconds": 163,
-      "views": 5343415,
-      "views_per_day": 69461
+      "views": 5412651,
+      "views_per_day": 69399
     },
     {
       "id": "66bTRI_sDAU",
@@ -334,8 +334,8 @@
       "channel": "건강쏙쏙",
       "published": "2026-08-16",
       "seconds": 6,
-      "views": 5308803,
-      "views_per_day": 75806
+      "views": 5317259,
+      "views_per_day": 74788
     },
     {
       "id": "AFz-pzOVJqw",
@@ -344,8 +344,8 @@
       "channel": "Accu-Chek Korea",
       "published": "2026-08-18",
       "seconds": 43,
-      "views": 4527568,
-      "views_per_day": 65776
+      "views": 4580092,
+      "views_per_day": 65523
     },
     {
       "id": "1fm043q84Rw",
@@ -354,8 +354,8 @@
       "channel": "유한양행 와이즈바이옴",
       "published": "2026-09-17",
       "seconds": 16,
-      "views": 3960468,
-      "views_per_day": 101971
+      "views": 3988234,
+      "views_per_day": 99941
     },
     {
       "id": "CobIlSZqlRs",
@@ -364,8 +364,8 @@
       "channel": "인생 조언",
       "published": "2026-08-27",
       "seconds": 6,
-      "views": 3737795,
-      "views_per_day": 63427
+      "views": 3799010,
+      "views_per_day": 63320
     },
     {
       "id": "TI01I99k83U",
@@ -374,8 +374,8 @@
       "channel": "리틀약사 Shorts",
       "published": "2026-08-21",
       "seconds": 20,
-      "views": 2381333,
-      "views_per_day": 36345
+      "views": 2382245,
+      "views_per_day": 35776
     },
     {
       "id": "dnwU19DjM0U",
@@ -384,8 +384,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-23",
       "seconds": 172,
-      "views": 2266536,
-      "views_per_day": 36018
+      "views": 2282882,
+      "views_per_day": 35674
     },
     {
       "id": "3gmrksuBDgs",
@@ -394,8 +394,8 @@
       "channel": "마음가짐",
       "published": "2026-08-11",
       "seconds": 11,
-      "views": 1953416,
-      "views_per_day": 25752
+      "views": 1960592,
+      "views_per_day": 25489
     },
     {
       "id": "X2jbOgSZgqU",
@@ -404,8 +404,8 @@
       "channel": "헬씨약사",
       "published": "2026-09-27",
       "seconds": 40,
-      "views": 1667151,
-      "views_per_day": 58955
+      "views": 1692215,
+      "views_per_day": 57667
     },
     {
       "id": "jOabU6mgJl8",
@@ -414,8 +414,8 @@
       "channel": "박술녀한복 [Hanbok]",
       "published": "2026-08-24",
       "seconds": 54,
-      "views": 1542733,
-      "views_per_day": 24684
+      "views": 1543995,
+      "views_per_day": 24289
     },
     {
       "id": "ab_t5jnZvck",
@@ -424,8 +424,8 @@
       "channel": "김소형채널H",
       "published": "2026-09-03",
       "seconds": 179,
-      "views": 1391886,
-      "views_per_day": 26805
+      "views": 1405321,
+      "views_per_day": 26519
     },
     {
       "id": "T0WHY0LtTI8",
@@ -434,8 +434,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-26",
       "seconds": 165,
-      "views": 1332638,
-      "views_per_day": 22238
+      "views": 1342513,
+      "views_per_day": 22011
     },
     {
       "id": "4kejcXVbw04",
@@ -444,8 +444,8 @@
       "channel": "지식 쇼츠",
       "published": "2026-09-01",
       "seconds": 90,
-      "views": 1325856,
-      "views_per_day": 24207
+      "views": 1336017,
+      "views_per_day": 23927
     },
     {
       "id": "LesbeWev11E",
@@ -454,8 +454,18 @@
       "channel": "김소형채널H",
       "published": "2026-09-01",
       "seconds": 132,
-      "views": 1291868,
-      "views_per_day": 23956
+      "views": 1302827,
+      "views_per_day": 23690
+    },
+    {
+      "id": "SanV2VbPJbs",
+      "keyword": "혈당",
+      "title": "대한민국 1등 혈당유산균, 매일 혈당 관리엔 당큐락",
+      "channel": "유한양행 와이즈바이옴",
+      "published": "2026-09-17",
+      "seconds": 11,
+      "views": 1291244,
+      "views_per_day": 32360
     },
     {
       "id": "yj1p3JezCTs",
@@ -464,8 +474,18 @@
       "channel": "오늘의 건강명언",
       "published": "2026-10-01",
       "seconds": 6,
-      "views": 1157544,
-      "views_per_day": 46951
+      "views": 1167310,
+      "views_per_day": 45384
+    },
+    {
+      "id": "ZooMl5Sw4Gc",
+      "keyword": "혈관 건강",
+      "title": "체지방 태우고 혈관 청소까지! 매일 아침 사과를 껍질째 먹어야 하는 이유 #노비노 #노비노다이어트 #이재동 #사과",
+      "channel": "노비노 건강TV",
+      "published": "2026-09-29",
+      "seconds": 132,
+      "views": 1147971,
+      "views_per_day": 42380
     },
     {
       "id": "2tdRoFdcYl4",
@@ -474,8 +494,8 @@
       "channel": "오늘",
       "published": "2026-08-29",
       "seconds": 42,
-      "views": 1129842,
-      "views_per_day": 19855
+      "views": 1132220,
+      "views_per_day": 19531
     },
     {
       "id": "DKhL41BZdq0",
@@ -484,8 +504,8 @@
       "channel": "김소형채널H",
       "published": "2026-10-13",
       "seconds": 172,
-      "views": 1046660,
-      "views_per_day": 87753
+      "views": 1089613,
+      "views_per_day": 83856
     },
     {
       "id": "4pcVKi6kyeU",
@@ -494,28 +514,8 @@
       "channel": "어떤약사",
       "published": "2026-08-12",
       "seconds": 17,
-      "views": 1010013,
-      "views_per_day": 13506
-    },
-    {
-      "id": "YbqysAt6i3A",
-      "keyword": "혈당",
-      "title": "혈당·체중 관리에 관심 있다면 이것부터 먹어보세요 😳 #건강간식 #식단관리  #레시피",
-      "channel": "맛도리팸 레시피",
-      "published": "2026-10-08",
-      "seconds": 39,
-      "views": 945142,
-      "views_per_day": 54606
-    },
-    {
-      "id": "zl5O4Yfn06o",
-      "keyword": "혈당",
-      "title": "공복혈당이 걱정된다면 식탁에 ‘이것’을 꼭 올리세요! 당뇨 환자에게 가장 좋은 음식, 정답은 따로 있습니다 #당뇨 #혈당관리 #공복혈당 #당뇨식단 #식초",
-      "channel": "김소형채널H",
-      "published": "2026-07-29",
-      "seconds": 163,
-      "views": 929953,
-      "views_per_day": 10576
+      "views": 1012387,
+      "views_per_day": 13348
     },
     {
       "id": "-8wuUmOz2YM",
@@ -524,8 +524,18 @@
       "channel": "온도한스푼",
       "published": "2026-10-08",
       "seconds": 6,
-      "views": 925603,
-      "views_per_day": 52955
+      "views": 980134,
+      "views_per_day": 52850
+    },
+    {
+      "id": "zl5O4Yfn06o",
+      "keyword": "혈당",
+      "title": "공복혈당이 걱정된다면 식탁에 ‘이것’을 꼭 올리세요! 당뇨 환자에게 가장 좋은 음식, 정답은 따로 있습니다 #당뇨 #혈당관리 #공복혈당 #당뇨식단 #식초",
+      "channel": "김소형채널H",
+      "published": "2026-07-29",
+      "seconds": 163,
+      "views": 937634,
+      "views_per_day": 10536
     },
     {
       "id": "6-VmB50YpEI",
@@ -534,18 +544,8 @@
       "channel": "닥터케이 김지은",
       "published": "2026-08-15",
       "seconds": 16,
-      "views": 906776,
-      "views_per_day": 12634
-    },
-    {
-      "id": "zlLVBt-kNgY",
-      "keyword": "혈당 스파이크",
-      "title": "모유 독점한 외동고양이의 최후 (혈당스파이크옴)",
-      "channel": "아니,근데",
-      "published": "2026-09-14",
-      "seconds": 18,
-      "views": 872088,
-      "views_per_day": 20876
+      "views": 906812,
+      "views_per_day": 12450
     },
     {
       "id": "EqIt5xx_hyk",
@@ -554,8 +554,18 @@
       "channel": "김소형채널H",
       "published": "2026-09-12",
       "seconds": 180,
-      "views": 862769,
-      "views_per_day": 20098
+      "views": 873537,
+      "views_per_day": 19856
+    },
+    {
+      "id": "zlLVBt-kNgY",
+      "keyword": "혈당 스파이크",
+      "title": "모유 독점한 외동고양이의 최후 (혈당스파이크옴)",
+      "channel": "아니,근데",
+      "published": "2026-09-14",
+      "seconds": 18,
+      "views": 872214,
+      "views_per_day": 20359
     },
     {
       "id": "Z4CvkV-At3I",
@@ -564,8 +574,18 @@
       "channel": "원더홈",
       "published": "2026-08-23",
       "seconds": 26,
-      "views": 847982,
-      "views_per_day": 13355
+      "views": 848267,
+      "views_per_day": 13139
+    },
+    {
+      "id": "_Me9ZGEc-54",
+      "keyword": "당뇨에 좋은 음식",
+      "title": "3대째 내려 온 건강밥상 비법! 당뇨식단 변비에도 좋다는데 #당뇨식단",
+      "channel": "더살자",
+      "published": "2026-10-22",
+      "seconds": 42,
+      "views": 811040,
+      "views_per_day": 175309
     },
     {
       "id": "y4KvMEE33TE",
@@ -574,8 +594,8 @@
       "channel": "김소형채널H",
       "published": "2026-08-19",
       "seconds": 178,
-      "views": 747864,
-      "views_per_day": 11174
+      "views": 749183,
+      "views_per_day": 11018
     },
     {
       "id": "mPOCY5qH1es",
@@ -584,28 +604,8 @@
       "channel": "딱중년템",
       "published": "2026-10-18",
       "seconds": 24,
-      "views": 708680,
-      "views_per_day": 94753
-    },
-    {
-      "id": "DfOXD4cwFx0",
-      "keyword": "혈당",
-      "title": "혈당 낮추려면 이 운동이 정답입니다",
-      "channel": "오늘",
-      "published": "2026-08-14",
-      "seconds": 21,
-      "views": 673968,
-      "views_per_day": 9369
-    },
-    {
-      "id": "kIu-Uf_d3IM",
-      "keyword": "당뇨 초기증상",
-      "title": "당뇨 초기 신호 10가지 한 장 정리 #shorts",
-      "channel": "건강하고 행복하게 ",
-      "published": "2026-09-14",
-      "seconds": 7,
-      "views": 672319,
-      "views_per_day": 16127
+      "views": 723610,
+      "views_per_day": 84675
     },
     {
       "id": "IcMyEuTiPPw",
@@ -614,8 +614,8 @@
       "channel": "김소형채널H",
       "published": "2026-10-17",
       "seconds": 112,
-      "views": 669196,
-      "views_per_day": 84531
+      "views": 701672,
+      "views_per_day": 78110
     }
   ]
 }
